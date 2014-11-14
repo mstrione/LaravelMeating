@@ -52,11 +52,11 @@ return array(
 			'prefix'   => '',
 		),
 
-		'mysql' => array(   // se conecta a la base de datos que utilizamos llamada meat
+		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'meat',
-			'username'  => 'root',
+			'database'  => 'forge',
+			'username'  => 'forge',
 			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
