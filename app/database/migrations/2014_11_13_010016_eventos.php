@@ -18,16 +18,16 @@ class Eventos extends Migration {
 			
 			$table->increments('id');
 			
-			$table->string('nombre'); 
-			$table->string('lugar');
+			$table->string('nombre',30); 
+			$table->string('direccion');
 			$table->date('fecha'); 
 			$table->time('hora');
 			$table->string('descripcion');
-			$table->string('cerrado');
-			$table->string('creador');
 			$table->string('latitud');
 			$table->string('longitud');
-			$table->string('metodocuenta');
+			$table->boolean('cerrado');
+			$table->string('creador');			
+			$table->integer('metodocuenta');
 			
 			$table->timestamps();
 		});
@@ -40,7 +40,7 @@ class Eventos extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('eventos');
 	}
 
 }

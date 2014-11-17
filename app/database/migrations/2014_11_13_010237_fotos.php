@@ -18,8 +18,8 @@ class Fotos extends Migration {
 			
 			$table->increments('id');
 			
-			$table->string('evento'); 			
-			$table->string('titulo'); 
+			$table->string('evento',30); 			
+			$table->string('titulo',30); 
 			$table->string('pic'); // es la imagen
 			
 			
@@ -35,7 +35,7 @@ class Fotos extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('fotos');
 	}
 
 }

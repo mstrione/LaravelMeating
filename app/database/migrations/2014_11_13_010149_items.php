@@ -18,9 +18,9 @@ class Items extends Migration {
 			
 			$table->increments('id');
 			
-			$table->string('evento'); 
+			$table->string('evento',30); 
 			$table->string('descripcion');
-			$table->string('cantidad'); 
+			$table->integer('cantidad'); 
 			
 			
 			$table->timestamps();
@@ -34,7 +34,7 @@ class Items extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('items');
 	}
 
 }

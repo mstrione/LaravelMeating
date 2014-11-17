@@ -18,9 +18,9 @@ class Itemsoks extends Migration {
 			
 			$table->increments('id');
 			
-			$table->string('item'); 			
-			$table->string('cantidad'); 
-			$table->string('usuario');
+			$table->string('item',30); 			
+			$table->integer('cantidad'); 
+			$table->string('usuario',30);
 			
 			
 			
@@ -35,7 +35,7 @@ class Itemsoks extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('itemsoks');
 	}
 
 }

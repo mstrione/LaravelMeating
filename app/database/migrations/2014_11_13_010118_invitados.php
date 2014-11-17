@@ -18,15 +18,15 @@ class Invitados extends Migration {
 			
 			$table->increments('id');
 			
-			$table->string('evento'); 
+			$table->string('evento', 30); 
 			$table->string('usuario');
-			$table->string('rol'); 
-			$table->string('menores');
-			$table->string('adultos');
-			$table->string('confirmado');
-			$table->string('notificado');
-			$table->string('costo');
-			$table->string('gasto');
+			$table->string('rol',10); 
+			$table->integer('menores');
+			$table->integer('adultos');
+			$table->boolean('confirmado');
+			$table->boolean('notificado');
+			$table->double('costo');
+			$table->double('gasto');
 			
 			
 			$table->timestamps();
@@ -40,7 +40,7 @@ class Invitados extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('invitados');
 	}
 
 }

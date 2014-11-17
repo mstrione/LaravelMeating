@@ -18,16 +18,16 @@ class Usuarios extends Migration {
 			
 			$table->increments('id');
 			
-			$table->string('username'); // es nombre, se utiliza username para usar mejor las validaciones incorporadas
-			$table->string('apellido');
-			$table->string('password'); // es la clave, lo mismo que username.
+			$table->string('username',30); // es nombre, se utiliza username para usar mejor las validaciones incorporadas
+			$table->string('apellido',30);
+			$table->string('password',15); // es la clave, lo mismo que username.
 			$table->date('nacimiento');
-			$table->string('sexo');
-			$table->string('email');
-			$table->string('provincia');
-			$table->string('ciudad');
+			$table->integer('sexo');
+			$table->string('email',50);
+			$table->string('provincia',30);
+			$table->string('ciudad',30);
 			$table->string('verificacion');
-			$table->string('activo');
+			$table->integer('activo');
 			
 			$table->timestamps();
 		});
