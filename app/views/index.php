@@ -28,7 +28,7 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Inicio</a></li>
-              <li><a href="../MEating/que es.html">¿Que es Meating?</a></li>
+              <li><a href="QueEs.php">¿Que es Meating?</a></li>
               <li><a href="../MEating/Quienes Somos.html">¿Quienes somos?</a></li> 
               <li><a href="../MEating/contacto.php">Contacto</a></li>           
             </ul>
