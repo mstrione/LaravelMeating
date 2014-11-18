@@ -11,4 +11,18 @@
 |
 */
 
-Route::get('/', function(){	return View::make('index');});
+Route::get('/', function()
+{	
+return View::make('index');});
+
+Route::resource('usuarios','UsuarioController');
+
+Route::resource('eventos','EventoController');
+
+Route::resource('invitados','InvitadoController');
+
+Route::resource('items','ItemController');
+
+Route::resource('itemsoks','ItemsokController');
+
+Route::resource('fotos','FotoController');
