@@ -15,6 +15,16 @@ Route::get('/', function()
 {	
 return View::make('index');});
 
+Route:: get('QueEs.php',function(){return View::Make('QueEs');});
+
+Route:: get('QuienesSomos.php',function(){return View::Make('QuienesSomos');});
+
+Route:: get('Contacto.php',function(){return View::Make('Contacto');});
+
+Route:: get('Login.php',function(){return View::Make('Login');});
+
+Route:: get('Registro.php',function(){return View::Make('Registro');});
+
 Route::resource('usuarios','UsuarioController');
 
 Route::resource('eventos','EventoController');

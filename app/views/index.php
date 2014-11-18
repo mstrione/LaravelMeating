@@ -21,7 +21,7 @@
 	
   	<!--barra de menu-->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container"><img class="navbar-brand" src="MEating/img/meatingLogo2.png"   HEIGHT="100px" ></img> <!style="width: 150px; height: auto;>
+        <div class="container"><img class="navbar-brand" src="img/meatingLogo3.png"   HEIGHT="100px" ></img> <!style="width: 150px; height: auto;>
           <div class="navbar-header">
               <a class="navbar-brand">Meating</a>
           </div>
@@ -29,12 +29,12 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Inicio</a></li>
               <li><a href="QueEs.php">¿Que es Meating?</a></li>
-              <li><a href="../MEating/Quienes Somos.html">¿Quienes somos?</a></li> 
-              <li><a href="../MEating/contacto.php">Contacto</a></li>           
+              <li><a href="QuienesSomos.php">¿Quienes somos?</a></li> 
+              <li><a href="Contacto.php">Contacto</a></li>           
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="../MEating/login.php">Inicio de Sesion</a></li> 
-              <li><a href="../MEating/registro.php">Registrarse</a></li>
+              <li><a href="Login.php">Inicio de Sesion</a></li> 
+              <li><a href="Registro.php">Registrarse</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
