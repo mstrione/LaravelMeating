@@ -88,7 +88,7 @@
       				<div class="caption" align="center">
         				<h3>ORGANIZÁ RAPIDO Y FACIL!</h3>
         				<p>Ahorrá tiempo! Porque con Meating calculamos todo y lo haces en un touch!</p>
-        				<p><a href="../MEating/registro.php" class="btn btn-primary" role="button">Registrate Ahora!</a> </p>
+        				<p><a href="Registro.php" class="btn btn-primary" role="button">Registrate Ahora!</a> </p>
       				</div>
     			</div>
   			</div>
@@ -98,7 +98,7 @@
       				<div class="caption" align="center">
         				<h3>INVITA</h3>
         				<p>Invita a todas las personas que quieras porque tenemos el corazon gigante!!</p>
-        				<p><a href="../MEating/registro.php" class="btn btn-primary" role="button">Invita amig@s!</a> </p>
+        				<p><a href="Registro.php" class="btn btn-primary" role="button">Invita amig@s!</a> </p>
       				</div>
     			</div>
   			</div>
@@ -108,7 +108,7 @@
       				<div class="caption" align="center">
         				<h3>DISFRUTA</h3>
         				<p>El ultimo paso y el mejor! Que estas esperando?? Regístrate y SALUD!</p>
-        				<p><a href="../MEating/registro.php" class="btn btn-primary" role="button">Comenzá a disfrutar!</a> </p>
+        				<p><a href="Registro.php" class="btn btn-primary" role="button">Comenzá a disfrutar!</a> </p>
       				</div>
     			</div>
   			</div>
@@ -130,7 +130,7 @@
             <div class="wrapped" align="center"> <!Anclamos un footer abajo del todo de la pagina>
                 <p class="pull-right"><a id="goTop" href="#"><h3> ^ </h3></a></p> <!con ese icono nos lleva hacia arriba de la pagina>
                 <p>© 2014 MEating   ·  <a href="ruta de privacidad y terminos">Privacidad y Términos</a> · Seguinos en <!no va a llevar a los links mencionados abajo a traves de los iconos-imagenes>
-                	<a href="http://facebook.com"><img src="img/f2.png" height='30' width='70'></a> | 
+                	<a href="http://facebook.com"><img src="img/f1.png" height='30' width='70'></a> | 
 					<a href="http://twitter.com"><img src="img/t1.png" height='30' width='70'></a> |
 					<a href="http://plus.google.com/share"><img src="img/g1.png" height='30' width='70'></a>
 					
