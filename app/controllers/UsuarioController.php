@@ -1,6 +1,6 @@
 <?php
 
-class UsuarioController extends \BaseController {
+class UsuarioController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +9,10 @@ class UsuarioController extends \BaseController {
 	 */
 	public function index() // cada vez que se rutea, laravel me lo envia aca
 	{
-		 return 'Esta es la lista de usuarios';
+		$usuarios=Usuario::all();
+		return View::make('index')->with('usuarios',$usuarios); 
+		 //return 'Esta es la lista de usuarios';
+
 	}
 
 

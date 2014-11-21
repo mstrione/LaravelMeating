@@ -36,6 +36,4 @@ Route::resource('Item','ItemController');
 Route::resource('Itemsok','ItemsokController');
 
 Route::resource('Foto','FotoController');
-
-
-
+//Route::get('/','UsuarioController@index');
