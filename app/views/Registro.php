@@ -46,6 +46,15 @@
                            
                     </div>
                   </div>
+				  
+				  <!--Apellido-->
+				  <div class="form-group">
+                      <label for="inputApellido" class="col-lg-2 control-label">Apellido</label>
+                      <div class="col-lg-5">
+                          <input class="form-control" id="inputNombre" placeholder="Apellido" type="text" name="apellido">
+                           
+                    </div>
+                  </div>
                                    
                 <!--Mail-->
                   
