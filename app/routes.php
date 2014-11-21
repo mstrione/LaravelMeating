@@ -25,14 +25,17 @@ Route:: get('Login.php',function(){return View::Make('Login');});
 
 Route:: get('Registro.php',function(){return View::Make('Registro');});
 
-Route::resource('usuarios','UsuarioController');
+Route::resource('Usuario','UsuarioController');
 
-Route::resource('eventos','EventoController');
+Route::resource('Evento','EventoController');
 
-Route::resource('invitados','InvitadoController');
+Route::resource('Invitado','InvitadoController');
 
-Route::resource('items','ItemController');
+Route::resource('Item','ItemController');
 
-Route::resource('itemsoks','ItemsokController');
+Route::resource('Itemsok','ItemsokController');
 
-Route::resource('fotos','FotoController');
+Route::resource('Foto','FotoController');
+
+
+

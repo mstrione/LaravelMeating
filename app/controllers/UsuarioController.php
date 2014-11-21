@@ -9,7 +9,7 @@ class UsuarioController extends \BaseController {
 	 */
 	public function index() // cada vez que se rutea, laravel me lo envia aca
 	{
-		//
+		 return 'Esta es la lista de usuarios';
 	}
 
 
@@ -20,7 +20,7 @@ class UsuarioController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		 return 'aca va el form para crear un usuario';
 	}
 
 
@@ -43,7 +43,7 @@ class UsuarioController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		// return 'aca mostramos la info del usuario:' . $id;
 	}
 
 
@@ -55,7 +55,7 @@ class UsuarioController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		// return ' aca editamos el usuario:' . $id;
 	}
 
 

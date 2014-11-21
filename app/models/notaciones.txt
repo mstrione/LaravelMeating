@@ -9,3 +9,8 @@ sobre  el modelo Usuario.php, porque ase referencia a una tabla 'users' ? si no 
 class Usuario extends..... //nombre igual al archivo que creamos.
 protected $table="usuarios"// tabla en plural, referencia.
 
+/--------------------------
+IMPORTANTISIMO
+Habria que pasar los formularios escritos en php a plantillas .blade.php
+
+ademas para no crear en cada pagina el header y el footer, deberiamos crear una plantilla donde se coloque el html una sola vez, y luego realizar la llamada a la plantilla desde cada view.
