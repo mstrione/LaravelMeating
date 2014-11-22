@@ -37,3 +37,21 @@ Route::resource('Itemsok','ItemsokController');
 
 Route::resource('Foto','FotoController');
 //Route::get('/','UsuarioController@index');
+
+
+
+// Deberiamos tener...
+/* 1 ruta para la pagina principal
+2 rutas para la pagina de contacto(una que muestra el formulario y otra que lo procesa-Get y Post)
+Esto se repite para el formulario de Login, el de Registro, el de eventos, el de llevar item (ver el de cuentas)
+
+tambien se puede hacer un grupo de rutas donde solo pueda ver el administrador
+Route::group(array('prefix'=>'admin'),function()
+{
+	Route:group(array('before'=>admin'),function()
+	{
+	aca irian las rutas de get y post que usaria el AdminController.
+	la vista principal, agregar usuarios, eventos etc..
+	}
+	}
+	
