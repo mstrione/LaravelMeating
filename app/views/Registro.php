@@ -165,9 +165,14 @@ La utilización de nuestro sitio implica su aceptación plena y sinreservas a to
                 </div>
             </fieldset>
           </form>
+            <?php
+    echo Form::text('campo');
+    echo Form::close(); 
+   ?>
         </div>
         
 	</div>
+
       <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

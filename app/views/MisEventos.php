@@ -12,6 +12,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/StyleComun.css" rel="stylesheet">
@@ -26,25 +27,35 @@
 <body>
   	<!--barra de menu-->
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container"><img class="navbar-brand" src="img/images.jpg" ></img>
-        <div class="navbar-header">
-          	<a class="navbar-brand">MEating</a>
+        <div class="container"><img class="navbar-brand" src="img/meatingLogo3.png"   HEIGHT="100px" ></img> <!style="width: 150px; height: auto;>
+          <div class="navbar-header">
+              <a class="navbar-brand">Meating</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Inicio</a></li>
+              <li><a href="QueEs.php">¿Que es Meating?</a></li>
+              <li><a href="QuienesSomos.php">¿Quienes somos?</a></li> 
+              <li><a href="Contacto.php">Contacto</a></li>           
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Link</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Dropdown <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+          </div><!--/.nav-collapse -->
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="Index.html">Inicio</a></li>
-            <li><a href="Que es.html">¿Que es MEating?</a></li>
-            <li><a href="Quienes Somos.html">¿Quienes somos?</a></li> 
-            <li><a href="Contacto.php">Contacto</a></li>            
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Finalizar Sesion</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
     </div>
     <!--le da el cuerpo al body (valga la redundancia)--> <!--modificado en el css box-shadow-->
-<?php
+<?php/*
 	@$Nombre=$_REQUEST['Nombre'];
 	@$Email=$_REQUEST['Email'];
 	@$FechaNacimiento="1990-05-21";
@@ -60,7 +71,7 @@
             <div align="right"><a href="Evento.php" class="btn btn-primary" >Agregar Evento +</a></div><br>		
 
 <?php	
-		$conexion= mysql_connect("localhost","root","") or die ("no se puede conectar con la base de datos");
+		/*$conexion= mysql_connect("localhost","root","") or die ("no se puede conectar con la base de datos");
 	
 		//Selecciono la base de datos
 		mysql_select_db("meating") or die("no se puede conectar con usuarios");
@@ -126,7 +137,7 @@
 		 
 	// Cerrar conexión
    	mysql_close ($conexion);
- 
+ */
 ?>    
         </div>
 	</div>

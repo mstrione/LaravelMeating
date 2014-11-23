@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function()
-{	
-return View::make('index');});
+Route::get('/', function(){return View::make('index');});
+
+Route::get('MisEventos.php','MisEventosController@index'); 
 
 Route:: get('QueEs.php',function(){return View::Make('QueEs');});
 
@@ -36,6 +36,8 @@ Route::resource('Item','ItemController');
 Route::resource('Itemsok','ItemsokController');
 
 Route::resource('Foto','FotoController');
+
+
 //Route::get('/','UsuarioController@index');
 
 
