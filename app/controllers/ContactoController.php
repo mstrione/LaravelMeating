@@ -32,6 +32,7 @@ class ContactoController extends BaseController {
 		$rules=array(
 			'nombre' => 'required',
 			'email' => 'required|email',
+			'asunto'=> 'required|alpha',
 			'mensaje' => 'required',
 			);
 			
