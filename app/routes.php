@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function(){return View::make('index');});
-
-Route::get('MisEventos.php','MisEventosController@index'); 
+/*Route::get('/', function()
+{	
+return View::make('index');});
 
 Route:: get('QueEs.php',function(){return View::Make('QueEs');});
 
@@ -37,9 +37,7 @@ Route::resource('Itemsok','ItemsokController');
 
 Route::resource('Foto','FotoController');
 
-
-//Route::get('/','UsuarioController@index');
-
+Route::get('/','PruebaController@index');*/
 
 
 // Deberiamos tener...
@@ -55,5 +53,46 @@ Route::group(array('prefix'=>'admin'),function()
 	aca irian las rutas de get y post que usaria el AdminController.
 	la vista principal, agregar usuarios, eventos etc..
 	}
-	}
-	
+	}*/
+//RUTA DE LA PAGINA PRINCIPAL	
+Route::get('/', function()
+{
+	return View::make('pages.home');
+	});
+//RUTA DE ACERCA DE MEATING
+Route::get('about', function()
+{
+	return View::make('pages.about');
+});
+
+//RUTA DE ACERCA DE NOSOTROS
+Route::get('aboutUs', function()
+{
+	return View::make('pages.aboutUs');
+});
+
+//RUTA DE CONTACTO
+
+Route::get('contacto', function()
+{
+	return View::make('pages.contacto');
+});
+
+/*Route::post('/contacto', 'HomeController@postcontacto'); 
+ACA DEBERIA AGREGAR EL CONTROLADOR DE CONTACTO COMO CONTROLADOR DEL SITIO QUE SE LLAMA HOME*/
+
+
+
+//RUTA DE LA PAGINA DEL INICIO DE SESION
+Route::get('login', function()
+{
+	return View::make('pages.login');
+});
+
+//RUTA DE LA PAGINA DE REGISTRO
+Route::get('registro', function()
+{
+	return View::make('pages.registro');
+});
+
+
