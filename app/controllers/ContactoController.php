@@ -20,6 +20,8 @@ class ContactoController extends BaseController {
 		return View::make('index');
 	}
 	
+	
+	//---------------PARTE DEL CONTACTO------------------------------------------------------------------------
 	public function get_contacto()
 	{
 		return View::make('contacto');
@@ -63,7 +65,13 @@ class ContactoController extends BaseController {
 						return Redirect::to('/contacto')->with('estado', 'El mensaje se ha enviado correctamente');
 			}
 	}
-		
+	
+	
+	
+	
+	//--------------------------------------
+	
+	
 		
 }
 

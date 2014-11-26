@@ -45,8 +45,13 @@ class UsuarioController extends BaseController {
 	 * @return Response
 	 */
 	public function show($id)
-	{
-		// return 'aca mostramos la info del usuario:' . $id;
+	{	
+	/*
+        $usuario = Usuario::find($id);
+
+        return View::make('usuario.profile', array('usuario' => $usuario));
+    
+		 return 'aca mostramos la info del usuario:' . $id;*/
 	}
 
 
@@ -84,13 +89,19 @@ class UsuarioController extends BaseController {
 	{
 		//
 	}
+	
+	//--------------------------------------------------------------------------------------------
+	
+	
+	
+	//--------------------------------------------PARTE DE LOS LOGUEOS----------------------------------------------------------
 	/*
 	public function get_login()
 	{
 		if (Usuario::isLogged()) //si el usuario esta logueado
-			return Redirect::to('ACA IRIA LA PAGINA DE MIS EVENTOS');
+			return Redirect::to('/MisEventos');
 		else
-			return View::make('Aca iria de nuevo a la pagina del login');
+			return View::make('pages.Login');
 	}
 
 	public function post_login()
@@ -131,10 +142,86 @@ class UsuarioController extends BaseController {
 			}
 	}
 
-public function logout()
-{
-	Session::flush();
-	return Redirect::to('/');  //aca cerre la sesion y lo deberia retornar a la pagina principal
-}*/
+	public function logout()
+	{
+		Session::flush();
+		return Redirect::to('/');  //aca cerre la sesion y lo deberia retornar a la pagina principal
+	}*/
+	
+	
+	//---------------------------------------------------PARTE DE LOS REGISTROS---------------------------------------------
+	
+	
+	Public function Get_Registrarme()
+	{
+		{
+		if(User::isLogged())
+			{
+			return Redirect::to('/MisEventos');
+			}
+			else
+			{
+				return View::make('pages.registro');
+			}
+		}
+	}
+	
+	
+	Public function Post_Registrarme()
+	{
+	
+		$input = Input::all();
+
+		$rules = array(
+			'username' => 'required|unique:usuarios,username',
+			'apellido'=>'required',
+			'email' => 'required|email|unique:usuarios,email',
+			'password' => 'required|between:5,10', //password entre 5 y 10 caracteres..es el min y el max pasado.
+			'password2' => 'required|same:password',
+			'nacimiento'=>'required|date_format:date', //El campo bajo validación debe coincidir con format (formato) definido acorde con la función PHP date_parse_from_format.
+			'sexo'=>'required|integer',
+			'provincia'=>'required',
+			'ciudad'=>'required|alpha',
+			
+			
+		);
+
+		$validator = Validator::make($input, $rules); //comparo lo ingresado con las reglas
+
+		if($validator->fails())
+		{
+			return Redirect::back()->withErrors($validator); //si la validacion falla vuelve con los errores
+		}
+		else
+		{
+			$usuario = new Usuario;
+				$usuario->username = Input::get('username');
+				$usuario->apellido = Input::get('apellido');
+				$usuario->password = Hash::make(Input::get('password'));
+				$usuario->nacimiento = Input::get('nacimiento');
+				$usuario->sexo = Input::get('sexo');
+				$usuario->email = Input::get('email');
+				$usuario->provincia = Input::get('provincia');
+				$usuario->ciudad = Input::get('ciudad');
+				//$usuario->verificacion = '';
+				//$$usuario->activo = 1;
+			$usuario->save();
+
+			return Redirect::to('/login')->with('registro', 'Registro completado. Acceda a su cuenta');
+		}
+	
+	
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
