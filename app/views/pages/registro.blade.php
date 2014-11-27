@@ -1,4 +1,8 @@
 @extends('layouts.default')
+
+<head>
+	@include('includes.headR')
+</head>
 @section('content')
 	
 	

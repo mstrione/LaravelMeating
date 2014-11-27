@@ -1,4 +1,7 @@
 @extends('layouts.default')
+<head>
+	@include('includes.head')
+</head>
 @section('content')
 	<!--le da el cuerpo al body (valga la redundancia)--> <!--modificado en el css box-shadow-->
     <div class="container"> 

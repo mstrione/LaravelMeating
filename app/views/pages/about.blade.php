@@ -1,4 +1,10 @@
+
+
 @extends('layouts.default')
+
+<head>
+	@include('includes.headqe')
+</head>
 <h1 class="featurette-heading" align="center">¿Que es MEating?..</h1>
 @section('content')
 	<div class="page-header">

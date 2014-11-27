@@ -1,4 +1,7 @@
 @extends('layouts.default')
+<head>
+	@include('includes.headC')
+</head>
 @section('content')
 {{Form::open(array('method'=>'POST','url'=>'/contacto','role'=>'form'))}} 
 	<div class="container">

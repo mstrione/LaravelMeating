@@ -5,7 +5,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Meating - Inicio</title>
+    <title>¿Que es Meating?</title>
 
 	<!-- CARGAR EL Bootstrap -->
 

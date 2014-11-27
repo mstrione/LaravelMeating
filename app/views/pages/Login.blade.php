@@ -1,7 +1,9 @@
 
 
 @extends('layouts.default')
-
+<head>
+	@include('includes.headL')
+</head>
 @section ('content')
 		<h2> INICIO DE SESION </h2>
 		{{Form::open(array('url'=> 'Aca va la url del login','method'=>'POST','role'=>'form'))}} 
