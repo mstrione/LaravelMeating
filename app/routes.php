@@ -95,4 +95,17 @@ Route::get('registro', function()
 	return View::make('pages.registro');
 });
 
+Route::get('itempop', function()
+{
+	return View::make('pages.itempop');
+});
+
+Route::get('item', 'ItemControllerController@mostrarItems');
+ 
+Route::post('item', 'ItemController@crearItem');
+ 
+Route::get('evento', 'EventoController@mostrarEventos');
+ 
+Route::post('evento', 'EventoController@crearEvento');
+
 

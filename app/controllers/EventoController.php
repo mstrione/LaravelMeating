@@ -18,9 +18,16 @@ class EventoController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function crearEvento()
 	{
 		//
+		$respuesta = Evento::agregarEvento(Input::all());
+		if $respuesta['error']==true=
+		{
+			return Redirect::to('evento')->withErrors($respuesta['mensaje'])->withInput;			
+		}else {
+			return Redirect::to('evento')->with('mensaje', $respuesta['mensaje']);
+			}
 	}
 
 
@@ -41,9 +48,15 @@ class EventoController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function mostrarEventos($id)
 	{
-		//
+		/*
+		$eventos=Evento::all(); // o mostrar el evento pasado por id
+		$usuarios=Usuario::all;
+		$items=Item::all;
+		$fotos=Foto::all;
+		$invitados=Invitado::all;
+		//falta poner el chat e items ok!
 	}
 
 

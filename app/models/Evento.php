@@ -1,7 +1,12 @@
 <?php 
 class Evento extends Eloquent { 
+
     protected $table = 'eventos';
 	
+	
+	
+	
+//-------CON QUE TABLAS SE RELACIONA------	
 	/*
 	public function usuarios()
 	{	
@@ -11,7 +16,7 @@ class Evento extends Eloquent {
 	
 	public function items()
 	{
-		return $this->hasMany('Item');
+		return $this->hasMany('Item');//ver de agregar en table de evento clave foranea a item
 	
 	}
 	
@@ -28,7 +33,12 @@ class Evento extends Eloquent {
 	//habria que agregar el del chat despues
 	
 	
-	
+//------------FUNCIONES DEL EVENTO-------
+
+public static funcion agregarEvento($input)	
+{
+
+}
 	
 	
 	
