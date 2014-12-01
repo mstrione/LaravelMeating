@@ -11,33 +11,7 @@
 |
 */
 
-/*Route::get('/', function()
-{	
-return View::make('index');});
 
-Route:: get('QueEs.php',function(){return View::Make('QueEs');});
-
-Route:: get('QuienesSomos.php',function(){return View::Make('QuienesSomos');});
-
-Route:: get('Contacto.php',function(){return View::Make('Contacto');});
-
-Route:: get('Login.php',function(){return View::Make('Login');});
-
-Route:: get('Registro.php',function(){return View::Make('Registro');});
-
-Route::resource('Usuario','UsuarioController');
-
-Route::resource('Evento','EventoController');
-
-Route::resource('Invitado','InvitadoController');
-
-Route::resource('Item','ItemController');
-
-Route::resource('Itemsok','ItemsokController');
-
-Route::resource('Foto','FotoController');
-
-Route::get('/','PruebaController@index');*/
 
 
 // Deberiamos tener...
@@ -78,18 +52,48 @@ Route::get('contacto', function()
 	return View::make('pages.contacto');
 });
 
+Route::get('login', function()
+{
+	return View::make('pages.login');
+});
 /*Route::post('/contacto', 'HomeController@postcontacto'); 
 ACA DEBERIA AGREGAR EL CONTROLADOR DE CONTACTO COMO CONTROLADOR DEL SITIO QUE SE LLAMA HOME*/
 
 
 
 //RUTA DE LA PAGINA DEL INICIO DE SESION
-Route::get('login', function()
+//ESTO HAY QUE ARREGLAR---->
+
+
+/*
+// Nos mostrará el formulario de login.
+Route::get('login', 'AuthController@showLogin');
+
+// Validamos los datos de inicio de sesión.
+Route::post('login', 'AuthController@postLogin');
+
+// Nos indica que las rutas que están dentro de él sólo serán mostradas si antes el usuario se ha autenticado.
+Route::group(array('before' => 'auth'), function()
 {
-	return View::make('pages.login');
-});
+    // Esta será nuestra ruta de bienvenida.
+    Route::get('/', function()
+    {
+        return View::make('hello');
+    });
+    // Esta ruta nos servirá para cerrar sesión.
+    Route::get('logout', 'AuthController@logOut');
+});*/  //<------------- ME RETORNA LOS ERRORES PERO NO ENTRA A LA SESION!!!!!!! VER PORQUE..
+ 
+
+
+
+
+
+
 
 //RUTA DE LA PAGINA DE REGISTRO
+//esta ruta es para crear al usuario(se hace el post)
+
 Route::get('registro', function()
 {
 	return View::make('pages.registro');
@@ -100,6 +104,7 @@ Route::get('itempop', function()
 	return View::make('pages.itempop');
 });
 
+
 Route::get('item', 'ItemControllerController@mostrarItems');
  
 Route::post('item', 'ItemController@crearItem');
@@ -109,3 +114,8 @@ Route::get('evento', 'EventoController@mostrarEventos');
 Route::post('evento', 'EventoController@crearEvento');
 
 
+
+Route::get('agregarinvitado', function()
+{
+	return View::make('pages.agregarinvitado');
+});
