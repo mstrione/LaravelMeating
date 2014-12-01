@@ -1,55 +1,52 @@
-@extends('layouts.default')
+<html>
 
 <head>
 	@include('includes.headR')
 </head>
 @section('content')
 	
-	
+<body>	
 	<div class="container" > 
-    	<div class="well">
-			<form class="form-horizontal" placeholder=".col-xs-3" id="contacto" action="MisEventos.php" method="post" >
+    	<div class="well">'/registro'
+			{{Form::open()}}
               <fieldset>
                   <legend>Registro</legend>
                   <!--Nombre-->
                   <div class="form-group">
-                      <label for="inputNombre" class="col-lg-2 control-label">Nombre</label>
-                      <div class="col-lg-5">
-                          <input class="form-control" id="inputNombre" placeholder="Nombre" type="text" name="nombre">
+                     {{Form::label('nombre', 'Usuario')}}
+                      
+                          {{Form::text('nombre')}}
                            
-                    </div>
+                    
                   </div>
 				  
 				  <!--Apellido-->
 				  <div class="form-group">
-                      <label for="inputApellido" class="col-lg-2 control-label">Apellido</label>
-                      <div class="col-lg-5">
-                          <input class="form-control" id="inputNombre" placeholder="Apellido" type="text" name="apellido">
+                      {{Form::label('apellido', 'Apellido')}}
+                      
+                         {{Form::text('apellido')}}
                            
-                    </div>
+                    
                   </div>
                                    
                 <!--Mail-->
                   
                 <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                    <div class="col-lg-5">
-                       <input class="form-control" id="inputEmail" placeholder="Un Email válido" type="email" name="mail">
-                    </div>
+                    {{Form::label('mail', 'E-mail')}}
+                      
+                          {{Form::text('mail')}}
                 </div>
                 <!-- Contraseña -->
                 <div class="form-group">
-    				<label for="inputPassword" class="col-lg-2 control-label">Contraseña</label>
-    				   <div class="col-lg-5">
-      					 <input type="password" class="form-control" id="contraseña1" placeholder="Introducí una contraseña" name="contraseña1">
-      				   </div>
+    				{{Form::label('contrasena', 'Contraseña')}}
+                      
+                          {{Form::password('contrasena')}}
   				</div>
   				<!--confirmacion password-->
   				<div class="form-group">
-                    <label for="inputPassword" class="col-lg-2 control-label">Confirmar Contraseña</label>
-                    <div class="col-lg-5">
-                      <input type="password" class="form-control" id="contraseña2" placeholder="Volve a ingresar la contraseña" name="contraseña2">
-      				</div>
+                   {{Form::label('contrasena_repite', 'Repita la Contraseña')}}
+                      
+                          {{Form::password('contrasena_repite')}}
  			    </div>
                 <!--Fecha de Nacimiento-->                  
 
@@ -62,17 +59,13 @@
                
                   <!--Sexo-->
                 <div class="form-group">
-            <label class="col-lg-2 control-label">Sexo:</label>
-            <div class="col-xs-2">
-                <label class="radio-inline">
-                  <input type="radio" name="Sexo" value="male" checked="checked"> Masculino
-                </label>
-            </div>
-            <div class="col-xs-2">
-                <label class="radio-inline">
-                  <input type="radio" name="Sexo" value="female"> Femenino
-                </label>
-            </div>
+           {{Form::label('femenino', 'Femenino')}}
+                      
+                          {{Form::radio('femenino', 'femenino')}}
+           
+               {{Form::label('masculino', 'Masculino')}}
+                      
+                          {{Form::radio('masculino', 'masculino')}}
         </div>
                  <!--Provincias-->
                 <div class="form-group">
@@ -108,10 +101,9 @@
                 </div>
                 <!--Ciudad--> 
                 <div class="form-group">
-                    <label for="inputCiudad" class="col-lg-2 control-label">Ciudad</label>
-                    <div class="col-lg-5">
-                      <input class="form-control" id="inputCiudad" placeholder="Nombre de tu ciudad" type="text" name="ciudad">
-                    </div>
+                   {{Form::label('ciudad', 'Ciudad')}}
+                      
+                          {{Form::text('ciudad')}}
                 </div>
                 <!--Textarea-->
                 <div class="form-group">
@@ -124,20 +116,20 @@ La utilización de nuestro sitio implica su aceptación plena y sinreservas a to
                     </div>
                </div>
                <!--CheckBox-->
-               <div class="checkbox-inline">
-                  <label class="radio-inline checkbox ">  
-                      <div>
-                      <input type="checkbox" name="check" id="condiciones">Acepto Términos y Condiciones</div>
-                  </label>
+              <div class="form-group">
+               
+                  {{Form::checkbox('terms', 'true')}}
+                  {{Form::label('Acepto terminos y condiciones')}}
+                      
+                          
+               
                </div>
                <!--Boton-->
                 <div class="form-group">
-                  <div class="col-lg-10 col-lg-offset-2 f">
-                     <button type="submit" class="btn-primary" value="submit" id="btnAceptar" name="acepta">Aceptar</button>
-                  </div>
+                  {{Form::submit('Aceptar')}}
                 </div>
             </fieldset>
-          </form>
+          {{Form::close()}}
         </div>
         
 	</div>
@@ -152,5 +144,6 @@ La utilización de nuestro sitio implica su aceptación plena y sinreservas a to
 	<script src="js/validaciones.js"></script>
     
 	
-	
-@stop
+</body>
+</html>	
+
