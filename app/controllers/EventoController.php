@@ -18,16 +18,71 @@ class EventoController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+	 
+	 
+	 
+	 
+	 
+	 public function get_crearEvento()
+	{
+		return View::make('pages.crearEvento');
+	}
+	
+	
+	public function post_crearEvento()
+	{
+		$input= Input::all();
+		//En rules ponemos que cosas vamos a validar... con lo que trae laravel quedaria:
+		$rules=array(
+			'nombre' => 'required',
+			'direccion' => 'required',
+			/*'fecha'=> 'date_format:d/m/y',
+			'hora' => 'required'|'time',*/
+			'descripcion'=>'required'
+			
+			
+			
+			);
+			
+			$validator = Validator::make ($input, $rules); //Aca se toma lo ingresado y revisa la regla
+			
+			
+			if ( $validator->fails() ){
+ 
+        // en caso de que la validación falle vamos a retornar al formulario 
+        // pero vamos a enviar los errores que devolvió Validator
+        // y también los datos que el usuario escribió 
+        return Redirect::to('pages.crearEvento')
+                // Aquí se esta devolviendo a la vista los errores 
+                ->withErrors($validator)
+                // Aquí se esta devolviendo a la vista todos los datos del formulario
+                ->withInput();
+			}else{
+				echo 'Datos Validos!';
+					exit;
+					}
+			
+	}
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	public function crearEvento()
 	{
-		//
+		/*
 		$respuesta = Evento::agregarEvento(Input::all());
-		if $respuesta['error']==true=
+		if ($respuesta['error']==true)
 		{
-			return Redirect::to('evento')->withErrors($respuesta['mensaje'])->withInput;			
+			return Redirect::to('crearEvento')->withErrors($respuesta['mensaje'])->withInput;			
 		}else {
 			return Redirect::to('evento')->with('mensaje', $respuesta['mensaje']);
-			}
+			}*/
 	}
 
 
@@ -56,7 +111,7 @@ class EventoController extends \BaseController {
 		$items=Item::all;
 		$fotos=Foto::all;
 		$invitados=Invitado::all;
-		//falta poner el chat e items ok!
+		//falta poner el chat e items ok!*/
 	}
 
 

@@ -109,9 +109,7 @@ Route::get('item', 'ItemControllerController@mostrarItems');
  
 Route::post('item', 'ItemController@crearItem');
  
-Route::get('evento', 'EventoController@mostrarEventos');
- 
-Route::post('evento', 'EventoController@crearEvento');
+
 
 
 
@@ -119,3 +117,20 @@ Route::get('agregarinvitado', function()
 {
 	return View::make('pages.agregarinvitado');
 });
+
+
+//***************************************
+//RUTA DE CREAR EVENTO
+
+
+/*Route::get('crearEvento', function()
+{
+	return View::make('pages.crearEvento');
+});*/
+Route::get('crearEvento', 'EventoController@get_crearEvento');
+ 
+Route::post('crearEvento', 'EventoController@post_crearEvento');
+
+
+
+
