@@ -95,20 +95,20 @@ class UsuarioController extends BaseController {
 	
 	
 	//--------------------------------------------PARTE DE LOS LOGUEOS----------------------------------------------------------
-	/*
-	public function get_login()
+	
+	/*public function get_login()
 	{
 		if (Usuario::isLogged()) //si el usuario esta logueado
 			return Redirect::to('/MisEventos');
 		else
-			return View::make('pages.Login');
+			return View::make('pages.login');
 	}
 
 	public function post_login()
 	{
 		$input=Input::all();
 		$rules=array(
-				'username'=>'required|exists:usuarios,username',
+				'email'=>'required|exists:usuarios,email',
 				'password'=>'required',
 		);
 		
@@ -120,17 +120,17 @@ class UsuarioController extends BaseController {
 			}
 			else
 			{
-				$username=Input::get('username');
+				$email=Input::get('email');
 				$password=Input::get('password');
 				
-				if ($usuario = User::where('username', '=', $username)->first()) //de la clase User me fijo si el username ingresado se encuentra..recorriendo desde el principio y lo guardo en usuario.
+				if ($usuario = Usuario::where('email', '=', $email)->first()) //de la clase Usuario fijo si el mail ingresado se encuentra..recorriendo desde el principio y lo guardo en usuario.
 				{
 					if (Hash::check($password, $usuario->$password) // la clase hash me chequea que el password sea el pasword del usuario
 					{
 						Session::put('user_id', $usuario->id);
-						Session::put('user_username',$usuario->username);
-						Session::put('user_type',$user->type);
-						return Redirect::to('A la pagina despues del logueo... mis eventos');
+						Session::put('user_mail',$usuario->mail);
+						
+						return Redirect::to('MisEventos');
 					}
 					else{
 						return Redirect::to('/login'); // sino me redirijo nuevamente a la pagina de logueo para loguearse
@@ -218,7 +218,36 @@ class UsuarioController extends BaseController {
 	
 	
 	
-	
+	/************************************************/
+	public function getAuthIdentifier()
+{
+return $this->getKey();
+}
+
+public function getAuthPassword()
+{
+return $this->password;
+} 
+
+public function getRememberToken()
+{
+return $this->remember_token;
+}
+
+public function setRememberToken($value)
+{
+$this->remember_token = $value;
+}
+
+public function getRememberTokenName()
+{
+return "remember_token";
+}
+
+public function getReminderEmail()
+{
+return $this->email;
+}
 	
 	
 	
