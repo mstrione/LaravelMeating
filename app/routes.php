@@ -20,44 +20,28 @@
 Esto se repite para el formulario de Login, el de Registro, el de eventos, el de llevar item (ver el de cuentas)
 
 tambien se puede hacer un grupo de rutas donde solo pueda ver el administrador
-Route::group(array('prefix'=>'admin'),function()
-{
-	Route:group(array('before'=>admin'),function()
-	{
-	aca irian las rutas de get y post que usaria el AdminController.
-	la vista principal, agregar usuarios, eventos etc..
-	}
-	}*/
-//RUTA DE LA PAGINA PRINCIPAL	
-Route::get('/', function()
-{
-	return View::make('pages.home');
-	});
-//RUTA DE ACERCA DE MEATING
-Route::get('about', function()
-{
-	return View::make('pages.about');
-});
+*/
 
-//RUTA DE ACERCA DE NOSOTROS
-Route::get('aboutUs', function()
-{
-	return View::make('pages.aboutUs');
-});
+//WebController*******************************************
+Route::get('/', 'HomeController@showPrincipal');
+Route::get('/aboutUs', 'HomeController@showAboutUs');
+Route::get('/about', 'HomeController@showAbout');
 
-//RUTA DE CONTACTO
+//contacto
+Route::get('/contacto', 'HomeController@get_contacto');
+Route::post('/contacto', 'HomeController@post_contacto');
 
-Route::get('contacto', function()
-{
-	return View::make('pages.contacto');
-});
+
+
+
+
+
+
 
 Route::get('login', function()
 {
 	return View::make('pages.login');
 });
-/*Route::post('/contacto', 'HomeController@postcontacto'); 
-ACA DEBERIA AGREGAR EL CONTROLADOR DE CONTACTO COMO CONTROLADOR DEL SITIO QUE SE LLAMA HOME*/
 
 
 
