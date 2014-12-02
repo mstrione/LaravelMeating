@@ -71,10 +71,6 @@ Route::group(array('before' => 'auth'), function()
 
 
 
-
-
-
-
 //RUTA DE LA PAGINA DE REGISTRO
 //esta ruta es para crear al usuario(se hace el post)
 
