@@ -8,14 +8,16 @@
 <body>	
 	<div class="container" > 
     	<div class="well">'/registro'
-			{{Form::open()}}
+			<!--{{Form::open()}}-->
+{{Form::open(array('method'=>'POST','url'=>'/registro','role'=>'form'))}} 
+
               <fieldset>
                   <legend>Registro</legend>
                   <!--Nombre-->
                   <div class="form-group">
-                     {{Form::label('nombre', 'Usuario')}}
+                     {{Form::label('username', 'Usuario')}}
                       
-                          {{Form::text('nombre')}}
+                          {{Form::text('username')}}
                            
                     
                   </div>
@@ -32,21 +34,21 @@
                 <!--Mail-->
                   
                 <div class="form-group">
-                    {{Form::label('mail', 'E-mail')}}
+                    {{Form::label('email', 'E-mail')}}
                       
-                          {{Form::text('mail')}}
+                          {{Form::text('email')}}
                 </div>
                 <!-- Contraseña -->
                 <div class="form-group">
-    				{{Form::label('contrasena', 'Contraseña')}}
+    				{{Form::label('password', 'Contraseña')}}
                       
-                          {{Form::password('contrasena')}}
+                          {{Form::password('password')}}
   				</div>
   				<!--confirmacion password-->
   				<div class="form-group">
-                   {{Form::label('contrasena_repite', 'Repita la Contraseña')}}
+                   {{Form::label('verificacion', 'Repita la Contraseña')}}
                       
-                          {{Form::password('contrasena_repite')}}
+                          {{Form::password('verificacion')}}
  			    </div>
                 <!--Fecha de Nacimiento-->                  
 
@@ -59,13 +61,13 @@
                
                   <!--Sexo-->
                 <div class="form-group">
-           {{Form::label('femenino', 'Femenino')}}
+           {{Form::label('sexo', 'Femenino')}}
                       
-                          {{Form::radio('femenino', 'femenino')}}
+                          {{Form::radio('sexo', 'femenino', 'selected')}}
            
-               {{Form::label('masculino', 'Masculino')}}
+               {{Form::label('sexo', 'Masculino')}}
                       
-                          {{Form::radio('masculino', 'masculino')}}
+                          {{Form::radio('sexo', 'masculino')}}
         </div>
                  <!--Provincias-->
                 <div class="form-group">
@@ -138,10 +140,10 @@ La utilización de nuestro sitio implica su aceptación plena y sinreservas a to
     <!-- Placed at the end of the document so the pages load faster -->
    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.js"></script>-->
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.js"></script>
     <script src="js/jquery2-0-0.min.js"></script>
     <script src="js/jquery.validate.js"></script>
-	<script src="js/validaciones.js"></script>
+	<script src="js/validaciones.js"></script>-->
     
 	
 </body>
