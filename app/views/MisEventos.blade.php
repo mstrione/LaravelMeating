@@ -27,7 +27,10 @@
 <body>
   	<!--barra de menu-->
 @include('includes.headersesion')
+
     <!--le da el cuerpo al body (valga la redundancia)--> <!--modificado en el css box-shadow-->
+
+
 <?php/*
 	@$Nombre=$_REQUEST['Nombre'];
 	@$Email=$_REQUEST['Email'];

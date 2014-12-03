@@ -8,27 +8,25 @@
 		<h3>{{Session::get('registro')}}</h3></br>
 	@endif
 
-	<div class="form-group">
-		{{Form::label('Usuario')}}
-		{{Form::text('username', '', array('class' => 'form-control'))}}
-		<span class="help-block">{{ $errors->first('username') }}</span>
-	</div>
-	<div class="form-group">
-		{{Form::label('Contraseña')}}
-		{{Form::password('password', array('class' => 'form-control'))}}
-		<span class="help-block">{{ $errors->first('password') }}</span>
-	</div>
-	<div class="form-group">
-		<p>{{Form::submit('Ingresar', array('class' => 'btn btn-default'))}}</p>
-		<p><a href="/registro" class="btn btn-default">Registrarme</a></p>
-	</div>
+    <div class="jumbotron">
+    	<div class="form-group">
+    		{{Form::label('Usuario')}}
+    		{{Form::text('username', '', array('class' => 'form-control'))}}
+    		<span class="help-block">{{ $errors->first('username') }}</span>
+    	</div>
+    	<div class="form-group">
+    		{{Form::label('Contraseña')}}
+    		{{Form::password('password', array('class' => 'form-control'))}}
+    		<span class="help-block">{{ $errors->first('password') }}</span>
+    	</div>
+    	<div class="form-group">
+    		<p>{{Form::submit('Ingresar', array('class' => 'btn btn-default'));}}<a href="/registro" class="btn btn-default">Registrarme</a></p>
+    	</div>
+    </div>
 
 	{{Form::close()}}
 
 @stop
-
-
-
 
 
 <!--
