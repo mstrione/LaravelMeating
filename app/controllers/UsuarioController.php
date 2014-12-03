@@ -100,10 +100,7 @@ class UsuarioController extends BaseController {
 	{
 		return View::make('usuarios.bienvenida');
 	}
-	public function MisEventos()
-	{
-		return View::make('MisEventos');
-	}
+
 	
 	public function get_login()
 	{
