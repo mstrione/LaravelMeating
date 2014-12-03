@@ -40,6 +40,13 @@ Route::get(Lang::get('routes.logout'), 'UsuarioController@logout');
 Route::get('/bienvenida', 'UsuarioController@bienvenida');
 Route::get('/MisEventos', 'MisEventosController@index');
 
+//RUTA registro********************************************
+Route::get('/registro', 'registroController@get_registro');
+Route::post('/registro', 'registroController@post_registro');
+
+
+
+
 
 
 
@@ -78,11 +85,6 @@ Route::group(array('before' => 'auth'), function()
 
 //RUTA DE LA PAGINA DE REGISTRO
 //esta ruta es para crear al usuario(se hace el post)
-
-Route::get('registro', function()
-{
-	return View::make('pages.registro');
-});
 
 Route::get('itempop', function()
 {
