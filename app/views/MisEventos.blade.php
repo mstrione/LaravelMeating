@@ -1,4 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8">
@@ -27,32 +26,7 @@
 </head>
 <body>
   	<!--barra de menu-->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container"><img class="navbar-brand" src="img/meatingLogo3.png"   HEIGHT="100px" ></img> <!style="width: 150px; height: auto;>
-          <div class="navbar-header">
-              <a class="navbar-brand">Meating</a>
-          </div>
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Inicio</a></li>
-              <li><a href="QueEs.php">¿Que es Meating?</a></li>
-              <li><a href="QuienesSomos.php">¿Quienes somos?</a></li> 
-              <li><a href="Contacto.php">Contacto</a></li>           
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{Session::get('usuario_username')}} <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Mis Eventos</a></li>
-                        <li><a href="#">Mi Perfil</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Cerrar Sesion</a></li>
-                     </ul>
-                </li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-    </div>
+@include('includes.headersesion')
     <!--le da el cuerpo al body (valga la redundancia)--> <!--modificado en el css box-shadow-->
 <?php/*
 	@$Nombre=$_REQUEST['Nombre'];
@@ -136,7 +110,7 @@
 		 
 	// Cerrar conexión
    	mysql_close ($conexion);
-    
+
         </div>
   </div>
  */
