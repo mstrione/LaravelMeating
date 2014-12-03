@@ -96,57 +96,61 @@ class UsuarioController extends BaseController {
 	
 	//--------------------------------------------PARTE DE LOS LOGUEOS----------------------------------------------------------
 	
-	/*public function get_login()
+	public function bienvenida()
 	{
-		if (Usuario::isLogged()) //si el usuario esta logueado
-			return Redirect::to('/MisEventos');
-		else
-			return View::make('pages.login');
+		return View::make('usuarios.bienvenida');
 	}
-
+	
+	public function get_login()
+	{
+		if(Usuario::isLogged())
+			return Redirect::to('/bienvenida');
+		else
+			return View::make('usuarios.login');
+	}
+	
 	public function post_login()
 	{
-		$input=Input::all();
-		$rules=array(
-				'email'=>'required|exists:usuarios,email',
-				'password'=>'required',
+		$input = Input::all();
+		$rules = array(
+			'username' => 'required|exists:usuarios,username',
+			'password' => 'required',
 		);
-		
-		$validator = Validator::make($input, $rules);//Con la clase Validator comparamos el input y las reglas
-		
-		if ($validator->fails()) //si la validacion falló
+		$validator = Validator::make($input, $rules);
+		if($validator->fails())
+		{
+			return Redirect::back()->withErrors($validator);
+		}
+		else
+		{
+			$username = Input::get('username');
+			$password = Input::get('password');
+			if($usuario = Usuario::where('username', '=', $username)->first())
 			{
-			return Redirect::back()->withErrors($validator); // vuelvo a la pagina mostrando los errores de la validacion
+				if(Hash::check($password, $usuario->password))
+				{
+					Session::put('usuario_id', $usuario->id);
+					Session::put('usuario_username', $usuario->username);
+					
+					return Redirect::to('/bienvenida');
+				}
+				else
+				{
+					return Redirect::to('/login');
+				}
 			}
 			else
 			{
-				$email=Input::get('email');
-				$password=Input::get('password');
-				
-				if ($usuario = Usuario::where('email', '=', $email)->first()) //de la clase Usuario fijo si el mail ingresado se encuentra..recorriendo desde el principio y lo guardo en usuario.
-				{
-					if (Hash::check($password, $usuario->$password) // la clase hash me chequea que el password sea el pasword del usuario
-					{
-						Session::put('user_id', $usuario->id);
-						Session::put('user_mail',$usuario->mail);
-						
-						return Redirect::to('MisEventos');
-					}
-					else{
-						return Redirect::to('/login'); // sino me redirijo nuevamente a la pagina de logueo para loguearse
-						}
-				}
-				else{
-					return Redirect::to('/login');  // en este caso si no encontro el usuario al comienzo.. lo lleva nuevamente a la pagina.
-					}
+				return Redirect::to('/login');
 			}
+		}
 	}
-
 	public function logout()
 	{
 		Session::flush();
-		return Redirect::to('/');  //aca cerre la sesion y lo deberia retornar a la pagina principal
-	}*/
+		return Redirect::to('/');
+	}
+
 	
 	
 	//---------------------------------------------------PARTE DE LOS REGISTROS---------------------------------------------
@@ -167,7 +171,7 @@ class UsuarioController extends BaseController {
 	}
 	
 	
-	Public function Post_Registrarme()
+	/*Public function Post_Registrarme()
 	{
 	
 		$input = Input::all();
@@ -207,12 +211,12 @@ class UsuarioController extends BaseController {
 				//$$usuario->activo = 1;
 			$usuario->save();
 
-			return Redirect::to('/login')->with('registro', 'Registro completado. Acceda a su cuenta');
+			return Redirect::to('/login')->with('registro', 'El registro se ha completado. Acceda a su cuenta');
 		}
 	
 	
 	
-	}
+	}*/
 	
 	
 	
