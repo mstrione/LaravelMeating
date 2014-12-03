@@ -16,7 +16,7 @@ class registroController extends BaseController {
 	*/
 	public function get_registro()
 	{
-		return View::make('page.registro');
+		return View::make('pages.registro');
 	}
 	
 	public function post_registro()
