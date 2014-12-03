@@ -33,15 +33,15 @@ Route::post('/contacto', 'HomeController@post_contacto');
 
 
 
+//RUTA USUARIOS********************************************
+Route::get(Lang::get('routes.login'), 'UsuarioController@get_login');
+Route::post(Lang::get('routes.login'), 'UsuarioController@post_login');
+Route::get(Lang::get('routes.logout'), 'UsuarioController@logout');
+Route::get('/bienvenida', 'UsuarioController@bienvenida');
 
 
 
 
-
-Route::get('login', function()
-{
-	return View::make('pages.login');
-});
 
 
 
@@ -68,6 +68,10 @@ Route::group(array('before' => 'auth'), function()
     Route::get('logout', 'AuthController@logOut');
 });*/  //<------------- ME RETORNA LOS ERRORES PERO NO ENTRA A LA SESION!!!!!!! VER PORQUE..
  
+
+
+
+
 
 
 
