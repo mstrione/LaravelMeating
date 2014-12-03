@@ -5,26 +5,26 @@
 @section('content')
 {{Form::open(array('method' => 'POST', 'url' => '/contacto', 'role' => 'form'))}}
 
-	<!--@if(Session::has('estado'))
+	@if(Session::has('estado'))
 		<h3>{{Session::get('estado')}}</h3></br>
-	@endif-->
+	@endif
 
 	<div class="form-group">
 		{{Form::label('Nombre')}}
-		<!--@if(Session::has('user_id'))
-			{{Form::text('nombre', User::find(Session::get('user_id'))->username, array('readonly' => 'readonly', 'class' => 'form-control'))}}
-		@else-->
+		@if(Session::has('usuario_id'))
+			{{Form::text('nombre', Usuario::find(Session::get('usuario_id'))->username, array('readonly' => 'readonly', 'class' => 'form-control'))}}
+		@else
 			{{Form::text('nombre', '', array('class' => 'form-control'))}}
-		<!--@endif-->
+		@endif
 		<span class="help-block">{{ $errors->first('nombre') }}</span>
 	</div>
 	<div class="form-group">
 		{{Form::label('Email')}}
-		<!--@if(Session::has('user_id'))
-			{{Form::text('email', User::find(Session::get('user_id'))->email, array('readonly' => 'readonly', 'class' => 'form-control'))}}
-		@else-->
+		@if(Session::has('usuario_id'))
+			{{Form::text('email', Usuario::find(Session::get('usuario_id'))->email, array('readonly' => 'readonly', 'class' => 'form-control'))}}
+		@else
 			{{Form::text('email', '', array('class' => 'form-control'))}}
-		<!--@endif-->
+		@endif
 		<span class="help-block">{{ $errors->first('email') }}</span>
 	</div>
 	<div class="form-group">
