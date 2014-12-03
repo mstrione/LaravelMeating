@@ -23,6 +23,7 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
 </head>
 <body>
   	<!--barra de menu-->
@@ -39,18 +40,16 @@
               <li><a href="Contacto.php">Contacto</a></li>           
             </ul>
             <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Link</a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Dropdown <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
-      </li>
-    </ul>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{{Session::get('usuario_username')}} <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Mis Eventos</a></li>
+                        <li><a href="#">Mi Perfil</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Cerrar Sesion</a></li>
+                     </ul>
+                </li>
+            </ul>
           </div><!--/.nav-collapse -->
         </div>
     </div>
@@ -137,23 +136,14 @@
 		 
 	// Cerrar conexión
    	mysql_close ($conexion);
+    
+        </div>
+  </div>
  */
 ?>    
-        </div>
-	</div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
-<div id="footer">
-		<!-- FOOTER -->
-        <footer id="mainFooter">
-            <div class="wrapped" align="center"> <!Anclamos un footer abajo del todo de la pagina>
-                <p class="pull-right"><a id="goTop" href="#"><h3> ^ </h3></a></p> <!con ese icono nos lleva hacia arriba de la pagina>
-                <p>© 2014 MEating   ·  <a href="ruta de privacidad y terminos">Privacidad y Términos</a> · Seguinos en <!no va a llevar a los links mencionados abajo a traves de los iconos-imagenes>
-                	<a href="http://facebook.com"><img src="img/f2.png" height='30' width='70'></a>, 
-					<a href="http://twitter.com"><img src="img/t1.png" height='30' width='70'></a> y 
-					<a href="http://plus.google.com/share"><img src="img/g1.png" height='30' width='70'></a>.
-					
-                </p>
-            </div>
-        </footer>
- </div>
+@include('includes.footer')
 </html>

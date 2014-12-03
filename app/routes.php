@@ -38,6 +38,7 @@ Route::get(Lang::get('routes.login'), 'UsuarioController@get_login');
 Route::post(Lang::get('routes.login'), 'UsuarioController@post_login');
 Route::get(Lang::get('routes.logout'), 'UsuarioController@logout');
 Route::get('/bienvenida', 'UsuarioController@bienvenida');
+Route::get('/MisEventos', 'UsuarioController@MisEventos');
 
 
 
