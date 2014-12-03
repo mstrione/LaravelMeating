@@ -7,12 +7,12 @@
 	<header class="row">
 		@include('includes.headL')
 		
-		@if(!Session::has('user_id'))
+		@if(!Session::has('usuario_id'))
 		
 				@include('includes.header')
 			@else
-				<p>¡Hola {{Session::get('user_username')}}!</p>
-				@include('headersesion')
+				<p>¡Hola {{Session::get('usuario_username')}}!</p>
+				@include('includes.headersesion')
 		@endif
 		
 	</header>

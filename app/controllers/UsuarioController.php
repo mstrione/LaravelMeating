@@ -125,9 +125,9 @@ class UsuarioController extends BaseController {
 		{
 			$username = Input::get('username');
 			$password = Input::get('password');
-			if($usuario = Usuario::where('password', '=', $password)->first())
+			if($usuario = Usuario::where('username', '=', $username)->first())
 			{
-				if(Hash::check($password, $usuario->password))
+				if($password = Usuario::where('password', '=', $password)->first())
 				{
 					Session::put('usuario_id', $usuario->id);
 					Session::put('usuario_username', $usuario->username);
