@@ -6,9 +6,8 @@
 @section('content')
 	
 <body>	
-@include('includes.header')
 	<div class="container" > 
-    	<div class="well">
+    	<div class="well">'/registro'
 			<!--{{Form::open()}}-->
 {{Form::open(array('method'=>'POST','url'=>'/registro','role'=>'form'))}} 
 
@@ -16,7 +15,7 @@
                   <legend>Registro</legend>
                   <!--Nombre-->
                   <div class="form-group">
-                     {{Form::label('username', 'Usuario')}}
+                     {{Form::label('username', 'Usuario'}}
                       
                           {{Form::text('username')}}
                            

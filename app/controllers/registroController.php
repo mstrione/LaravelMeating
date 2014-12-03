@@ -23,16 +23,24 @@ class registroController extends BaseController {
 	{
 		$input= Input::all();
 		$rules=array(
-			'username' => 'required|min:3|max:10|unique:usuarios, username',
-			'apellido'=>'required|min:3|max:10|unique:usuarios, username',
-			'email' => 'required|email',
+			'username' => 'required|min:3|max:10',
+			'apellido'=>'required|min:3|max:10',
+			'email' => 'required|email|unique',
 			'password' => 'required|min:4|max:10',
 			'verificacion'=>'same:password',
 			'ciudad'=>'required',
+			'provincia'=>'required',
+			'nacimiento'=>'required'
 			
 			);
 			
-			$validator = Validator::make ($input, $rules); 
+			 $messages = array(
+            'required' => 'El campo :attribute es obligatorio.',
+            'email' => 'El campo :attribute debe ser un email válido.',
+            'unique' => 'El email ingresado ya existe en la base de datos'
+        );
+			
+			$validator = Validator::make ($input, $rules,$messages); 
 			
 			if ($validator->fails())
 			{
@@ -41,14 +49,22 @@ class registroController extends BaseController {
 			}
 			else
 			{ 
-				$datos=array(
-					'nombre'=>Input::get('nombre'),
-					'email'=> Input::get('email'),
-					'asunto'=>Input::get('asunto'),
-					'mensaje'=>Input::get('mensaje')
-					);
+			
+				$Usuario = new usuarios;
+				$Usuario->username = Input::get('username');
+				$Usuario->apellido =Input::get('apellido');
+				$Usuario->ciudad = Input::get('ciudad');
+				$Usuario->email = Input::get('email');;
+				$Usario->nacimiento = Input::get('nacimiento');
+				$Usuario->password = Input::get('password');
+				$Usuario->provincia = Input::get('provincia');
+				$Usuario->sexo = Input::get('sexo');;
+				$Usuario->verificacion = Input::get('verificacion');;
+				$Usuario->save();
+			return Redirect::to('/registro')->with('registro', 'Registro completado. Accede a su cuenta');
+			
+				
 					
-					return Redirect::to('/registro')->with('estado', 'Se ha registrado con exito');
 			}
 	}
 	
