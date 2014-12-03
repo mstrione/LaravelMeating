@@ -33,6 +33,11 @@ App::after(function($request, $response)
 |
 */
 
+Route::filter('admin', function()
+{
+	if (!User::isLogged() OR !User::isAdmin()) return Redirect::to('/');
+});
+
 Route::filter('auth', function()
 {
 	if (Auth::guest())
