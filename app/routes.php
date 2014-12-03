@@ -44,7 +44,12 @@ Route::get('/MisEventos', 'MisEventosController@index');
 Route::get('/registro', 'registroController@get_registro');
 Route::post('/registro', 'registroController@post_registro');
 
+//RUTA PARA ITEM----------------------------------
 
+Route::get('/itempop', 'ItemController@get_Item');
+Route::post('/itempop', 'ItemController@post_Item');
+/*Route::get('/itempop', 'ItemController@show_item');
+Route::post('/itempop', 'ItemController@delete_item');*/
 
 
 
@@ -83,18 +88,10 @@ Route::group(array('before' => 'auth'), function()
 
 
 
-//RUTA DE LA PAGINA DE REGISTRO
-//esta ruta es para crear al usuario(se hace el post)
-
-Route::get('itempop', function()
-{
-	return View::make('pages.itempop');
-});
 
 
-Route::get('item', 'ItemControllerController@mostrarItems');
- 
-Route::post('item', 'ItemController@crearItem');
+
+
  
 
 
