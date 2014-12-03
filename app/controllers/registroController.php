@@ -14,17 +14,9 @@ class registroController extends BaseController {
 	|	Route::get('/', 'HomeController@showWelcome'); aca seria ContactoController en el route
 	|
 	*/
-
-	public function index()
-	{
-		return View::make('index');
-	}
-	
-	
-	
 	public function get_registro()
 	{
-		return View::make('registro');
+		return View::make('page.registro');
 	}
 	
 	public function post_registro()
