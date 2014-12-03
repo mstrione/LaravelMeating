@@ -6,8 +6,9 @@
 @section('content')
 	
 <body>	
+@include('includes.header')
 	<div class="container" > 
-    	<div class="well">'/registro'
+    	<div class="well">
 			<!--{{Form::open()}}-->
 {{Form::open(array('method'=>'POST','url'=>'/registro','role'=>'form'))}} 
 

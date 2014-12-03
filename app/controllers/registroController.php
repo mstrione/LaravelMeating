@@ -56,8 +56,6 @@ class registroController extends BaseController {
 					'mensaje'=>Input::get('mensaje')
 					);
 					
-					
-					
 					return Redirect::to('/registro')->with('estado', 'Se ha registrado con exito');
 			}
 	}

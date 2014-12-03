@@ -125,7 +125,7 @@ class UsuarioController extends BaseController {
 		{
 			$username = Input::get('username');
 			$password = Input::get('password');
-			if($usuario = Usuario::where('username', '=', $username)->first())
+			if($usuario = Usuario::where('password', '=', $password)->first())
 			{
 				if(Hash::check($password, $usuario->password))
 				{
