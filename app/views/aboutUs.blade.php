@@ -87,16 +87,16 @@
 					<div class="col-sm-6 col-md-8">
 						<h3>Javier Morabes</h3>
 						<blockquote class="pull.left"> <!Este Blackquote me ordena el texto hacia la izquierda, dandole un mejor formato ubicandolo dentro del recuadro sin irse de la pagina>
-						<p class="text-left">Left aligned Hola soy ezekiel tngo 98 años, y este es el juego mortal komVVVat para pc... bueno vamos a aser la fataliti pinia vaja arriva arriva.. avajo arriva, pinia vaja, equis sirkulo y patada boladora. bueno soy de villa 38, no me banio y huelo mal. espero ke les aya gustado el juego q ice, chau.</p>
+						<p class="text-left">Descripcion de Javi</p>
 						</blockquote>
 						<small><cite title="Bariloche, Arg">Bariloche, ARG <i class="glyphicon glyphicon-map-marker">
 						</i></cite></small>
 						<p>
-                        <i class="glyphicon glyphicon-envelope"></i>eze_torress@hotmail.com
+                        <i class="glyphicon glyphicon-envelope"></i>@hotmail.com
                         <br />
                         <i class="glyphicon glyphicon-globe"></i><a href="http://www.google.com">www.google.com</a>
                         <br />
-                        <i class="glyphicon glyphicon-gift"></i>June 27, 1988</p>
+                        <i class="glyphicon glyphicon-gift"></i></p>
                     <!-- Split button -->
                     
 					</div>
