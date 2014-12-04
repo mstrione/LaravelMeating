@@ -30,7 +30,8 @@
 				<div class="row">
 				<div class="form-group" class="col-lg-4 control-label" >
 					{{Form::label('Fecha')}}
-					{{Form::text('fecha','',array('class'=>'form-control','class'=>'input-append date','data-date-format'=>'dd-mm-yyyy'))}}
+					{{ Form::input('date', 'fecha') }}
+					<!--Form::text('fecha','',array('class'=>'form-control','class'=>'input-append date','data-date-format'=>'dd-mm-yyyy'))-->
 					<span class="add-on"><i class="icon-th"></i></span>
 				</div>
 				</div>
@@ -39,7 +40,8 @@
 			<div class "row">
 				<div class="form-group" class="col-lg-4 control-label" >
 						{{Form::label('Hora')}}
-						{{Form::text('hora','',array('class'=>'form-control'))}} 
+						{{ Form::input('date', 'hora') }}
+						<!--Form::text('hora','',array('class'=>'form-control')) -->
 				</div>
 			</div>
 			
@@ -62,14 +64,14 @@
 			<div class "row">
 				<div class="form-group" class="col-lg-4 control-label" >
 						{{Form::label('Adultos')}}
-						{{Form::text('adultos','',array('class'=>'form-control'))}} 
+						{{ Form::input('number', 'adultosmax') }}
 				</div>
 			</div>
 
 			<div class "row">
 				<div class="form-group" class="col-lg-4 control-label" >
 						{{Form::label('Menores')}}
-						{{Form::text('menores','',array('class'=>'form-control'))}} 
+						{{ Form::input('number', 'menoresmax') }}
 				</div>
 			</div>
 			
