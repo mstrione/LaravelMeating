@@ -39,7 +39,7 @@ class FotoController extends \BaseController {
     }else{
         $foto = new Foto(array(
             "titulo"    =>    Input::get("titulo"),            
-            "pic"        =>    Input::file("photo")->getClientOriginalName()//nombre original de la foto
+            "photo"        =>    Input::file("photo")->getClientOriginalName()//nombre original de la foto
             
         ));
         if($foto->save()){

@@ -31,11 +31,11 @@
               
                 {{ Form::open(array('url' => 'upload', 'files' => true)) }}
  
-                {{ Form::label('photo', 'Foto') }}                
+                {{ Form::label('photo', 'photo') }}                
                 <!--así se crea un campo file en laravel-->
                 {{ Form::file('photo') }}
                 
-                {{ Form::label('titulo', 'Titulo') }} 
+                {{ Form::label('titulo', 'titulo') }} 
                 {{ Form::text('titulo') }}
                
                 
