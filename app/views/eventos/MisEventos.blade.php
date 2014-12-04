@@ -62,7 +62,7 @@
             				<td>{{$value->direccion}}</td>
             				<td>{{$value->fecha}}</td>
             				<td>{{$value->creador}}</td> 
-            				<td>Ver/Modificar/borrar</td>		
+            				<td><span class="glyphicon glyphicon-trash"></span></td>		
             		</tr>
             		@endforeach
             	</tbody>
