@@ -44,7 +44,7 @@
     <div class="container"> 
     	<div class="well"> 
 	        <div><h1 id="type"> Mis Eventos</h1></div>
-            <div align="right"><a href="Evento.php" class="btn btn-primary" >Agregar Evento +</a></div><br>		
+            <div align="right"><a href="/crearEvento" class="btn btn-primary" >Agregar Evento +</a></div><br>		
 
             <table class='table table-striped table-hover'>
             	<thead>

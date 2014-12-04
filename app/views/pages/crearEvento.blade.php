@@ -24,12 +24,6 @@
 			</div>
 	
 	
-	
-	
-	
-	
-	
-
 			<!--FECHA Y HORA-->
 			
           
@@ -65,6 +59,19 @@
 				</div>
 			</div>
 			
+			<div class "row">
+				<div class="form-group" class="col-lg-4 control-label" >
+						{{Form::label('Adultos')}}
+						{{Form::text('adultos','',array('class'=>'form-control'))}} 
+				</div>
+			</div>
+
+			<div class "row">
+				<div class="form-group" class="col-lg-4 control-label" >
+						{{Form::label('Menores')}}
+						{{Form::text('menores','',array('class'=>'form-control'))}} 
+				</div>
+			</div>
 			
 			
 			<!--ACA INSERTO LO DEL MAPA-->
