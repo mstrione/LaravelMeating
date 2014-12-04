@@ -4,7 +4,8 @@
 class MisEventosController extends BaseController {
 	public function index()
 	{
-		return View::make('eventos.MisEventos');
+		$listaDeEventos=MisEventos::all(); 
+		return View::make('eventos.MisEventos',array('listaDeEventos'=>$listaDeEventos ));
 	}
 
 }

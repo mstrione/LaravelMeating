@@ -31,22 +31,47 @@
     <!--le da el cuerpo al body (valga la redundancia)--> <!--modificado en el css box-shadow-->
 
 
-<?php/*
-	@$Nombre=$_REQUEST['Nombre'];
+
+	<!--@$Nombre=$_REQUEST['Nombre'];
 	@$Email=$_REQUEST['Email'];
 	@$FechaNacimiento="1990-05-21";
 	@$Sexo="Masculino";
 	@$Provincia=$_REQUEST['Provincia'];
 	@$Ciudad=$_REQUEST['Ciudad'];
-	@$Password="12345";
+	@$Password="12345";-->
 	
-?>
+
     <div class="container"> 
     	<div class="well"> 
 	        <div><h1 id="type"> Mis Eventos</h1></div>
             <div align="right"><a href="Evento.php" class="btn btn-primary" >Agregar Evento +</a></div><br>		
 
-<?php	
+            <table class='table table-striped table-hover'>
+            	<thead>
+            		
+            		<th>NOMBRE</th>
+            		<th>LUGAR</th>
+            		<th>FECHA</th>
+            		<th>ORGANIZADOR</th>
+            		<th>ACCIONES</th>
+            	</thead>
+            	<tbody>
+            		@foreach ($listaDeEventos as $value )
+            		<tr>
+            				<td>{{$value->nombre}}</td>
+            				<td>{{$value->direccion}}</td>
+            				<td>{{$value->fecha}}</td>
+            				<td>{{$value->creador}}</td> 
+            				<td>Ver/Modificar/borrar</td>		
+            		</tr>
+            		@endforeach
+            	</tbody>
+            </table>
+
+ 			
+
+
+<!--
 		/*$conexion= mysql_connect("localhost","root","") or die ("no se puede conectar con la base de datos");
 	
 		//Selecciono la base de datos
@@ -60,6 +85,7 @@
 	}
 	
 	//pidiendo datos para mis eventos
+
 	$instruccion= "select * from evento";
 	$consulta = mysql_query ($instruccion, $conexion) or die("falló consulta");
 	
@@ -112,14 +138,11 @@
 		 
 		 
 	// Cerrar conexión
-   	mysql_close ($conexion);
+   	mysql_close ($conexion);-->
 
         </div>
   </div>
- */
-?>    
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>
 @include('includes.footer')
