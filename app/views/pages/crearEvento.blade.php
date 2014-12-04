@@ -91,14 +91,17 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <h1>CREAR EVENTO</h1>
     </div>    
 </div>
-{{Form::open(array('method'=>'POST','url'=>'pages/crearEvento','role'=>'form'))}}
-
+<div class="jumbotron">
+{{Form::open(array('method'=>'POST','url'=>'pages/crearEvento','role'=>'form','class'=>'form-horizontal'))}}
+<fieldset>
 			
 			
 			<div class "row">
-				<div class="form-group" class="col-lg-4 control-label">
-						{{Form::label('Nombre')}}
+				<div class="form-group" >
+						{{Form::label('Nombre','',array('class'=>'col-lg-1 control-label'))}}
+						<div class="col-lg-10">
 						{{Form::text('nombre','',array('class'=>'form-control'))}} 
+						</div>
 				</div>
 			</div>
 	
@@ -107,50 +110,62 @@ google.maps.event.addDomListener(window, 'load', initialize);
 			
           
 				<div class="row">
-				<div class="form-group" class="col-lg-4 control-label" >
-					{{Form::label('Fecha')}}
+				<div class="form-group"  >
+					{{Form::label('Fecha','',array('class'=>'col-lg-1 control-label'))}}
+					<div class="col-lg-10">
 					{{ Form::input('date', 'fecha') }}
 					<!--Form::text('fecha','',array('class'=>'form-control','class'=>'input-append date','data-date-format'=>'dd-mm-yyyy'))-->
+					</div>
 					<span class="add-on"><i class="icon-th"></i></span>
 				</div>
 				</div>
 			
 			
 			<div class "row">
-				<div class="form-group" class="col-lg-4 control-label" >
-						{{Form::label('Hora')}}
+				<div class="form-group"  >
+						{{Form::label('Hora','',array('class'=>'col-lg-1 control-label'))}}
+						<div class="col-lg-10">
 						{{ Form::input('time', 'hora') }}
 						<!--Form::text('hora','',array('class'=>'form-control')) -->
+						</div>
 				</div>
 			</div>
 			
 	
 			<div class "row">
-				<div class="form-group" class="col-lg-4 control-label">
-						{{Form::label('Descripcion')}}
-						{{Form::textarea('descripcion','',array('class'=>'form-control'))}} 
+				<div class="form-group" >
+						{{Form::label('Descripcion','',array('class'=>'col-lg-1 control-label'))}}
+						<div class="col-lg-10">
+						{{Form::textarea('descripcion','',array('class'=>'form-control'))}}
+						</div> 
 				</div>
 			</div>
 	
 	
 			<div class "row">
 				<div class="form-group" class="col-lg-4 control-label">
-						{{Form::label('Lugar')}}
+						{{Form::label('Lugar','',array('class'=>'col-lg-1 control-label'))}}
+						<div class="col-lg-10">
 						{{Form::text('direccion','',array('class'=>'form-control'))}} 
+						</div>
 				</div>
 			</div>
 			
 			<div class "row">
 				<div class="form-group" class="col-lg-4 control-label" >
-						{{Form::label('Adultos')}}
+						{{Form::label('Adultos','',array('class'=>'col-lg-1 control-label'))}}
+						<div class="col-lg-10">
 						{{ Form::input('number', 'adultosmax') }}
+						</div>
 				</div>
 			</div>
 
 			<div class "row">
 				<div class="form-group" class="col-lg-4 control-label" >
-						{{Form::label('Menores')}}
+						{{Form::label('Menores','',array('class'=>'col-lg-1 control-label'))}}
+						<div class="col-lg-10">
 						{{ Form::input('number', 'menoresmax') }}
+						</div>
 				</div>
 			</div>
 			
@@ -158,22 +173,24 @@ google.maps.event.addDomListener(window, 'load', initialize);
 	
 			<!--ACA INSERTO LO DEL MAPA-->
 	<div class="row">
+	<dic class='col-lg-10'>
 	<div id="panel">
-      <input onclick="clearMarkers();" type=button value="Hide Markers">
-      <input onclick="showMarkers();" type=button value="Show All Markers">
-      <input onclick="deleteMarkers();" type=button value="Delete Markers">
+      <input onclick="clearMarkers();" type=button value="ocultar marcadores">
+      <input onclick="showMarkers();" type=button value="mostrar marcadores">
+      <input onclick="deleteMarkers();" type=button value="borrar marcadores">
     </div>
     </div>
     <div id="map-canvas"></div>
-    <p>Click on the map to add markers.</p>
-			
+    <p>click en el mapa para agregar marcadores.</p>
+			</dic>
 			
 			
 			<div class="form-group" class="col-lg-4 col-lg-offset-2">
 				<p>{{Form::submit('Crear Evento', array('class' => 'btn btn-primary'))}}</p>
 			</div>
-			
+		</fieldset>	
 {{Form::close()}}
+</div>
 	
 			<!-- PARTE DE LAS CUENTAS Form::checkbox('name', 'value');-->
 		
