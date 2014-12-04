@@ -35,6 +35,8 @@
 	
 	
 			<!--FECHA Y HORA-->
+			
+          
 				<div class="row">
 				<div class="form-group"  >
 					{{Form::label('Fecha','',array('class'=>'col-lg-1 control-label'))}}
@@ -203,52 +205,6 @@
 			<!--PARTE DE LOS INVITADOS-->
 			
 	<h1>INVITADOS</h1>
-   <table> 
-   <tr>
-   		<th>Email</th>
-        <th>Organizador</th>
-        <th>Asistirá</th>
-        <th>Adultos</th>
-        <th>Niños</th>
-        <th>Costó</th>
-        <th>Gastó</th>
-        <th>Balance</th>
-        <th>Saldado</th>
-        <th>Acción</th>
-        
-   </tr>
-   <tr>
-   	<th>{{Form::text('email','',array('class'=>'form-control'))}}</th>
-    <th>{{Form::checkbox('organizador','',array('class'=>'form-control'))}}</th>
-    <th>{{Form::checkbox('asistira','',array('class'=>'form-control'))}}</th>
-    <th>{{Form::text('niños','',array('class'=>'form-control'))}}</th>
-    <th>{{Form::text('adultos','',array('class'=>'form-control'))}}</th>
-    <th>{{Form::text('costo','',array('class'=>'form-control'))}}</th>
-    <th> {{Form::text('gasto','',array('class'=>'form-control'))}}</th>
-    <th>{{Form::text('balance','',array('class'=>'form-control'))}}</th>
-    <th>{{Form::checkbox('saldado','',array('class'=>'form-control'))}}</th>
-    <th>{{Form::checkbox('asistira','',array('class'=>'form-control'))}}</th>
-     <th>{{Form::button('enviar mail')}}{{Form::button('borrar')}}</th>
-   </tr>
-   @foreach($usuario)
-   <tr>
-   		<th>{{$usuario->email}}</th>
-        <th>{{Form::checkbox}}</th>
-        <th>{{Form::checkbox}}</th>
-        <th>{{Form::text}}</th>
-        <th>{{Form::text}}</th>
-        <th>{{Form::text}}</th>
-        <th>{{$usuario->}}</th>
-        <th>{{Form::checkbox}}</th>
-        <th>{{Form::button x 2}}</th>
-   </tr>
-   
-   
-   </table>
-    
-    
-    
-    
 	<!--		
 	<div class="row">
 		<h2 class="inline">Invitados<a id="add-invitee" class="btn btn-success" href="#addInvitee"><i class="icon-plus"></i></a></h2>
@@ -259,6 +215,14 @@
 			<input class="inline" name="Events[confirmation_closed]" id="Events_confirmation_closed" value="1" type="checkbox" />
 			<div class="errorMessage" id="Events_confirmation_closed_em_" style="display:none"></div>
 		</div>		
+			
+			
+			
+			
+			
+			
+			
+			
 			
 	<table id="table-invitados" class="table table-striped">
 			<thead>
