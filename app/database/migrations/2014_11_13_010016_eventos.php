@@ -25,11 +25,11 @@ class Eventos extends Migration {
 			$table->string('descripcion');
 			$table->string('latitud');
 			$table->string('longitud');
-			$table->boolean('cerrado');
-			$table->boolean('creador');			
+			$table->boolean('cerrado');						
 			$table->integer('metodocuenta');
 			$table->integer('menoresmax');
 			$table->integer('adultosmax');
+			$table->integer('creador');
 			
 			$table->timestamps();
 		});
