@@ -51,6 +51,8 @@ Route::post('/itempop', 'ItemController@post_Item');
 /*Route::get('/itempop', 'ItemController@show_item');
 Route::post('/itempop', 'ItemController@delete_item');*/
 
+Route::get('/upload', 'FotoController@get_foto');
+Route::post('/upload', 'FotoController@post_foto');
 
 
 
