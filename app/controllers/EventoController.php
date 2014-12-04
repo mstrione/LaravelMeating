@@ -36,30 +36,38 @@ class EventoController extends \BaseController {
 		$rules=array(
 			'nombre' => 'required',
 			'direccion' => 'required',
-			/*'fecha'=> 'date_format:d/m/y',
-			'hora' => 'required'|'time',*/
+			'fecha'=> 'date_format:d/m/y',
+			'hora' => 'required'|'time',
 			'descripcion'=>'required'
+			'adultosmax'=>'required'|'numeric',
+			'menoresmax'=>'required'|'numeric',
 			
 			
 			
 			);
 			
-			$validator = Validator::make ($input, $rules); //Aca se toma lo ingresado y revisa la regla
+			$validator = Validator::make ($input, $rules); 
 			
+			if ($validator->fails())
+			{
+				return Redirect::back()->withErrors($validator)-> with('estado', 'Revise los datos ingresados') ;
+				
+			}
+			else
+			{ 
 			
-			if ( $validator->fails() ){
- 
-        // en caso de que la validación falle vamos a retornar al formulario 
-        // pero vamos a enviar los errores que devolvió Validator
-        // y también los datos que el usuario escribió 
-        return Redirect::to('pages.crearEvento')
-                // Aquí se esta devolviendo a la vista los errores 
-                ->withErrors($validator)
-                // Aquí se esta devolviendo a la vista todos los datos del formulario
-                ->withInput();
-			}else{
-				echo 'Datos Validos!';
-					exit;
+				$Evento = new eventos;
+				$Evento->nombre = Input::get('username');
+				$Evento->direccion =Input::get('apellido');
+				$Evento->descripcion = Input::get('ciudad');
+				$Evento->fecha = Input::get('email');;
+				$Evento->hora = Input::get('nacimiento');
+				$Evento->adultosmax = Input::get('password');
+				$Evento->menoresmax = Input::get('provincia');
+				
+				$Evento->save();
+			return Redirect::to('/crearEvento')->with('crearEvento', 'Su evento ha sido creado');
+			
 					}
 			
 	}
