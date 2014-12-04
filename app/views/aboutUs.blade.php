@@ -18,7 +18,7 @@
 			<div class="well well-sm">
 				<div class="row">
 					<div class="col-sm-6 col-md-4">
-						<img src="img/fotocv.jpg" alt="" class="img-rounded img-responsive" />
+						<img src="img/eze.jpg" alt="" class="img-rounded img-responsive" />
 					</div>
 					<div class="col-sm-6 col-md-8">
 						<h3>Torres Almada Hector Ezequiel</h3>
