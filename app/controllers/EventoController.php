@@ -2,22 +2,7 @@
 
 class EventoController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
-
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
+	
 	 
 	 
 	 
@@ -38,7 +23,7 @@ class EventoController extends \BaseController {
 			'direccion' => 'required',
 			'fecha'=> 'date_format:d/m/y',
 			'hora' => 'required'|'time',
-			'descripcion'=>'required'
+			'descripcion'=>'required',
 			'adultosmax'=>'required'|'numeric',
 			'menoresmax'=>'required'|'numeric',
 			

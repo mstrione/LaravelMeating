@@ -40,7 +40,7 @@
 			<div class "row">
 				<div class="form-group" class="col-lg-4 control-label" >
 						{{Form::label('Hora')}}
-						{{ Form::input('date', 'hora') }}
+						{{ Form::input('time', 'hora') }}
 						<!--Form::text('hora','',array('class'=>'form-control')) -->
 				</div>
 			</div>
