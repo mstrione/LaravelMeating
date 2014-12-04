@@ -92,7 +92,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     </div>    
 </div>
 <div class="jumbotron">
-{{Form::open(array('method'=>'POST','url'=>'pages/Evento','role'=>'form','class'=>'form-horizontal'))}}
+{{Form::open(array('method'=>'POST','Action'=> '/MisEventos' ,'role'=>'form','class'=>'form-horizontal'))}}
 <fieldset>
 			
 			
@@ -113,7 +113,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 				<div class="form-group"  >
 					{{Form::label('Fecha','',array('class'=>'col-lg-1 control-label'))}}
 					<div class="col-lg-10">
-					{{ Form::input('date', 'fecha') }}
+					{{ Form::input('date','Fecha','',array( 'date_format' => 'yyyy-mm-dd')) }}
 					<!--Form::text('fecha','',array('class'=>'form-control','class'=>'input-append date','data-date-format'=>'dd-mm-yyyy'))-->
 					</div>
 					<span class="add-on"><i class="icon-th"></i></span>
@@ -125,7 +125,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 				<div class="form-group"  >
 						{{Form::label('Hora','',array('class'=>'col-lg-1 control-label'))}}
 						<div class="col-lg-10">
-						{{ Form::input('time', 'hora') }}
+						{{ Form::input('time', 'hora','',array( 'time_format' => 'HH:mm:ss')) }}
 						<!--Form::text('hora','',array('class'=>'form-control')) -->
 						</div>
 				</div>

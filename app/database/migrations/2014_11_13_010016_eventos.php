@@ -20,8 +20,8 @@ class Eventos extends Migration {
 			
 			$table->string('nombre',30); 
 			$table->string('direccion',30);
-			$table->date('fecha'); 
-			$table->time('hora');
+			$table->string('fecha'); 
+			$table->string('hora');
 			$table->string('descripcion');
 			$table->string('latitud');
 			$table->string('longitud');

@@ -14,7 +14,26 @@ class EventoController extends \BaseController {
 	}
 	public function get_EventoX()
 	{
-		return View::make('pages.Evento');
+		if ($_POST)
+		{	$NEvento= new Evento;
+			$NEvento -> nombre=Input::get('nombre');
+			$NEvento -> fecha=Input::get('Fecha');
+			$NEvento -> hora=Input::get('hora');
+			$NEvento -> descripcion=Input::get('nombre');
+			$NEvento -> latitud=Input::get('nombre');
+			$NEvento -> longitud=Input::get('nombre');
+			$NEvento -> adultosmax=Input::get('adultosmax');
+			$NEvento -> menoresmax=Input::get('menoresmax');
+			$NEvento -> metodocuenta=Input::get('menoresmax');
+			$NEvento -> creador=Input::get('nombre');
+			$NEvento-> save();
+			return View::make('pages.registro');
+
+		}
+		else
+		{
+			return View::make('eventos.MisEventos');
+		}
 	}
 	
 	

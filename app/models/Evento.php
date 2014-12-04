@@ -2,7 +2,8 @@
 class Evento extends Eloquent { 
 
     protected $table = 'eventos';
-	
+	protected $PrimaryKey='id';
+	public $timesstamps=false;
 	
 	
 	
@@ -35,11 +36,6 @@ class Evento extends Eloquent {
 	
 //------------FUNCIONES DEL EVENTO-------
 
-public static funcion agregarEvento($input)	
-{
-
-}
-	
 	
 	
 	
