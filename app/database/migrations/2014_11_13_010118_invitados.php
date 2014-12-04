@@ -20,6 +20,7 @@ class Invitados extends Migration {
 			
 			$table->integer('idevento'); 
 			$table->integer('idusuario');
+			$table->string('email',50);
 			$table->boolean('rol'); 
 			$table->integer('menores');
 			$table->integer('adultos');
