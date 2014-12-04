@@ -37,7 +37,7 @@
 			<div class="col-xs-6">
 				<div class="input-group" >
 						{{Form::label('Cantidad')}}
-						{{Form::text('cantidad','',array('class'=>'form-control'))}} 
+						{{Form::input('number','cantidad')}} 
 				</div>
 			</div>
 		</div>

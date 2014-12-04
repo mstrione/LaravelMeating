@@ -24,7 +24,7 @@ class ItemController extends \BaseController {
 		
 		$input = Input::all();
 		$rules = array(
-			'descripcion' => 'required',
+			'nombre' => 'required',
 			'cantidad' => 'required|numeric',
 			
 		);
@@ -36,7 +36,7 @@ class ItemController extends \BaseController {
 		else
 		{
 			$item = new Item;
-				$item->descripcion = Input::get('descripcion');
+				$item->nombre = Input::get('nombre');
 				$item->cantidad = Input::get('cantidad');
 				
 			$item->save();
