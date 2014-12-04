@@ -8,7 +8,7 @@ class FotoController extends \BaseController {
 	
 	public function get_foto()
 	{
-		return View::make("pages.upload");
+		return View::make("pages.Evento");
 	}
 
 	

@@ -1,7 +1,11 @@
 @extends('layouts.default')
+<head><!--cargamos los css-->
+        {{ HTML::style('css/foundation.min.css') }}
+        {{ HTML::style('css/normalize.css') }}
+		
 
 @include('includes.headC')
-
+</head>
 @section('content')
 <!-- DATOS DEL EVENTO -->
    <div class="container">         
@@ -293,33 +297,46 @@
 	
 	
 	
-			<!--FOTOS-->
-<!--
-			<div class="row fileupload-buttonbar">
-	<div class="span7"> -->
-		<!-- The fileinput-button span is used to style the file input field as button -->
-		<!--<span class="btn btn-success fileinput-button">
-            <i class="icon-plus icon-white"></i>
-            <span>Elegir Archivos</span>
-			<input id="ytXUploadForm_file" type="hidden" value="" name="XUploadForm[file]" /><input multiple="multiple" name="XUploadForm[file]" id="XUploadForm_file" type="file" />
-		</span>
-        		<button type="submit" class="btn btn-primary start">
-			<i class="icon-upload icon-white"></i>
-			<span>Iniciar subida</span>
-		</button>
-		<button type="reset" class="btn btn-warning cancel">
-			<i class="icon-ban-circle icon-white"></i>
-			<span>Cancelar subida</span>
-		</button>
-		<button type="button" class="btn btn-danger delete">
-			<i class="icon-trash icon-white"></i>
-			<span>Eliminar</span>
-		</button>
-		<input type="checkbox" class="toggle">
-        	</div>
-	
-</div>-->
-
+			
+<div class="row"> 
+            <h1 class="subheader">Subir imágenes </h1>
+            <!--si el formulario contiene errores de validación-->
+            @if($errors->has())
+                <div class="alert-box alert">           
+                    <!--recorremos los errores en un loop y los mostramos-->
+                    @foreach ($errors->all('<p>:message</p>') as $message)
+                        {{ $message }}
+                    @endforeach
+                     
+                </div>
+            @endif
+            
+            @if(Session::has('confirm'))
+                <div class="alert-box success round">
+                    {{ Session::get('confirm') }}
+                </div>                    
+            @endif
+            <div class="form">
+              
+                {{ Form::open(array('url' => 'Evento', 'files' => true)) }}
+ 
+                {{ Form::label('photo', 'photo') }}                
+                <!--así se crea un campo file en laravel-->
+                {{ Form::file('photo') }}
+                
+                {{ Form::label('titulo', 'titulo') }} 
+                {{ Form::text('titulo') }}
+               
+                
+                
+                <br />
+                {{ Form::submit('Cargar Foto', array("class" => "button expand round")) }}
+ 
+                {{ Form::close() }}
+ 
+            </div>    
+             
+        </div>
 
 
 
