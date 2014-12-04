@@ -92,7 +92,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     </div>    
 </div>
 <div class="jumbotron">
-{{Form::open(array('method'=>'POST','url'=>'pages/crearEvento','role'=>'form','class'=>'form-horizontal'))}}
+{{Form::open(array('method'=>'POST','url'=>'pages/Evento','role'=>'form','class'=>'form-horizontal'))}}
 <fieldset>
 			
 			

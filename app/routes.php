@@ -114,6 +114,7 @@ Route::get('agregarinvitado', function()
 	return View::make('pages.crearEvento');
 });*/
 Route::get('crearEvento', 'EventoController@get_crearEvento');
+Route::get('Evento','EventoController@get_EventoX');
  
 Route::post('crearEvento', 'EventoController@post_crearEvento');
 

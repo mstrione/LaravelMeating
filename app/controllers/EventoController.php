@@ -12,6 +12,10 @@ class EventoController extends \BaseController {
 	{
 		return View::make('pages.crearEvento');
 	}
+	public function get_EventoX()
+	{
+		return View::make('pages.Evento');
+	}
 	
 	
 	public function post_crearEvento()
