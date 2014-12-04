@@ -18,9 +18,9 @@ class Fotos extends Migration {
 			
 			$table->increments('id');
 			
-			$table->string('evento',30); 			
+			$table->integer('idevento'); 			
 			$table->string('titulo',30); 
-			$table->string('pic'); // es la imagen
+			$table->string('photo'); // es la imagen
 			
 			
 			

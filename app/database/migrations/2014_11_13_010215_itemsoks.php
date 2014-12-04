@@ -18,9 +18,9 @@ class Itemsoks extends Migration {
 			
 			$table->increments('id');
 			
-			$table->string('item',30); 			
+			$table->integer('iditem'); 			
 			$table->integer('cantidad'); 
-			$table->string('usuario',30);
+			$table->integer('idusuario');
 			
 			
 			

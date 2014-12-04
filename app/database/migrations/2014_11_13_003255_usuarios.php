@@ -22,12 +22,11 @@ class Usuarios extends Migration {
 			$table->string('apellido',30);
 			$table->string('password',15); // es la clave, lo mismo que username.
 			$table->date('nacimiento');
-			$table->integer('sexo');
+			$table->boolean('sexo');
 			$table->string('email',50);
 			$table->string('provincia',30);
 			$table->string('ciudad',30);
-			$table->string('verificacion');
-			$table->integer('activo');
+			
 			
 			$table->timestamps();
 		});

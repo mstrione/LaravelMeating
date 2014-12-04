@@ -18,8 +18,8 @@ class Items extends Migration {
 			
 			$table->increments('id');
 			
-			$table->string('evento',30); 
-			$table->string('descripcion');
+			$table->integer('idevento'); 
+			$table->string('nombre');
 			$table->integer('cantidad'); 
 			
 			

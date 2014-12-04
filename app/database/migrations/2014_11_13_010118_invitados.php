@@ -18,9 +18,9 @@ class Invitados extends Migration {
 			
 			$table->increments('id');
 			
-			$table->string('evento', 30); 
-			$table->string('usuario');
-			$table->string('rol',10); 
+			$table->integer('idevento'); 
+			$table->integer('idusuario');
+			$table->boolean('rol'); 
 			$table->integer('menores');
 			$table->integer('adultos');
 			$table->boolean('confirmado');

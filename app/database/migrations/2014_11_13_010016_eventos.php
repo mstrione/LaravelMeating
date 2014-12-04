@@ -19,15 +19,17 @@ class Eventos extends Migration {
 			$table->increments('id');
 			
 			$table->string('nombre',30); 
-			$table->string('direccion');
+			$table->string('direccion',30);
 			$table->date('fecha'); 
 			$table->time('hora');
 			$table->string('descripcion');
 			$table->string('latitud');
 			$table->string('longitud');
 			$table->boolean('cerrado');
-			$table->string('creador');			
+			$table->boolean('creador');			
 			$table->integer('metodocuenta');
+			$table->integer('menoresmax');
+			$table->integer('adultosmax');
 			
 			$table->timestamps();
 		});
