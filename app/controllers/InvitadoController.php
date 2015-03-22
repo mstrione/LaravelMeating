@@ -7,9 +7,9 @@ class InvitadoController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function get_invitado()
 	{
-		//
+		return View::make('eventos.Invitados');
 	}
 
 

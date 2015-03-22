@@ -34,7 +34,7 @@
 			
 			
 		<div class "row">
-			<div class="col-xs-6">
+			<div class="col-xs-4">
 				<div class="input-group" >
 						{{Form::label('Cantidad')}}
 						{{Form::input('number','cantidad')}} 
@@ -46,7 +46,7 @@
          <div class="modal-footer">
 			<div class="form-group" class="col-lg-4 col-lg-offset-2">
 				<p>{{Form::submit('Agegar Item', array('class' => 'btn btn-success'))}}</p>
-				<p>{{Form::submit('Cancelar', array('class' => 'btn btn-primary') )}}</p>
+				
 			</div>            
          </div>
 	
