@@ -7,9 +7,9 @@
 	
 <body>	
 	<div class="container" > 
-    	<div class="well">'/registro'
+    	<div class="well">
 			<!--{{Form::open()}}-->
-{{Form::open(array('method'=>'POST','url'=>'/registro','role'=>'form'))}} 
+			{{Form::open(array('method'=>'POST','url'=>'/registro','role'=>'form'))}} 
 
               <fieldset>
                   <legend>Registro</legend>
