@@ -2,6 +2,7 @@
 
 class EventoController extends \BaseController {
 
+	
 	 
 	 public function get_crearEvento()
 	{
@@ -29,6 +30,7 @@ class EventoController extends \BaseController {
 		{
 			return View::make('pages.crearEvento');
 		}
+		
 	}
 	
 	

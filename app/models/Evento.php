@@ -7,6 +7,7 @@ class Evento extends Eloquent {
 	
 	
 	
+	
 //-------CON QUE TABLAS SE RELACIONA------	
 	/*
 	public function usuarios()
@@ -36,9 +37,7 @@ class Evento extends Eloquent {
 	
 //------------FUNCIONES DEL EVENTO-------
 
-	
-	
-	
+
 	
 }
 ?>
