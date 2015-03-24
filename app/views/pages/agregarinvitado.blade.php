@@ -3,7 +3,7 @@
 	@include('includes.headPopItem')
 </head>
 @section('content')
-<!--{{Form::open(array('method'=>'POST','url'=>'/contacto','role'=>'form'))}} -->
+{{Form::open(array('method'=>'POST','url'=>'/contacto','role'=>'form'))}} 
 		<a data-toggle="modal" href="app/views/pages" class="btn btn-primary btn-large"> <!-- en href deberia ponerse la direccion donde se encuentra el popup, en este caso es id=example-->
 		Agregar Invitado
 		</a>
@@ -19,35 +19,44 @@
          
 		 <form >
 		<!--Nombre-->
-                  <div class="form-group">
-                      <label for="inputNombre" class="col-lg-2 control-label">Nombre</label>
-                      <input class="form-control" id="inputNombre" placeholder="Nombre" type="text" name="nombre">                    
-                  </div>
+                  
+				    <div class="form-group">
+							<div class="col-lg-4">
+							{{Form::label('Nombre')}}
+							</div>
+							{{Form::text('username', '', array('class' => 'form-control', 'placeholder' => 'Nombre'))}}
+					                                       
+					</div>
 				  
 				  <!--Apellido-->
-				  <div class="form-group">
-                      <label for="inputApellido" class="col-lg-2 control-label">Apellido</label>
-                      <input class="form-control" id="inputNombre" placeholder="Apellido" type="text" name="apellido">                                           
-                  </div>
+				  
+				    <div class="form-group">
+							<div class="col-lg-4">
+							{{Form::label('Apellido')}}
+							</div>
+							{{Form::text('apellido', '', array('class' => 'form-control', 'placeholder' => 'Apellido'))}}
+					                                       
+					</div>
                                    
                 <!--Mail-->
                   
-                <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                    <input class="form-control" id="inputEmail" placeholder="Email del invitado" type="email" name="mail">                   
-                </div>
+                	<div class="form-group">
+							<div class="col-lg-4">
+							{{Form::label('Email')}}
+							</div>
+							{{Form::text('email', '', array('class' => 'form-control', 'placeholder' => 'email'))}}
+					                                       
+					</div>
 				
 				<!---->
-                <div class="form-group">
-					<label class="col-lg-2 control-label">ROL:</label>
-						<div class="col-xs-2">
-						<label class="radio-inline">
-							<input type="radio" name="rol" value="invitado" checked="checked">Invitado</label>
-						</div>
-				<div class="col-xs-2">
-					<label class="radio-inline">
-					<input type="radio" name="rol" value="creador">Organizador</label>
-            	</div>
+                
+				<div class="form-group">
+							{{Form::label('rol', 'Invitado')}}
+							{{Form::radio('rol', 'invitado', 'selected')}}
+           
+							{{Form::label('rol', 'Organizador')}}
+							{{Form::radio('rol', 'organizador')}}
+				</div>
           
                 
 		</form>
@@ -58,6 +67,6 @@
    	</div>
    </div>
 </div>
-<!--{{Form::close()}}-->
+{{Form::close()}}
 	
 @stop
