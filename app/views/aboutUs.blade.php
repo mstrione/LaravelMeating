@@ -1,13 +1,12 @@
 @extends('layouts.default')
 <head>
 	@include('includes.headqs')
+	
 </head>
 @section('content')
 <div class="container"> <!--le da el cuerpo al body (valga la redundancia)--> <!--modificado en el css box-shadow-->
 <div class="page-header">
 <div class="jumbotron">
-
-
 
 <h2>¿QUIENES SOMOS?</h2>
 <br>

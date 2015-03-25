@@ -7,10 +7,10 @@
 	
 <body>	
 	<div class="container" > 
-    	<div class="">
+    	<div class="col-lg-6">
 			<!--{{Form::open()}}-->
 			{{Form::open(array('method'=>'POST','url'=>'/registro','role'=>'form'))}} 
-			<div class="col-lg-6">
+			
 				
 					<legend>Registro</legend>
 					
@@ -103,7 +103,7 @@ Reservamos el derecho a modificar esta Declaración de Privacidad en cualquier m
 			</div>
           {{Form::close()}}
 			
-        </div>
+        
 	</div>
       <!-- Bootstrap core JavaScript
     ================================================== -->

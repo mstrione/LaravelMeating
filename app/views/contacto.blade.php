@@ -9,8 +9,10 @@
 	@if(Session::has('estado'))
 		<h3>{{Session::get('estado')}}</h3></br>
 	@endif
-
+<body>	
+<div class="container" > 	
 	<div class="col-lg-4">
+	<legend>Contacto</legend>
 		<div class="form-group">
 			
 				{{Form::label('Nombre')}}
@@ -58,7 +60,8 @@
 	</div>
 
 	{{Form::close()}}
-
+</div>
+</body>
 @stop
 	
 
