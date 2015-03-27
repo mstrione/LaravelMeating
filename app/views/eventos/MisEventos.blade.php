@@ -63,7 +63,16 @@
             				<td>{{$value->direccion}}</td>
             				<td>{{$value->fecha}}</td>
             				<td>{{$value->creador}}</td> 
-            				<td><span class="glyphicon glyphicon-trash"></span></td>		
+            				<td>
+								<a class="btn btn-default" href="#mailInvitee" title="mail cuentas o invitacion">
+								<i class="icon-envelope"></i>Eliminar
+								</a>
+								
+								<a class="btn btn-default" href="#mailInvitee" title="mail cuentas o invitacion">
+								<i class="icon-envelope"></i>Modificar
+								</a>
+								</span>
+							</td>		
             		</tr>
             		@endforeach
             	</tbody>

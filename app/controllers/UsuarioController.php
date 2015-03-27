@@ -15,16 +15,74 @@ class UsuarioController extends BaseController {
 
 	}
 
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
+//---------------------------------------------------PARTE DE LOS REGISTROS---------------------------------------------
+	//ACA MUESTRO LA PAGINA DEL REGISTRO
+	public function get_registro()
 	{
-		 return 'aca va el form para crear un usuario';
+		{
+		if(Usuario::isLogged())
+			{
+			return Redirect::to('/MisEventos');
+			}
+			else
+			{
+				return View::make('pages.registro');
+			}
+		}
 	}
+	
+	
+	// ACA INTRODUZCO LOS DATOS DEL REGISTRO A LA BASE DE DATOS, ES DECIR, QUE CREO EL USUARIO
+	public function post_registro()
+	{
+		$input= Input::ALL();
+		$rules=array(
+			'username' => 'required|min:3|max:10',
+			'apellido'=>'required|min:3|max:10',
+			'email' => 'required|email',
+			'password' => 'required|min:4|max:10',
+			'verificacion'=>'same:password',
+			'ciudad'=>'required',
+			'provincia'=>'required',
+			'nacimiento'=>'required',
+			
+			);
+			
+			 $messages = array(
+            'required' => 'El campo :attribute es obligatorio.',
+            'email' => 'El campo :attribute debe ser un email válido.',
+            'unique' => 'El email ingresado ya existe en la base de datos'
+        );
+			
+			$validator = Validator::make ($input, $rules,$messages); 
+			
+			if ($validator->fails())
+			{
+				return Redirect::back()->withErrors($validator)-> with('estado', 'Revise los datos ingresados') ;
+				
+			}
+			else
+			{ 
+			
+			
+				$Usuario = new usuarios;
+				$Usuario->username = Input::get('username');
+				$Usuario->apellido =Input::get('apellido');
+				$Usuario->ciudad = Input::get('ciudad');
+				$Usuario->email = Input::get('email');;
+				$Usario->nacimiento = Input::get('nacimiento');
+				$Usuario->password = Input::get('password');
+				$Usuario->provincia = Input::get('provincia');
+				$Usuario->sexo = Input::get('sexo');;
+				$Usuario->verificacion = Input::get('verificacion');;
+				$Usuario->save();
+			return Redirect::to('/registro')->with('registro', 'Registro completado. Accede a su cuenta');
+			
+				
+					
+			}
+	}
+	
 
 
 	/**
@@ -152,73 +210,6 @@ class UsuarioController extends BaseController {
 		return Redirect::to('/');
 	}
 
-	
-	
-	//---------------------------------------------------PARTE DE LOS REGISTROS---------------------------------------------
-	
-	
-	Public function Get_Registrarme()
-	{
-		{
-		if(User::isLogged())
-			{
-			return Redirect::to('/MisEventos');
-			}
-			else
-			{
-				return View::make('pages.registro');
-			}
-		}
-	}
-	
-	
-	/*Public function Post_Registrarme()
-	{
-	
-		$input = Input::all();
-
-		$rules = array(
-			'username' => 'required|unique:usuarios,username',
-			'apellido'=>'required',
-			'email' => 'required|email|unique:usuarios,email',
-			'password' => 'required|between:5,10', //password entre 5 y 10 caracteres..es el min y el max pasado.
-			'password2' => 'required|same:password',
-			'nacimiento'=>'required|date_format:date', //El campo bajo validación debe coincidir con format (formato) definido acorde con la función PHP date_parse_from_format.
-			'sexo'=>'required|integer',
-			'provincia'=>'required',
-			'ciudad'=>'required|alpha',
-			
-			
-		);
-
-		$validator = Validator::make($input, $rules); //comparo lo ingresado con las reglas
-
-		if($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator); //si la validacion falla vuelve con los errores
-		}
-		else
-		{
-			$usuario = new Usuario;
-				$usuario->username = Input::get('username');
-				$usuario->apellido = Input::get('apellido');
-				$usuario->password = Hash::make(Input::get('password'));
-				$usuario->nacimiento = Input::get('nacimiento');
-				$usuario->sexo = Input::get('sexo');
-				$usuario->email = Input::get('email');
-				$usuario->provincia = Input::get('provincia');
-				$usuario->ciudad = Input::get('ciudad');
-				//$usuario->verificacion = '';
-				//$$usuario->activo = 1;
-			$usuario->save();
-
-			return Redirect::to('/login')->with('registro', 'El registro se ha completado. Acceda a su cuenta');
-		}
-	
-	
-	
-	}*/
-	
 	
 	
 	

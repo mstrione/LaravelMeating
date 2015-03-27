@@ -39,10 +39,9 @@ Route::post(Lang::get('routes.login'), 'UsuarioController@post_login');
 Route::get(Lang::get('routes.logout'), 'UsuarioController@logout');
 Route::get('/bienvenida', 'UsuarioController@bienvenida');
 Route::get('/MisEventos', 'MisEventosController@index');
-
 //RUTA registro********************************************
-Route::get('/registro', 'registroController@get_registro');
-Route::post('/registro', 'registroController@post_registro');
+Route::get('/registro', 'UsuarioController@get_registro');
+Route::post('/registro', 'UsuarioController@post_registro');
 
 //RUTA PARA ITEM----------------------------------
 

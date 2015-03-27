@@ -18,7 +18,7 @@
 						<div class="form-group">
 							{{Form::label('Nombre Usuario')}}
 							{{Form::text('username', '', array('class' => 'form-control'))}}
-					                                       
+					        <div class="bg-danger">{{$errors->first('username')}}</div>                               
 						</div>
 				  
 					<!--Apellido-->
@@ -117,5 +117,6 @@ Reservamos el derecho a modificar esta Declaración de Privacidad en cualquier m
     
 	
 </body>
+@stop
 </html>	
 

@@ -11,87 +11,9 @@
 	{{ HTML::script('js/MapaCrearEvento.js') }}
 	{{ HTML::style('css/datepicker.css') }}
 	{{ HTML::style('css/EstiloMapa.css') }}
-	 <style>
-      html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-      }
-    </style>
+	 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    <script>
-// In the following example, markers appear when the user clicks on the map.
-// The markers are stored in an array.
-// The user can then click an option to hide, show or delete the markers.
-var map;
-var markers = [];
-
-function initialize() {
-  var haightAshbury = new google.maps.LatLng(-41.1309137, -71.3028207);
-  var mapOptions = {
-    zoom: 12,
-    center: haightAshbury,
-    mapTypeId: google.maps.MapTypeId.TERRAIN
-  };
-  map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
-
-  // This event listener will call addMarker() when the map is clicked.
-  google.maps.event.addListener(map, 'click', function(event) {
-    addMarker(event.latLng);
-  });
-
-  // Adds a marker at the center of the map.
-  addMarker(haightAshbury);
-}
-
-// Add a marker to the map and push to the array.
-function addMarker(location) {
-  var marker = new google.maps.Marker({
-    position: location,
-    map: map
-  });
-  markers.push(marker);
-}
-
-// Sets the map on all markers in the array.
-function setAllMap(map) {
-  for (var i = 0; i < markers.length; i++) {
-    markers[i].setMap(map);
-  }
-}
-
-// Removes the markers from the map, but keeps them in the array.
-function clearMarkers() {
-  setAllMap(null);
-}
-
-// Shows any markers currently in the array.
-function showMarkers() {
-  setAllMap(map);
-}
-
-// Deletes all markers in the array by removing references to them.
-function deleteMarkers() {
-  clearMarkers();
-  markers = [];
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
-    </script>
-	<script >google.maps.event.addDomListener(window, 'load', initialize);
-	</script>
+    <script> <script >google.maps.event.addDomListener(window, 'load', initialize);	</script>
 </head>
 @section('content')
 <div class="page-header">
@@ -209,17 +131,18 @@ google.maps.event.addDomListener(window, 'load', initialize);
 	
 	
 	
-	
-			<div class=accordion-container>
+			
+			<div class="accordion-container">			
 				<div>
 				{{ Form::radio('metodo', '1', (Input::old('metodo') == '1'), array('id'=>'male', 'class'=>'accordion-header'))}}	
 				{{Form::label('El organizador invita')}}	
-					
+				<div class=""><p>El evento no tiene costo alguno para los invitados</p></div>
 				</div>
 				
 				<div>
 				{{Form::radio('metodo', '2', (Input::old('metodo') == '2'), array('id'=>'female', 'class'=>'accordion-header'))}}
-				{{Form::label('Se establece un valor fijo')}}				
+				{{Form::label('Se establece un valor fijo')}}	
+				<div class=""><p>Se distinguen dos valores fijos de costo para cada uno de los tipos de asistentes respectivamente, adultos y menores, tambien independientemente del costo total del evento.</p></div>
 				</div>
 				
 				<div>
@@ -248,7 +171,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 				{{Form::label('Se divide un valor arbitrario según asistentes')}}				
 				</div>
 			</div>
-	
+			
 	
 	<!--
 	<ul >
@@ -288,10 +211,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 			<!--PARTE DE LOS INVITADOS-->
 			
 	<h1>INVITADOS</h1>
-	<!--		
+			
 	<div class="row">
-		<h2 class="inline">Invitados<a id="add-invitee" class="btn btn-success" href="#addInvitee"><i class="icon-plus"></i></a></h2>
-
+		<div>
+		<h2 class="inline">Invitados <a data-toggle="modal" href="/agregarinvitado" class="btn btn-primary btn-large"> <!-- en href deberia ponerse la direccion donde se encuentra el popup, en este caso es id=example-->
+		Agregar Invitado
+		</a></a></h2>
+		
+		
+		
 		<div class="inline pull-right">
 			<label class="inline" for="Events_confirmation_closed">Confirmación Cerrada</label>	
 			<input id="ytEvents_confirmation_closed" type="hidden" value="0" name="Events[confirmation_closed]" />
@@ -306,90 +234,70 @@ google.maps.event.addDomListener(window, 'load', initialize);
 			
 			
 			
-			
-	<table id="table-invitados" class="table table-striped">
+	
+	<table id="table-invitados" class="table table-striped" > 
 			<thead>
 				<tr>
-					<th><label for="Invitees_email" class="required">Email <span class="required">*</span></label></th>
-					<th><label class="inline" for="Invitees_admin">Organizador</label></th>
-					<th><label class="inline" for="Invitees_confirmed">Asistirá</label></th>
-					<th><label class="inline" for="Invitees_adults">Adultos</label></th>
-					<th><label class="inline" for="Invitees_kids">Niños</label></th>
-					<th><label class="inline" for="Invitees_cost">Costo</label></th>
-					<th><label class="inline" for="Invitees_spent">Gastó</label></th>
-					<th>Balance</th>
-					<th><label class="inline" for="Invitees_money_ok">Saldado</label></th>
-					<th colspan="2">Acciones</th>
+					<th><label>Email*</label></th>
+					<th><label>Organizador</label></th>
+					<th><label>Asistirá</label></th>
+					<th><label>Adultos</label></th>
+					<th><label>Niños</label></th>
+					<th><label>$ Costo</label></th>
+					<th><label>$ Gastó</label></th>
+					<th><label>$ Balance</label></th>
+					<th><label>Saldado</label></th>
+					<th colspan="3"><label>Acciones</label></th>
 				</tr>
 			</thead>
 		<tbody>
 						
 				<tr>
-		            <td>
-		             <input size="60" maxlength="255" list="suggest" autocomplete="off" name="Invitees[0][email]" id="Invitees_0_email" type="text" />
-					 <div class="errorMessage" id="Invitees_email_em_" style="display:none"></div>	
-					</td>
-		            
+		            <td>						
+		             {{Form::text('email', '', array('class' => 'form-control'))}}   
+					</td>		            
 					<td>
-						<input id="ytInvitees_0_admin" type="hidden" value="0" name="Invitees[0][admin]" />
-						<input class="inline" name="Invitees[0][admin]" id="Invitees_0_admin" value="1" type="checkbox" />
-						<div class="errorMessage" id="Invitees_admin_em_" style="display:none"></div>
-					</td>
-		            
+						{{Form::checkbox('organizador', 'true')}}
+					</td>		            
 					<td>
-						<input id="ytInvitees_0_confirmed" type="hidden" value="0" name="Invitees[0][confirmed]" />
-						<input class="inline" name="Invitees[0][confirmed]" id="Invitees_0_confirmed" value="1" type="checkbox" />
-						<div class="errorMessage" id="Invitees_confirmed_em_" style="display:none"></div>
-					</td>
-		            
+						{{Form::checkbox('confirmado', 'true')}}
+					</td>		            
 					<td>
-						<input class="inline" name="Invitees[0][adults]" id="Invitees_0_adults" type="number" />
-						<div class="errorMessage" id="Invitees_adults_em_" style="display:none"></div>
-					</td>
-		            
+						{{Form::input('number','adultos')}}
+					</td>		            
 					<td>
-						<input class="inline" name="Invitees[0][kids]" id="Invitees_0_kids" type="number" />
-						<div class="errorMessage" id="Invitees_kids_em_" style="display:none"></div>
-					</td>
-		            
+						{{Form::input('number','niños')}}
+					</td>		            
+					<td>		            	
+						{{Form::input('number','costo')}}
+					</td>		            
+					<td>		            	
+						{{Form::input('number','gasto')}}	
+						</td>					
+					<td>		            	
+						{{Form::input('number','balance')}}
+					</td>		            
 					<td>
-		            	$
-						<input class="inline" name="Invitees[0][cost]" id="Invitees_0_cost" type="number" />
-						<div class="errorMessage" id="Invitees_cost_em_" style="display:none"></div>
-					</td>
-		            
-					<td>
-		            	$
-						<input class="inline" name="Invitees[0][spent]" id="Invitees_0_spent" type="number" />	
-						<div class="errorMessage" id="Invitees_spent_em_" style="display:none"></div>	
-						</td>
-					
-					<td>
-		            	$
-						<input disabled="disabled" id="Invitees_time" type="number" value="-1">
-					</td>
-		            
-					<td>
-		            	<input id="ytInvitees_0_money_ok" type="hidden" value="0" name="Invitees[0][money_ok]" />
-						<input class="inline" name="Invitees[0][money_ok]" id="Invitees_0_money_ok" value="1" type="checkbox" />
-						<div class="errorMessage" id="Invitees_money_ok_em_" style="display:none"></div>
+		            	{{Form::checkbox('confirmado', 'true')}}
 					</td>
 		            
 					<td class="buttons">
 		            	<a class="btn btn-default" href="#mailInvitee" title="mail cuentas o invitacion">
-		            		<i class="icon-envelope"></i>
+		            		<i class="icon-envelope"></i>Enviar mail
 		            	</a>
 		            </td>
 		            
 					<td class="buttons">
 		            	<a class="btn btn-danger remove-invitee" href="#removeInvitee" title="remove" >
-		            		<i class="icon-remove"></i>
+		            		<i class="icon-remove"></i> Remover
 		            	</a>
 		            </td>
 			</tr>
 			
         </tbody>
     </table>
+	</div>
+	</div>
 	
 		<a class="btn btn-info pull-right " href="#resendInvitation" title="Reenviar invitaciones a no confirmados" type="">
 		<i class="icon-envelope"></i> Reenviar invitaciones</a>
@@ -397,14 +305,56 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		<i class="icon-envelope"></i> Enviar cuentas</a>
     </div>
         
-	<hr>-->
+	<hr>
 			
 			<!-- LISTA DE ITEMS-->
-	<!--<h1>ITEMS-LISTA</h1>	
+	<h1>ITEMS-LISTA</h1>	
 		<div class="row">
 		<h2 class="inline">Lista de items <a id="add-item" class="btn btn-success" href="#addItem">	<i class="icon-plus"></i></a>
 			
-			-->
+			<table class='table table-striped table-hover'>
+            	<thead>
+            		
+            		<th>NOMBRE ITEM</th>
+            		<th>TRAE</th>
+            		<th>CANTIDAD</th>
+            		<th>FALTAN</th>
+            		<th>ACCIONES</th>
+            	</thead>
+            	<tbody>
+            		
+            		<tr>
+            			<td>						
+							{{Form::text('item', '', array('class' => 'form-control'))}}   
+						</td>		            
+						<td>
+							{{Form::text('item', '', array('class' => 'form-control'))}}  
+						</td>		            
+						<td>
+							{{Form::input('number','cantidad')}}
+						</td>		            
+						<td>
+							{{Form::input('number','faltan')}}
+						</td>		            
+								
+            				<td>
+								<a class="btn btn-default" href="#mailInvitee" title="mail cuentas o invitacion">
+								<i class="icon-envelope"></i>Yo llevo
+								</a>
+								
+								<a class="btn btn-default" href="#mailInvitee" title="mail cuentas o invitacion">
+								<i class="icon-envelope"></i>Asignar
+								</a>
+								
+								<a class="btn btn-default" href="#mailInvitee" title="mail cuentas o invitacion">
+								<i class="icon-envelope"></i>Eliminar
+								</a>
+								</span>
+							</td>		
+            		</tr>
+            		
+            	</tbody>
+            </table>
 			<!--FOTOS-->
 <!--
 			<div class="row fileupload-buttonbar">

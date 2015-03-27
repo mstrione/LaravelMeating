@@ -4,9 +4,7 @@
 </head>
 @section('content')
 {{Form::open(array('method'=>'POST','url'=>'/contacto','role'=>'form'))}} 
-		<a data-toggle="modal" href="app/views/pages" class="btn btn-primary btn-large"> <!-- en href deberia ponerse la direccion donde se encuentra el popup, en este caso es id=example-->
-		Agregar Invitado
-		</a>
+		
   	
    <div class="modal-dialog">   
       <div class="modal-content"> 
