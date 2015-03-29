@@ -17,13 +17,13 @@ class Items extends Migration {
 			$table->create();
 			
 			$table->increments('id');
-			
-			$table->integer('idevento'); 
+			$table->integer('idevento')->unsigned();
+			$table->foreign('idevento')->references('id')->on('eventos');			
 			$table->string('nombre');
-			$table->integer('cantidad'); 
+			$table->integer('cantidad'); 		
 			
-			
-			$table->timestamps();
+			$table->timestamps();     
+      
 		});
 	}
 

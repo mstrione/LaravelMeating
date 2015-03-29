@@ -16,15 +16,20 @@ class Itemsoks extends Migration {
 		{
 			$table->create();
 			
-			$table->increments('id');
-			
-			$table->integer('iditem'); 			
+			$table->increments('id');			
+				
+			$table->integer('iditem')->unsigned();
+			$table->foreign('iditem')->references('id')->on('items');
 			$table->integer('cantidad'); 
-			$table->integer('idusuario');
 			
-			
+			$table->integer('idusuario')->unsigned();
+			$table->foreign('idusuario')->references('id')->on('usuarios');
+			$table->integer('idevento')->unsigned();
+			$table->foreign('idevento')->references('id')->on('eventos');			
 			
 			$table->timestamps();
+			
+					
 		});
 	}
 

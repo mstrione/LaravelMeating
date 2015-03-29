@@ -28,10 +28,13 @@ class Eventos extends Migration {
 			$table->boolean('cerrado');						
 			$table->integer('metodocuenta');
 			$table->integer('menoresmax');
-			$table->integer('adultosmax');
-			$table->integer('creador');
+			$table->integer('adultosmax');			
 			
-			$table->timestamps();
+			$table->integer('creador')->unsigned();
+			$table->foreign('creador')->references('id')->on('usuarios');
+			
+			$table->timestamps();	
+				
 		});
 	}
 

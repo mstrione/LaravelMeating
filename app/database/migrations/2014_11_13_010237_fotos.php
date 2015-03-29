@@ -17,14 +17,14 @@ class Fotos extends Migration {
 			$table->create();
 			
 			$table->increments('id');
-			
-			$table->integer('idevento'); 			
+			$table->integer('idevento')->unsigned();
+			$table->foreign('idevento')->references('id')->on('eventos');
+					
 			$table->string('titulo',30); 
-			$table->string('photo'); // es la imagen
+			$table->string('photo'); // es la imagen			
 			
-			
-			
-			$table->timestamps();
+			$table->timestamps();	
+					
 		});
 	}
 

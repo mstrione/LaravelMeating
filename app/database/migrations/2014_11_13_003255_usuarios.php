@@ -29,6 +29,9 @@ class Usuarios extends Migration {
 			
 			
 			$table->timestamps();
+			
+			
+			
 		});
 	}
 

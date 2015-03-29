@@ -18,8 +18,12 @@ class Invitados extends Migration {
 			
 			$table->increments('id');
 			
-			$table->integer('idevento'); 
-			$table->integer('idusuario');
+			
+			$table->integer('idevento')->unsigned();
+			$table->foreign('idevento')->references('id')->on('eventos');
+			$table->integer('idusuario')->unsigned();
+			$table->foreign('idusuario')->references('id')->on('usuarios');
+			
 			$table->string('email',50);
 			$table->boolean('rol'); 
 			$table->integer('menores');
@@ -31,6 +35,12 @@ class Invitados extends Migration {
 			
 			
 			$table->timestamps();
+			
+			
+			
+			
+     
+				
 		});
 	}
 
