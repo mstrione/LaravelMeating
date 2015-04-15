@@ -35,8 +35,8 @@ class UsuarioController extends BaseController {
 	// ACA INTRODUZCO LOS DATOS DEL REGISTRO A LA BASE DE DATOS, ES DECIR, QUE CREO EL USUARIO
 	public function post_registro()
 	{
-		$input= Input::ALL();
-		$rules=array(
+		$input= Input::all();
+		$reglas=array(
 			'username' => 'required|min:3|max:10',
 			'apellido'=>'required|min:3|max:10',
 			'email' => 'required|email',
@@ -45,16 +45,18 @@ class UsuarioController extends BaseController {
 			'ciudad'=>'required',
 			'provincia'=>'required',
 			'nacimiento'=>'required',
+			'terms' => 'required'
 			
 			);
 			
-			 $messages = array(
+			 $mensajes = array(
             'required' => 'El campo :attribute es obligatorio.',
             'email' => 'El campo :attribute debe ser un email válido.',
-            'unique' => 'El email ingresado ya existe en la base de datos'
+            'unique' => 'El email ingresado ya existe en la base de datos',
+			
         );
 			
-			$validator = Validator::make ($input, $rules,$messages); 
+			$validator = Validator::make ($input, $reglas,$mensajes); 
 			
 			if ($validator->fails())
 			{
@@ -65,17 +67,17 @@ class UsuarioController extends BaseController {
 			{ 
 			
 			
-				$Usuario = new usuarios;
-				$Usuario->username = Input::get('username');
-				$Usuario->apellido =Input::get('apellido');
-				$Usuario->ciudad = Input::get('ciudad');
-				$Usuario->email = Input::get('email');;
-				$Usario->nacimiento = Input::get('nacimiento');
-				$Usuario->password = Input::get('password');
-				$Usuario->provincia = Input::get('provincia');
-				$Usuario->sexo = Input::get('sexo');;
-				$Usuario->verificacion = Input::get('verificacion');;
-				$Usuario->save();
+				$usuario = new Usuario;
+				$usuario->username = Input::get('username');
+				$usuario->apellido =Input::get('apellido');
+				$usuario->password = Input::get('password');
+				$usuario->nacimiento = Input::get('nacimiento');
+				$usuario->sexo = Input::get('sexo');;
+				$usuario->email = Input::get('email');;
+				$usuario->provincia = Input::get('provincia');
+				$usuario->ciudad = Input::get('ciudad');
+				
+				$usuario->save();
 			return Redirect::to('/registro')->with('registro', 'Registro completado. Accede a su cuenta');
 			
 				

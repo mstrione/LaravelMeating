@@ -25,24 +25,28 @@
 						<div class="form-group">
 							{{Form::label('Apellido')}}
 							{{Form::text('apellido', '', array('class' => 'form-control'))}}
+							<div class="bg-danger">{{$errors->first('apellido')}}</div>                               
 						</div>
                                    
 					<!--Mail-->
                         <div class="form-group">
 							{{Form::label('E-mail')}}
 							{{Form::text('email', '', array('class' => 'form-control'))}}   
+							<div class="bg-danger">{{$errors->first('email')}}</div>                               
 						</div>
 				
 					<!-- Contraseña -->
 						<div class="form-group">
 							{{Form::label('Contraseña')}}
-							{{Form::password('password', array('class' => 'form-control'))}}									
+							{{Form::password('password', array('class' => 'form-control'))}}	
+							<div class="bg-danger">{{$errors->first('password')}}</div>                               							
 						</div>
 				
 					<!--confirmacion password-->
 						<div class="form-group">
 							{{Form::label('verificacion', 'Repita la Contraseña')}}
 							{{Form::password('verificacion', array('class' => 'form-control'))}}	
+							<div class="bg-danger">{{$errors->first('verificacion')}}</div>                               
 						</div>
 				
 				
@@ -51,6 +55,7 @@
 							<label for="inputFecha" class="control-label" >Fecha de Nacimiento</label>						
 								<input class="form-control" id="dateFecha" type="date" name="nacimiento" >					
 						</div>
+						<div class="bg-danger">{{$errors->first('nacimiento')}}</div>                               
                
 					<!--Sexo-->
 						<div class="form-group">
@@ -64,8 +69,9 @@
 				
 					<!--Provincias-->
 						<div class="form-group">
-							{{Form::label('provincias','Provincias')}}
-							{{Form::select('provincias', array('Buenos Aires' => 'Buenos Aires', 'Catamarca' => 'Catamarca', 'Chaco'=>'Chaco', 'Chubut'=>'Chubut', 'Cordoba'=>'Cordoba', 'Corrientes'=>'Corrientes', 'Entre Rios'=>'Entre Rios', 'Formosa'=>'Formosa', 'Jujuy'=>'Jujuy', 'La Pampa'=>'La Pampa', 'La Rioja'=>'La Rioja', 'Mendoza'=>'Mendoza', 'Misiones'=>'Misiones', 'Neuquen'=>'Neuquen', 'Rio Negro'=>'Rio Negro', 'Salta'=>'Salta', 'San Juan'=>'San Juan', 'San Luis'=>'San Luis', 'Santa Cruz'=>'Santa Cruz', 'Santa Fe'=>'Santa Fe', 'Santiago del Estero'=>'Santiago del Estero', 'Tierra del Fuego'=>'Tierra del Fuego', 'Tucuman'=>'Tucuman' ));}}
+							{{Form::label('provincia','Provincia')}}
+							{{Form::select('provincia', array('Buenos Aires' => 'Buenos Aires', 'Catamarca' => 'Catamarca', 'Chaco'=>'Chaco', 'Chubut'=>'Chubut', 'Cordoba'=>'Cordoba', 'Corrientes'=>'Corrientes', 'Entre Rios'=>'Entre Rios', 'Formosa'=>'Formosa', 'Jujuy'=>'Jujuy', 'La Pampa'=>'La Pampa', 'La Rioja'=>'La Rioja', 'Mendoza'=>'Mendoza', 'Misiones'=>'Misiones', 'Neuquen'=>'Neuquen', 'Rio Negro'=>'Rio Negro', 'Salta'=>'Salta', 'San Juan'=>'San Juan', 'San Luis'=>'San Luis', 'Santa Cruz'=>'Santa Cruz', 'Santa Fe'=>'Santa Fe', 'Santiago del Estero'=>'Santiago del Estero', 'Tierra del Fuego'=>'Tierra del Fuego', 'Tucuman'=>'Tucuman' ));}}
+							<div class="bg-danger">{{$errors->first('provincia')}}</div>                               
 						</div>
 				
 				
@@ -73,7 +79,8 @@
                 
 						<div class="form-group">
 							{{Form::label('Ciudad')}}
-							{{Form::text('ciudad', '', array('class' => 'form-control'))}}					    					
+							{{Form::text('ciudad', '', array('class' => 'form-control'))}}	
+							<div class="bg-danger">{{$errors->first('ciudad')}}</div>                               
 						</div>
 								
 					<!--Textarea-->
@@ -90,7 +97,8 @@ Reservamos el derecho a modificar esta Declaración de Privacidad en cualquier m
 							<div class="col-lg-10">
 								{{Form::checkbox('terms', 'true')}}
 								{{Form::label('Acepto terminos y condiciones')}}
-							</div>                   
+							</div>            
+								<div class="bg-danger">{{$errors->first('terms')}}</div>                               
 						</div>
 			   
 					<!--Boton-->
