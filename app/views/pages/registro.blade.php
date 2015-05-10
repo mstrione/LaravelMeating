@@ -60,10 +60,10 @@
 					<!--Sexo-->
 						<div class="form-group">
 							{{Form::label('sexo', 'Femenino')}}
-							{{Form::radio('sexo', 'femenino', 'selected')}}
+							{{Form::radio('sexo', '1', 'selected')}}
            
 							{{Form::label('sexo', 'Masculino')}}
-							{{Form::radio('sexo', 'masculino')}}
+							{{Form::radio('sexo', '0')}}
 						</div>
                 
 				
