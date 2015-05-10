@@ -12,18 +12,18 @@ class EventoController extends \BaseController {
 	{
 		if ($_POST)
 		{	$NEvento= new Evento;
-			$NEvento -> nombre=Input::get('nombre');
-			$NEvento -> fecha=Input::get('Fecha');
+			$NEvento -> nombre=Input::get('nombreevento');
+			$NEvento -> fecha=Input::get('fecha');
 			$NEvento -> hora=Input::get('hora');
-			$NEvento -> descripcion=Input::get('nombre');
-			$NEvento -> latitud=Input::get('nombre');
-			$NEvento -> longitud=Input::get('nombre');
+			$NEvento -> descripcion=Input::get('descripcion');
+			$NEvento -> direccion=Input::get('direccion');
+			
 			$NEvento -> adultosmax=Input::get('adultosmax');
 			$NEvento -> menoresmax=Input::get('menoresmax');
-			$NEvento -> metodocuenta=Input::get('menoresmax');
-			$NEvento -> creador=Input::get('nombre');
+			
+			$NEvento -> creador=Session::get('usuario_id');
 			$NEvento-> save();
-			return View::make('eventos.MisEventos');
+			return Redirect::action('MisEventosController@index');
 
 		}
 		else
