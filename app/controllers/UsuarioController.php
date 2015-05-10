@@ -213,7 +213,11 @@ class UsuarioController extends BaseController {
 	}
 
 	
-	
+/***********************PERFIL***********	*/
+public function get_perfil()
+	{
+		return View::make('usuarios.perfil');
+	}
 	
 	
 	/************************************************/
