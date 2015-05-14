@@ -26,7 +26,7 @@ tambien se puede hacer un grupo de rutas donde solo pueda ver el administrador
 Route::get('/', 'HomeController@showPrincipal');
 Route::get('/aboutUs', 'HomeController@showAboutUs');
 Route::get('/about', 'HomeController@showAbout');
-
+Route::get('/Cuentas', 'HomeController@showCuentas');
 //contacto
 Route::get('/contacto', 'HomeController@get_contacto');
 Route::post('/contacto', 'HomeController@post_contacto');
@@ -78,6 +78,8 @@ Route::get('crearEvento', 'EventoController@get_crearEvento');
 Route::Post('/MisEventos','EventoController@get_EventoX');
  
 Route::post('crearEvento', 'EventoController@get_EventoX');
+
+Route::get('verevento/{id}', 'EventoController@get_verevento');
 
 
 

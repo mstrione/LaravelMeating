@@ -86,24 +86,7 @@ class EventoController extends \BaseController {
 	 
 	 
 	 
-	public function crearEvento()
-	{
-		/*
-		$respuesta = Evento::agregarEvento(Input::all());
-		if ($respuesta['error']==true)
-		{
-			return Redirect::to('crearEvento')->withErrors($respuesta['mensaje'])->withInput;			
-		}else {
-			return Redirect::to('evento')->with('mensaje', $respuesta['mensaje']);
-			}*/
-	}
-
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
+	
 	public function store()
 	{
 		//
@@ -116,6 +99,14 @@ class EventoController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
+	
+	 public function get_verevento($id)
+	{
+		return View::make('eventos.verevento');
+	}
+	
+	
+	
 	public function mostrarEventos($id)
 	{
 		/*

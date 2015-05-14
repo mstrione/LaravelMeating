@@ -32,7 +32,13 @@ class HomeController extends BaseController {
 	{
 		return View::make('aboutUs');
 	}
-	
+	 
+	 
+	//RUTA DE MUESTRA PARA LA PAGINA DE CUENTAS...SOLO PRUEBA
+	public function showCuentas()
+	{
+		return View::make('Cuentas');
+	}
 	
 	
 	//---------------PARTE DEL CONTACTO------------------------------------------------------------------------
