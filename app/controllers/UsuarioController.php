@@ -219,8 +219,48 @@ public function get_perfil()
 		return View::make('usuarios.perfil');
 	}
 	
+/* ***********************************************/
 	
-	/************************************************/
+
+	
+public function get_recordarpass()
+{
+	return View::make('usuarios.recordarpass');	
+}
+
+public function post_recordarpass()
+	{
+		$input = Input::all();
+		$rules = array(
+			'nombre' => 'required',
+			'email' => 'required|email'
+			
+		);
+		$validator = Validator::make($input, $rules); //aca se compara el input con las reglas
+		if($validator->fails()) //si la validacion falla
+		{
+			return Redirect::back()->withErrors($validator)->with('estado', 'No enviado. Comprueba los datos que has ingresado');
+		}
+		else
+		{
+			$datos = array(
+				'nombre' => Input::get('nombre'),
+				'email' => Input::get('email'),				
+			);
+			Mail::send('emails.contact', $datos, function($message) //se envia el mail
+			{
+			    $message->from('meating@web.com', 'Laravel');
+			    $message->to(Input::get('email'))->subject(Input::get('asunto')); //aca deberia colocar el pass a recordarle seleccionado de las tablas
+			});
+			return Redirect::to('/recordarpass')->with('estado', 'Mensaje enviado correctamente');
+		}
+	}
+	
+	
+	
+	
+	
+//////////////////////////////////////////////////////////
 	public function getAuthIdentifier()
 {
 return $this->getKey();

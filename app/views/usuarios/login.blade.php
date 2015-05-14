@@ -28,6 +28,7 @@
 						<div class="form-group">
 							<p>{{Form::submit('Ingresar', array('class' => 'btn btn-default'));}}<a href="/registro" class="btn btn-default">Registrarme</a></p>
 						</div>
+						<div><a href="/recordarpass" class="btn btn-default">Olvide mi contraseña</a></div>
 					</div>
 			</div>
   

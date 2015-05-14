@@ -34,9 +34,14 @@ Route::post('/contacto', 'HomeController@post_contacto');
 
 
 //RUTA USUARIOS********************************************
+//LOGs
 Route::get(Lang::get('routes.login'), 'UsuarioController@get_login');
 Route::post(Lang::get('routes.login'), 'UsuarioController@post_login');
 Route::get(Lang::get('routes.logout'), 'UsuarioController@logout');
+Route::get('/recordarpass', 'UsuarioController@get_recordarpass');
+Route::post('/recordarpass', 'UsuarioController@post_recordarpass');
+
+//Otros
 Route::get('/bienvenida', 'UsuarioController@bienvenida');
 Route::get('/perfil', 'UsuarioController@get_perfil');
 
