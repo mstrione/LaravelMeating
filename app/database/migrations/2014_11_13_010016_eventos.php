@@ -31,7 +31,7 @@ class Eventos extends Migration {
 			$table->integer('adultosmax');			
 			
 			$table->integer('creador')->unsigned();
-			$table->foreign('creador')->references('id')->on('usuarios');
+			$table->foreign('creador')->references('id')->on('usuarios')->onDelete('cascade');
 			
 			$table->timestamps();	
 				

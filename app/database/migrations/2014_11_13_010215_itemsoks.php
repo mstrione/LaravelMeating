@@ -19,13 +19,13 @@ class Itemsoks extends Migration {
 			$table->increments('id');			
 				
 			$table->integer('iditem')->unsigned();
-			$table->foreign('iditem')->references('id')->on('items');
+			$table->foreign('iditem')->references('id')->on('items')->onDelete('cascade');
 			$table->integer('cantidad'); 
 			
 			$table->integer('idusuario')->unsigned();
-			$table->foreign('idusuario')->references('id')->on('usuarios');
+			$table->foreign('idusuario')->references('id')->on('usuarios')->onDelete('cascade');
 			$table->integer('idevento')->unsigned();
-			$table->foreign('idevento')->references('id')->on('eventos');			
+			$table->foreign('idevento')->references('id')->on('eventos')->onDelete('cascade');			
 			
 			$table->timestamps();
 			

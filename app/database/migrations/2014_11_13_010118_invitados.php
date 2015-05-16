@@ -20,9 +20,9 @@ class Invitados extends Migration {
 			
 			
 			$table->integer('idevento')->unsigned();
-			$table->foreign('idevento')->references('id')->on('eventos');
+			$table->foreign('idevento')->references('id')->on('eventos')->onDelete('cascade');
 			$table->integer('idusuario')->unsigned();
-			$table->foreign('idusuario')->references('id')->on('usuarios');
+			$table->foreign('idusuario')->references('id')->on('usuarios')->onDelete('cascade');
 			
 			$table->string('email',50);
 			$table->boolean('rol'); 

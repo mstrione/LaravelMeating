@@ -18,7 +18,7 @@ class Items extends Migration {
 			
 			$table->increments('id');
 			$table->integer('idevento')->unsigned();
-			$table->foreign('idevento')->references('id')->on('eventos');			
+			$table->foreign('idevento')->references('id')->on('eventos')->onDelete('cascade');			
 			$table->string('nombre');
 			$table->integer('cantidad'); 		
 			
