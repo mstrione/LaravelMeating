@@ -1,5 +1,4 @@
 
-
 @extends('layouts.default')
 
 <head>

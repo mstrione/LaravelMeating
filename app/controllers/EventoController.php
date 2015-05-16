@@ -76,79 +76,40 @@ class EventoController extends \BaseController {
 					}
 			
 	}
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
+	  
 	
-	public function store()
-	{
-		//
-	}
-
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	
-	 public function get_verevento($id)
+	
+	 public function get_verevento($id=null) 
 	{
-		return View::make('eventos.verevento');
+		$objEvento=Evento::find($id);
+		$objInvitado=Invitado::find(1);
+		return View::make('eventos.verevento', array('objEvento'=>$objEvento , 'objInvitado'=>$objInvitado));
 	}
 	
 	
 	
-	public function mostrarEventos($id)
+	
+	/*public function modificarevento($id=null)
 	{
-		/*
-		$eventos=Evento::all(); // o mostrar el evento pasado por id
-		$usuarios=Usuario::all;
-		$items=Item::all;
-		$fotos=Foto::all;
-		$invitados=Invitado::all;
-		//falta poner el chat e items ok!*/
+		
+			$NEvento= new Evento::find($id);
+			$NEvento -> nombre=Input::get('nombreevento');
+			$NEvento -> fecha=Input::get('fecha');
+			$NEvento -> hora=Input::get('hora');
+			$NEvento -> descripcion=Input::get('descripcion');
+			$NEvento -> direccion=Input::get('direccion');
+			
+			$NEvento -> adultosmax=Input::get('adultosmax');
+			$NEvento -> menoresmax=Input::get('menoresmax');
+			
+			$NEvento -> creador=Session::get('usuario_id');
+			$NEvento-> save();
+			return View::make('pages.verevento'); //deberia mostrar el ver evento con los nuevos valores
 	}
+*/
 
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+	
 	public function destroy($id)
 	{
 		//

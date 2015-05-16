@@ -22,8 +22,7 @@
 							<div class="col-lg-4">
 							{{Form::label('Nombre')}}
 							</div>
-							{{Form::text('username', '', array('class' => 'form-control', 'placeholder' => 'Nombre'))}}
-					                                       
+							{{Form::text('username', '', array('class' => 'form-control', 'placeholder' => 'Nombre'))}}					                                       
 					</div>
 				  
 				  <!--Apellido-->

@@ -4,7 +4,7 @@
         {{ HTML::style('css/normalize.css') }}
 		
 
-@include('includes.headC')
+@include('includes.headContacto')
 </head>
 @section('content')
 <!-- DATOS DEL EVENTO -->

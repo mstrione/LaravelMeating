@@ -63,7 +63,7 @@ Route::post('/upload', 'FotoController@post_foto');
 
 
 
-
+//INVITADOS
 
 Route::get('agregarinvitado', function()
 {
@@ -85,6 +85,8 @@ Route::Post('/MisEventos','EventoController@get_EventoX');
 Route::post('crearEvento', 'EventoController@get_EventoX');
 
 Route::get('verevento/{id}', 'EventoController@get_verevento');
+
+Route::get('modificarevento/{id}', 'EventoController@get_modificarevento');
 
 
 

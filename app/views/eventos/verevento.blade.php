@@ -1,7 +1,8 @@
 <html>
 @extends('layouts.1')
 <head>
-	@include('includes.headR')
+	@include('includes.headvistaevento')
+	
 </head>
 @section('content')
 {{Form::open(array('method' => 'POST', 'url' => '/contacto', 'role' => 'form'))}}
@@ -12,41 +13,35 @@
 	
 <body>	
 	@if(Session::has('usuario_id'))
-	<legend>Mi perfil</legend>
+	<legend>Evento</legend>
 		<div class="row">
 			<div class="col-md-6">
 				<!--Nombre Evento-->
-				
+					
 						<div class="form-group">
-							{{Form::label('Nombre Evento')}}
-							
-							{{Form::text('nombre', Usuario::find(Session::get('usuario_id'))->username, array('readonly' => 'readonly', 'class' => 'form-control'))}}
-							
-							
+							{{Form::label('Nombre Evento')}}							
+							{{Form::text('nombre', $objEvento->nombre, array( 'readonly' => 'readonly', 'class' => 'form-control'))}} <!--asi es para poder hacer lo mismo con el modificar-->
+													
 						</div>
 				  
 					<!--Lugar-->
 						<div class="form-group">
-							{{Form::label('Lugar')}}
-							
-							{{Form::text('apellido', Usuario::find(Session::get('usuario_id'))->apellido, array('readonly' => 'readonly', 'class' => 'form-control'))}}
+							{{Form::label('Lugar')}}							
+							{{Form::text('direccion', $objEvento->direccion, array('readonly' => 'readonly', 'class' => 'form-control'))}}
 							
 							
 						</div>
                                    
 					<!--Fecha-->
                         <div class="form-group">
-							{{Form::label('Fecha')}}
-							
-							{{Form::text('email', Usuario::find(Session::get('usuario_id'))->email, array('readonly' => 'readonly', 'class' => 'form-control'))}}
-							
+							{{Form::label('Fecha')}}							
+							{{Form::text('fecha', $objEvento->fecha , array('readonly' => 'readonly', 'class' => 'form-control'))}}							
 						</div>
   
 					<!--Hora-->
                         <div class="form-group">
-							{{Form::label('Hora')}}
-							
-							{{Form::text('email', Usuario::find(Session::get('usuario_id'))->email, array('readonly' => 'readonly', 'class' => 'form-control'))}}
+							{{Form::label('Hora')}}							
+							{{Form::text('hora', $objEvento->hora, array('readonly' => 'readonly', 'class' => 'form-control'))}}
 							
 						</div>
 						
@@ -54,7 +49,7 @@
                         <div class="form-group">
 							{{Form::label('Descripcion')}}
 							
-							{{Form::text('email', Usuario::find(Session::get('usuario_id'))->email, array('readonly' => 'readonly', 'class' => 'form-control'))}}
+							{{Form::text('descripcion', $objEvento->descripcion, array('readonly' => 'readonly', 'class' => 'form-control'))}}
 							
 						</div>
   
@@ -64,8 +59,7 @@
 			<div class="col-md-6">
   					<!--Mapa de Gmap-->                  
 						<div class="form-group">		
-							{{Form::label('Ubicacion Geografica')}}
-							
+							{{Form::label('Ubicacion Geografica')}}							
 							{{Form::text('nacimiento', Usuario::find(Session::get('usuario_id'))->nacimiento, array('readonly' => 'readonly', 'class' => 'form-control'))}}
 														
 						</div>						
@@ -82,13 +76,15 @@
 	<!--PARTE DE LOS INVITADOS-->
 			
 	<h1>INVITADOS</h1>
-		
+		<!-- Aca deberia poner un if preguntando SI es el creador...que muestre todo... sino, es invitado y solo ve algunas cosas-->
 	<div class="row">
-					
-			
+	<a href="agregarinvitado" class="btn btn-success" action="ValidarCantidad">Agregar Invitado</a>
+	</div>
+	<div class="row">
 	<table id="table-invitados" class="table table-striped">
 			<thead>
 				<tr>
+					<th><label class="inline" >Nombre</label></th>
 					<th><label for="Invitees_email" class="required">Email <span class="required">*</span></label></th>
 					<th><label class="inline" >Organizador</label></th>
 					<th><label class="inline" >Asistirá</label></th>
@@ -103,10 +99,14 @@
 				</tr>
 			</thead>
 		<tbody>
-						
+				
 				<tr>
+					<td>
+		             							
+					
+					</td>
 		            <td>
-		             aca tiramos el mail
+		            
 					</td>
 		            
 					<td>
@@ -149,9 +149,11 @@
 	
 	<!-- LISTA DE ITEMS-->
 	<h1>ITEMS-LISTA</h1>	
-		
-					
-			
+		<!-- Aca SI es el creador puede agregar items... SINO si es invitado, que diga si lleva o no-->
+	<div class="row">
+	<a href="" class="btn btn-success" action="ValidarCantidad">Agregar Item</a>
+	</div>				
+	<div class="row">		
 	<table id="table-invitados" class="table table-striped">
 			<thead>
 				<tr>
@@ -185,6 +187,7 @@
 			
         </tbody>
     </table>
+	</div>
 	
 	<div class="row"> 
             <h1 class="subheader">Subir imágenes </h1>

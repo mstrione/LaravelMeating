@@ -8,6 +8,11 @@ class MisEventosController extends BaseController {
 		return View::make('eventos.MisEventos',array('listaDeEventos'=>$listaDeEventos ));
 	}
 
+	public function indexInvitados()
+	{
+		$listaDeInvitados=Invitado::all(); 
+		return View::make('eventos.verevento',array('listaDeInvitados'=>$listaDeInvitados ));
+	}
 	
 	/*public function edit($id)
 	{

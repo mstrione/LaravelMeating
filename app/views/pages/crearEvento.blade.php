@@ -1,7 +1,7 @@
 @extends('layouts.1')
 	
 <head>
-	@include('includes.headC')
+	@include('includes.headAgregarEvento')
 	@if(!Session::has('usuario_id'))
 		@stop
 		@else

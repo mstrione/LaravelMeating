@@ -1,6 +1,6 @@
 @extends('layouts.default')
 <head>
-	@include('includes.headC')
+	@include('includes.headContacto')
 </head>
 @section('content')
 

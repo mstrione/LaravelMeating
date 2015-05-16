@@ -37,7 +37,7 @@
   <div class="col-xs-12 col-md-8">
 	<ul >
 		<li class="accordion-container">
-			<div input type="radio" class="accordion-header" name="" checked="true" value="0">El organizador invita</div>
+			<div input type="radio" class="accordion-header" name="" checked="true" value="0" action="onclick" <!--aca mandaria al javascript con la opcion -->El organizador invita</div>
 			<div class="accordion-content"><p>El evento no tiene costo alguno para los invitados</p></div>
 		</li>
 		<li class="accordion-container">
@@ -64,7 +64,10 @@
 	</ul>	
 	
 	</div>
-	<div class="col-xs-6 col-md-4">Aca pondre un container o tarjeta donde me aparezcan los porcentajes
+	<div class="col-xs-6 col-md-4">
+		<!--dependiendo de la opcion muestro-->
+		<div id="opcion1" style="display:none"></div>
+	Aca pondre un container o tarjeta donde me aparezcan los porcentajes
 	</br>sasdfasdf
 	</br>sasdfasdf
 	</br>sasdfasdf
