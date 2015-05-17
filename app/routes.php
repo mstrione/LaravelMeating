@@ -14,14 +14,6 @@
 
 
 
-// Deberiamos tener...
-/* 1 ruta para la pagina principal
-2 rutas para la pagina de contacto(una que muestra el formulario y otra que lo procesa-Get y Post)
-Esto se repite para el formulario de Login, el de Registro, el de eventos, el de llevar item (ver el de cuentas)
-
-tambien se puede hacer un grupo de rutas donde solo pueda ver el administrador
-*/
-
 //WebController*******************************************
 Route::get('/', 'HomeController@showPrincipal');
 Route::get('/aboutUs', 'HomeController@showAboutUs');
@@ -52,24 +44,22 @@ Route::post('/registro', 'UsuarioController@post_registro');
 
 //RUTA PARA ITEM----------------------------------
 
-Route::get('/itempop', 'ItemController@get_Item');
-Route::post('/itempop', 'ItemController@post_Item');
+//Route::get('/itempop', 'ItemController@get_Item');
+//Route::post('/itempop', 'ItemController@post_Item');
 /*Route::get('/itempop', 'ItemController@show_item');
-Route::post('/itempop', 'ItemController@delete_item');*/
+*/
 
 Route::get('/upload', 'FotoController@get_foto');
 Route::post('/upload', 'FotoController@post_foto');
 
 
+//ItemController
+Route::post('/AgregarElItem', 'ItemController@agregar');
 
 
 //INVITADOS
 
-Route::get('agregarinvitado', function()
-{
-	return View::make('pages.agregarinvitado');
-});
-
+Route::post('/invitar', 'InvitadoController@invitacion');
 
 //***************************************
 //RUTA DE CREAR EVENTO
@@ -81,12 +71,13 @@ Route::get('agregarinvitado', function()
 });*/
 Route::get('crearEvento', 'EventoController@get_crearEvento');
 Route::Post('/MisEventos','EventoController@get_EventoX');
+Route::Post('/MisEventos/{id}','EventoController@destroy');
  
 Route::post('crearEvento', 'EventoController@get_EventoX');
 
 Route::get('verevento/{id}', 'EventoController@get_verevento');
 
-Route::get('modificarevento/{id}', 'EventoController@get_modificarevento');
+//Route::get('modificarevento/{id}', 'EventoController@modificarevento');
 
 
 
