@@ -10,7 +10,7 @@ class MisEventosController extends BaseController {
 
 	public function indexInvitados()
 	{
-		$listaDeInvitados=Invitado::all(); 
+		$listaDeInvitados=Invitado::all();  
 		return View::make('eventos.verevento',array('listaDeInvitados'=>$listaDeInvitados ));
 	}
 	

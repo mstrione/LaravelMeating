@@ -19,16 +19,22 @@ class ItemController extends \BaseController {
 		return View::make('pages.itempop');
 	 }
 	 
-	public function post_Item()
+	public function agregar()
 	{
-		
+		$ideventocapturado=Input::get('captura')
 		$input = Input::all();
 		$rules = array(
 			'nombre' => 'required',
 			'cantidad' => 'required|numeric',
 			
 		);
-		$validator = Validator::make($input, $rules);
+		$mensajes = array(
+            'required' => 'El campo :attribute es obligatorio.',
+            
+            'numeric' => 'El campo :attribute es obligatorio',
+			
+        );
+		$validator = Validator::make($input, $rules, $mensajes);
 		if($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator);
@@ -36,11 +42,12 @@ class ItemController extends \BaseController {
 		else
 		{
 			$item = new Item;
+				$item->idevento =$ideventocapturado;
 				$item->nombre = Input::get('nombre');
 				$item->cantidad = Input::get('cantidad');
 				
 			$item->save();
-			return Redirect::to('/crearEvento')->with('item', 'Item ingresado correctamente');
+			return Redirect::to("verevento/$ideventocapturado")->with('item', 'Item ingresado correctamente');
 		}
 	}
 	

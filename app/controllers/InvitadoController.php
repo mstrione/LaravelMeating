@@ -9,21 +9,41 @@ class InvitadoController extends \BaseController {
 	 */
 	 
 	
-	public function get_EventoX()
+	public function invitacion()
 	{
-		if ($_POST)
-		{	$NInvitado= new Invitado;
-			$NInvitado -> email=Input::get('email');
-			$NInvitado -> rol=Input::get('rol');
-			
-			$NInvitado-> save();
-			return Redirect::action('MisEventosController@indexInvitados');
-
+		$ideventocapturado=Input::get('captura');
+		$emailobtenido=Input::get('email');
+		$rolCaptura=Input::get('rol');
+		$idinvitado=-1; //para inicializarla
+		$listaUsuarios=Usuario::all();
+		foreach($listaUsuarios as $usuario){
+		
+			if ($usuario->email == $emailobtenido){
+				$idinvitado=$usuario->id;
+			}
 		}
-		else
-		{
-			return View::make('pages.crearEvento');
+		
+		if ($idinvitado==-1){
+			//envio mail con link de registro
+		}else{
+				$invitado = new Invitado;
+				$invitado->idevento = $ideventocapturado;
+				$invitado->idusuario =$idinvitado;
+				$invitado->email = $emailobtenido;
+				$invitado->rol = $rolCaptura;
+				$invitado->menores = '';
+				$invitado->adultos = '';
+				$invitado->confirmado = '';
+				$invitado->notificado= '';
+				$invitado->costo= '';
+				$invitado->gasto= '';
+				
+				$invitado->save();
+				
+				return Redirect::to("verevento/$ideventocapturado");
 		}
+		
+		
 		
 	}
 	 

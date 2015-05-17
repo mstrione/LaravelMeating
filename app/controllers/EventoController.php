@@ -106,14 +106,23 @@ class EventoController extends \BaseController {
 			$NEvento -> creador=Session::get('usuario_id');
 			$NEvento-> save();
 			return View::make('pages.verevento'); //deberia mostrar el ver evento con los nuevos valores
-	}
-*/
+	}*/
 
-	
+
 	public function destroy($id)
-	{
-		//
-	}
+{
+        $evento = Evento::find($id);
+        
+        if (is_null ($evento))
+        {
+            App::abort(404);
+        }
+        
+        $evento->delete();
+
+        return View::make('/MisEventos');
+}
+	
 
 
 }
