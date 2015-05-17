@@ -21,34 +21,16 @@ class ItemController extends \BaseController {
 	 
 	public function agregar()
 	{
-		$ideventocapturado=Input::get('captura')
-		$input = Input::all();
-		$rules = array(
-			'nombre' => 'required',
-			'cantidad' => 'required|numeric',
-			
-		);
-		$mensajes = array(
-            'required' => 'El campo :attribute es obligatorio.',
-            
-            'numeric' => 'El campo :attribute es obligatorio',
-			
-        );
-		$validator = Validator::make($input, $rules, $mensajes);
-		if($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator);
-		}
-		else
-		{
-			$item = new Item;
+		$ideventocapturado=Input::get('captura');
+		
+				$item = new Item;
 				$item->idevento =$ideventocapturado;
 				$item->nombre = Input::get('nombre');
 				$item->cantidad = Input::get('cantidad');
 				
 			$item->save();
 			return Redirect::to("verevento/$ideventocapturado")->with('item', 'Item ingresado correctamente');
-		}
+		
 	}
 	
 	/*public function delete_item($id)
