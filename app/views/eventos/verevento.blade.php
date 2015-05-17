@@ -5,7 +5,7 @@
 	
 </head>
 @section('content')
-{{Form::open(array('method' => 'POST', 'url' => '/contacto', 'role' => 'form'))}}
+
 
 	@if(Session::has('estado'))
 		<h3>{{Session::get('estado')}}</h3></br>
@@ -78,13 +78,80 @@
 	<h1>INVITADOS</h1>
 		<!-- Aca deberia poner un if preguntando SI es el creador...que muestre todo... sino, es invitado y solo ve algunas cosas-->
 	<div class="row">
-	<a href="agregarinvitado" class="btn btn-success" action="ValidarCantidad">Agregar Invitado</a>
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Agregar Invitado </button> 
 	</div>
+	
+	<!--Aca mi codigo de modal de Invitado-->
+		<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content"> 
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<bold><h2>AGREGAR INVITADO</h2></bold>
+				</div>
+				{{Form::open(array('method' => 'POST', 'class'=>'form-horizontal', 'action' =>'InvitadoController@invitacion' , 'role' => 'form'))}}
+					<div class="modal-body">
+					
+						<!--Nombre-->
+						<div class="form-group">
+							<div class="col-lg-4">
+								{{Form::label('Nombre')}}
+							</div>
+								{{Form::text('username', '', array('class' => 'form-control', 'placeholder' => 'Nombre'))}}					                                       
+						</div>				  
+					
+						<!--Apellido-->				  
+						<div class="form-group">
+							<div class="col-lg-4">
+								{{Form::label('Apellido')}}
+							</div>
+								{{Form::text('apellido', '', array('class' => 'form-control', 'placeholder' => 'Apellido'))}}					                                       
+						</div>
+                                   
+						<!--Mail-->
+						<div class="form-group">
+							<div class="col-lg-4">
+								{{Form::label('Email')}}
+							</div>
+								{{Form::text('email', '', array('class' => 'form-control', 'placeholder' => 'email'))}}					                                       
+						</div>
+						<!--capturoevento-->
+												
+								<input name="captura" type="hidden" value="{{$objEvento->id}}">				                                       
+						
+					
+						<!---->                
+						<div class="form-group">
+							{{Form::label('rol', 'Invitado')}}
+							{{Form::radio('rol', 'invitado', 'selected')}}
+           
+							{{Form::label('rol', 'Organizador')}}
+							{{Form::radio('rol', 'organizador')}}
+						</div>   			
+					</div>
+					
+					<div class="modal-footer">
+						<div class="form-group">
+							<div class="col-lg-10">
+								{{Form::submit('Invitar', array('class' => 'btn btn-success'))}}
+							</div>
+						</div>					
+						<a href="#" data-dismiss="modal" class="btn">Cancelar</a>
+					</div>
+					{{Form::close()}}
+				
+			</div>
+			</div>
+		</div>
+	
+	
+	
+	
 	<div class="row">
 	<table id="table-invitados" class="table table-striped">
 			<thead>
 				<tr>
-					<th><label class="inline" >Nombre</label></th>
+					
 					<th><label for="Invitees_email" class="required">Email <span class="required">*</span></label></th>
 					<th><label class="inline" >Organizador</label></th>
 					<th><label class="inline" >Asistirá</label></th>
@@ -99,50 +166,27 @@
 				</tr>
 			</thead>
 		<tbody>
-				
+				@foreach ($listaDeInvitados as $invitado )
+				@if ($invitado->idevento == $objEvento->id)
 				<tr>
-					<td>
-		             							
-					
-					</td>
-		            <td>
-		            
-					</td>
-		            
-					<td>
-					aca tiramos si es organizador
-					</td>
-		            
-					<td>
-						aca tiramos si asiste
-					</td>
-		            
-					<td>
-						aca tiramos cantidad de adultos
-					</td>
-		            
-					<td>
-						aca tiramos cantidad de niños
-					</td>
-		            
-					<td>
-		            	aca tiramos costo
-					</td>
-		            
-					<td>
-		            	aca tiramos el gasto	
-					</td>
-					
+					<td>{{$invitado->email}}</td>
+		            <td>{{$invitado->rol}}</td>
+					<td>{{$invitado->menores}}</td>
+					<td>{{$invitado->adultos}}</td>
+					<td>{{$invitado->confirmado}}</td>
+					<td>{{$invitado->notificado}}</td>
+					<td>{{$invitado->costo}}</td>
+					<td>{{$invitado->gasto}}</td>				
 					<td>
 		            	aca calculamos el balance
 					</td>
 		            
 					<td>
 		            	aca si esta saldado
-					</td>
-		            
-					
-			</tr>
+					</td>		
+				</tr>
+				@endif
+				@endforeach
 			
         </tbody>
     </table>
@@ -150,9 +194,55 @@
 	<!-- LISTA DE ITEMS-->
 	<h1>ITEMS-LISTA</h1>	
 		<!-- Aca SI es el creador puede agregar items... SINO si es invitado, que diga si lleva o no-->
+	
 	<div class="row">
-	<a href="" class="btn btn-success" action="ValidarCantidad">Agregar Item</a>
-	</div>				
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalItem">Agregar Item </button> 
+	</div>
+					
+	<!--Aca mi codigo de modal de Items-->
+		<div id="myModalItem" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+			<div class="modal-content"> 
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<bold><h2>AGREGAR ITEM</h2></bold>
+				</div>
+				{{Form::open(array('method' => 'POST', 'class'=>'form-horizontal', 'action' =>'ItemController@agregar' , 'role' => 'form'))}}
+					<div class="modal-body">
+						<div class="form-group">								
+							<div class="row">
+								<div class="col-xs-6">
+									{{Form::label('Nombre Item')}}						
+									{{Form::text('nombre','',array('class'=>'form-control'))}} 	
+									<div>{{$errors->first('nombre')}}</div>							
+								</div>					
+						
+								<div class="col-xs-6">
+									{{Form::label('Cantidad')}}		
+										</br>
+									{{Form::input('number','cantidad')}} 			
+									<div>{{$errors->first('cantidad')}}</div>						
+								</div>
+							</div>
+									<input name="captura" type="hidden" value="{{$objEvento->id}}">				                                       
+						</div>						
+					</div>
+					
+					<div class="modal-footer">
+						<div class="form-group" class="col-lg-4 col-lg-offset-2">
+							<p>{{Form::submit('Agegar Item', array('class' => 'btn btn-success'))}}</p>		
+								<a href="#" data-dismiss="modal" class="btn">Cancelar</a>
+						</div>   
+								{{Form::close()}}
+						
+					</div>
+				
+			</div>
+		</div>
+<!----></div>
+	
+	
+	
 	<div class="row">		
 	<table id="table-invitados" class="table table-striped">
 			<thead>

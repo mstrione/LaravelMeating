@@ -54,7 +54,7 @@
 								<i class="icon-envelope"></i>Modificar
 								</a>
 								
-								<a class="btn btn-default" href="" title="Borra el evento">
+								<a class="btn btn-danger" href="Evento/destroy/{{$evento->id}}" title="Borra el evento">
 								<i class="icon-envelope"></i>Eliminar
 								</a>
 								
