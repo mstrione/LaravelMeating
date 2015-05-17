@@ -68,25 +68,50 @@
 		<!--dependiendo de la opcion muestro-->
 		<div id="opcion1" style="display:none"></div>
 	Aca pondre un container o tarjeta donde me aparezcan los porcentajes
+			<div class="row">
+				<div class="form-group" class="col-lg-4 control-label" >
+						{{Form::label('Costo por invitado','',array('class'=>'col-lg-1 control-label'))}}
+						<div class="col-lg-6">
+						{{ Form::input('number', 'costo') }}
+						</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group" class="col-lg-4 control-label" >
+						{{Form::label('Costo por asistente','',array('class'=>'col-lg-1 control-label'))}}
+						<div class="col-lg-6">
+						{{ Form::input('number', 'costo') }}
+						</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group" class="col-lg-4 control-label" >
+						{{Form::label('Dividir lo gastado en partes iguales','',array('class'=>'col-lg-1 control-label'))}}
+						<div class="col-lg-6">
+						
+						</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group" class="col-lg-4 control-label" >
+						{{Form::label('Se divide lo gastado segun asistentes','',array('class'=>'col-lg-1 control-label'))}}
+						<div class="col-lg-6">
+						{{ Form::input('number', 'costo') }}
+						</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group" class="col-lg-4 control-label" >
+						{{Form::label('Valor a dividir en partes iguales','',array('class'=>'col-lg-1 control-label'))}}
+						<div class="col-lg-6">
+						{{ Form::input('number', 'costo') }}
+						</div>
+				</div>
+			</div>
 	</br>sasdfasdf
 	</br>sasdfasdf
 	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
+	
 	</br>sasdfasdf
 	</div>
 </div>
