@@ -81,6 +81,8 @@ Route::get('verevento/{id}', 'EventoController@get_verevento');
 
 //Route::get('modificarevento/{id}', 'EventoController@get_modificarevento');
 
-
+Route::get('eliminaritem/{id}', 'ItemController@delete_item');
+Route::get('eliminarinvitado/{id}', 'InvitadoController@delete_invitado');
+Route::get('eliminarevento/{id}', 'EventoController@delete_evento');
 
 

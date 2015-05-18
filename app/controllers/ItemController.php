@@ -33,12 +33,14 @@ class ItemController extends \BaseController {
 		
 	}
 	
-	/*public function delete_item($id)
+	public function delete_item($id)
 	{
-	//
+	$itemBorrar=Item::find($id);
+	$itemBorrar->delete();
+	return Redirect::to("MisEventos");
 	}
 
-	
+	/*
 	public function show_item($id)
 	{
 		//

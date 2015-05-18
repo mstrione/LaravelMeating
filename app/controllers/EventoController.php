@@ -117,19 +117,13 @@ class EventoController extends \BaseController {
 	}*/
 
 
-	public function destroy($id)
-{
-        $evento = Evento::find($id);
-        
-        if (is_null ($evento))
-        {
-            App::abort(404);
-        }
-        
-        $evento->delete();
+	public function delete_evento($id)
+	{
+        $borrarevento = Evento::find($id);
+        $borrarevento->delete();
 
-        return View::make('/MisEventos');
-}
+        return Redirect::to('MisEventos');
+	}
 	
 
 

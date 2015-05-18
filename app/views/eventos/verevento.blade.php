@@ -187,7 +187,7 @@
 						
 						<a class="btn btn-info" href="" title="Envia un email"><i class="icon-envelope"></i>Enviar Mail</a>
 						<a class="btn btn-info" href="" title="Envia la cuenta"><i class="icon-envelope"></i>Enviar Cuentas</a>
-						<a class="btn btn-danger" href="" title="Eliminar invitado"><i class="icon-envelope"></i>Eliminar</a>
+						<a class="btn btn-danger" href="/eliminarinvitado/{{$invitado->id}}" title="Eliminar invitado"><i class="icon-envelope"></i>Eliminar</a>
 					</td>		
 				</tr>
 				@endforeach
@@ -275,7 +275,7 @@
 						
 						<a class="btn btn-info" href="" title="Asigna el item"><i class="icon-envelope"></i>Asignar</a>
 						<a class="btn btn-info" href="" title="Llevar"><i class="icon-envelope"></i>Yo llevo</a>
-						<a class="btn btn-danger" href="" title="Elimina el item"><i class="icon-envelope"></i>Eliminar</a>
+						<a class="btn btn-danger"  href="/eliminaritem/{{$item->id}}" title="Elimina el item"><i class="icon-envelope"></i>Eliminar</a>
 					</td>
 					
 				</tr>
@@ -326,6 +326,8 @@
             </div>    
              
         </div>
+		
+		
 
 	@else
 	@endif
