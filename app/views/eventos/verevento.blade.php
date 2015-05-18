@@ -74,6 +74,7 @@
 	</br>
 	
 	<h1> CUENTAS</h1>
+	<!-- aca muestro las cuentas si el evento esta cerrado-->
 	
 	
 	

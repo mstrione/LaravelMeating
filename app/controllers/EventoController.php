@@ -90,18 +90,23 @@ class EventoController extends \BaseController {
 	
 	
 	
-	/*public function get_modificarevento($id)
+	public function get_modificarevento($id)
 	{
-	
-	return View::make('eventos.modificarevento');
+	 $eventomodid=Evento::find($id);
+	 if($eventomodid)
+	 {
+		return View::make('eventos.modificarevento', array('eventomodid'=>$eventomodid));
+		}
+	return Redirect::to("MisEventos");
 	}
 	
 	
-	public function modificarevento($id=null)
+	public function modificarelevento()
 	{
-		
-			$NEvento=Evento::find($id);
-			$NEvento -> nombre=Input::get('nombreevento');
+			$ideventoamod=Input::get('capturaevent');
+			$NEvento=Evento::find($ideventoamod);
+			
+			$NEvento -> nombre=Input::get('nombre');
 			$NEvento -> fecha=Input::get('fecha');
 			$NEvento -> hora=Input::get('hora');
 			$NEvento -> descripcion=Input::get('descripcion');
@@ -113,8 +118,8 @@ class EventoController extends \BaseController {
 			$NEvento -> creador=Session::get('usuario_id');
 			
 			$NEvento-> save();
-			return Redirect::to("verevento/$id"); //deberia mostrar el ver evento con los nuevos valores
-	}*/
+			return Redirect::to("verevento/$ideventoamod"); //deberia mostrar el ver evento con los nuevos valores
+	}
 
 
 	public function delete_evento($id)
