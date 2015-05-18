@@ -65,10 +65,7 @@ Route::post('/invitar', 'InvitadoController@invitacion');
 //RUTA DE CREAR EVENTO
 
 
-/*Route::get('crearEvento', function()
-{
-	return View::make('pages.crearEvento');
-});*/
+
 Route::get('crearEvento', 'EventoController@get_crearEvento');
 Route::Post('/MisEventos','EventoController@get_EventoX');
 Route::Post('/MisEventos/{id}','EventoController@destroy');
@@ -77,9 +74,9 @@ Route::post('crearEvento', 'EventoController@get_EventoX');
 
 Route::get('verevento/{id}', 'EventoController@get_verevento');
 
-//Route::get('modificar/{id}', 'EventoController@modificarevento');
+Route::post('/Modificar', 'EventoController@modificarelevento');
 
-//Route::get('modificarevento/{id}', 'EventoController@get_modificarevento');
+Route::get('modificarevento/{id}', 'EventoController@get_modificarevento');
 
 Route::get('eliminaritem/{id}', 'ItemController@delete_item');
 Route::get('eliminarinvitado/{id}', 'InvitadoController@delete_invitado');
