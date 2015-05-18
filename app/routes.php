@@ -77,7 +77,9 @@ Route::post('crearEvento', 'EventoController@get_EventoX');
 
 Route::get('verevento/{id}', 'EventoController@get_verevento');
 
-//Route::get('modificarevento/{id}', 'EventoController@modificarevento');
+//Route::get('modificar/{id}', 'EventoController@modificarevento');
+
+//Route::get('modificarevento/{id}', 'EventoController@get_modificarevento');
 
 
 

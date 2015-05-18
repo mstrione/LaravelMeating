@@ -5,7 +5,7 @@
 	
 </head>
 @section('content')
-{{Form::open(array('method' => 'POST', 'url' => '/contacto', 'role' => 'form'))}}
+
 
 	@if(Session::has('estado'))
 		<h3>{{Session::get('estado')}}</h3></br>
@@ -13,7 +13,8 @@
 	
 <body>	
 	@if(Session::has('usuario_id'))
-	<legend>Evento</legend>
+	<legend>Modificar Evento</legend>
+	
 		<div class="row">
 			<div class="col-md-6">
 				<!--Nombre Evento-->
@@ -21,7 +22,7 @@
 						<div class="form-group">
 							{{Form::label('Nombre Evento')}}
 							
-							{{Form::text('nombre', $objEvento->nombre, array( 'class' => 'form-control'))}} <!--asi es para poder hacer lo mismo con el modificar-->
+							{{Form::text('nombre','' , array( 'class' => 'form-control'))}} <!--asi es para poder hacer lo mismo con el modificar-->
 							
 							
 						</div>
@@ -30,7 +31,7 @@
 						<div class="form-group">
 							{{Form::label('Lugar')}}
 							
-							{{Form::text('', $objEvento->, array( 'class' => 'form-control'))}}
+							{{Form::text('direccion', '', array( 'class' => 'form-control'))}}
 							
 							
 						</div>
@@ -39,7 +40,7 @@
                         <div class="form-group">
 							{{Form::label('Fecha')}}
 							
-							{{ Form::input('date','$objEvento->fecha',' ',array( 'date_format' => 'yyyy-mm-dd')) }}
+							{{ Form::input('date','',' ',array( 'date_format' => 'yyyy-mm-dd')) }}
 							
 						</div>
   
@@ -47,7 +48,7 @@
                         <div class="form-group">
 							{{Form::label('Hora')}}
 							
-							{{ Form::input('time','$objEvento->hora','',array( 'time_format' => 'HH:mm:ss')) }}
+							{{ Form::input('time','','',array( 'time_format' => 'HH:mm:ss')) }}
 							
 						</div>
 						
@@ -65,9 +66,7 @@
 			<div class="col-md-6">
   					<!--Mapa de Gmap-->                  
 						<div class="form-group">		
-							{{Form::label('Ubicacion Geografica')}}
 							
-							{{Form::text('nacimiento', Usuario::find(Session::get('usuario_id'))->nacimiento, array('readonly' => 'readonly', 'class' => 'form-control'))}}
 														
 						</div>						
                 

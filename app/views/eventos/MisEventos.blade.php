@@ -46,11 +46,11 @@
             				<td>{{$evento->fecha}}</td>
             				<td>{{$evento->creador}}</td> 
             				<td>
-								<a class="btn btn-default" href="/verevento/{{$evento->id}}"  title="Vista del evento"><span class="glyphicon glyphicon-eye-open"></span>
+								<a class="btn btn-success" href="/verevento/{{$evento->id}}"  title="Vista del evento"><span class="glyphicon glyphicon-eye-open"></span>
 								<i class="icon-envelope"></i>Ver
 								</a>
 								
-								<a class="btn btn-default" href="/modificarevento/{{$evento->id}}" title="Modifica el evento">
+								<a class="btn btn-info" href="/modificarevento/{{$evento->id}}" title="Modifica el evento">
 								<i class="icon-envelope"></i>Modificar
 								</a>
 								

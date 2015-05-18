@@ -83,17 +83,24 @@ class EventoController extends \BaseController {
 	 public function get_verevento($id=null) 
 	{
 		$objEvento=Evento::find($id);
-		$objInvitado=Invitado::find(1);
-		return View::make('eventos.verevento', array('objEvento'=>$objEvento , 'objInvitado'=>$objInvitado));
+		$listaDeInvitados= Invitado::where('idevento','=',$id)->get(); //idevento es el nombre en la tabla, el atributo en invitados
+		$listaDeItems= Item::where('idevento','=',$id)->get();
+		return View::make('eventos.verevento', array('objEvento'=>$objEvento , 'listaDeInvitados'=>$listaDeInvitados , 'listaDeItems'=>$listaDeItems));
 	}
 	
 	
 	
+	/*public function get_modificarevento($id)
+	{
 	
-	/*public function modificarevento($id=null)
+	return View::make('eventos.modificarevento');
+	}
+	
+	
+	public function modificarevento($id=null)
 	{
 		
-			$NEvento= new Evento::find($id);
+			$NEvento=Evento::find($id);
 			$NEvento -> nombre=Input::get('nombreevento');
 			$NEvento -> fecha=Input::get('fecha');
 			$NEvento -> hora=Input::get('hora');
@@ -104,8 +111,9 @@ class EventoController extends \BaseController {
 			$NEvento -> menoresmax=Input::get('menoresmax');
 			
 			$NEvento -> creador=Session::get('usuario_id');
+			
 			$NEvento-> save();
-			return View::make('pages.verevento'); //deberia mostrar el ver evento con los nuevos valores
+			return Redirect::to("verevento/$id"); //deberia mostrar el ver evento con los nuevos valores
 	}*/
 
 

@@ -71,6 +71,11 @@
 	<!--PARTE DE Sala de chat-->
 	
 	<h1> SALA DE CHAT </h1>
+	</br>
+	
+	<h1> CUENTAS</h1>
+	
+	
 	
 	
 	<!--PARTE DE LOS INVITADOS-->
@@ -167,26 +172,26 @@
 			</thead>
 		<tbody>
 				@foreach ($listaDeInvitados as $invitado )
-				@if ($invitado->idevento == $objEvento->id)
 				<tr>
 					<td>{{$invitado->email}}</td>
 		            <td>{{$invitado->rol}}</td>
-					<td>{{$invitado->menores}}</td>
-					<td>{{$invitado->adultos}}</td>
 					<td>{{$invitado->confirmado}}</td>
-					<td>{{$invitado->notificado}}</td>
+					<td>{{$invitado->adultos}}</td>
+					<td>{{$invitado->menores}}</td>
 					<td>{{$invitado->costo}}</td>
-					<td>{{$invitado->gasto}}</td>				
-					<td>
-		            	aca calculamos el balance
-					</td>
-		            
-					<td>
-		            	aca si esta saldado
+					<td>{{$invitado->gasto}}</td>
+					
+					<td>aca balance</td>
+					<td>aca si esta saldado</td>
+		            <td>
+						
+						<a class="btn btn-info" href="" title="Envia un email"><i class="icon-envelope"></i>Enviar Mail</a>
+						<a class="btn btn-info" href="" title="Envia la cuenta"><i class="icon-envelope"></i>Enviar Cuentas</a>
+						<a class="btn btn-danger" href="" title="Eliminar invitado"><i class="icon-envelope"></i>Eliminar</a>
 					</td>		
 				</tr>
-				@endif
 				@endforeach
+				
 			
         </tbody>
     </table>
@@ -248,39 +253,41 @@
 			<thead>
 				<tr>
 					<th><label class="inline" >Item</label></th>
-					<th><label for="Invitees_email" class="required">Email <span class="required">*</span></label></th>					
-					<th><label class="inline" >Requerido</label></th>
+					<th><label class="inline" >Cantidad Requerida</label></th>
+					<th><label for="Invitees_email" class="required">Email <span class="required">*</span></label></th>							
 					<th><label class="inline" >Falta</label></th>
+					<th><label class="inline" >Acciones</label></th>
 										
 				</tr>
 			</thead>
 		<tbody>
-						
+				@foreach ($listaDeItems as $item )		
 				<tr>
-		            <td>
-		             aca tiramos los nombres de los items
-					</td>
-		            
+		            <td>{{$item->nombre}}</td>
+					<td>{{$item->cantidad}}</td>		            
 					<td>
 					aca tiramos el mail de quien asignamos el item
-					</td>
-		            
-					<td>
-						aca colocamos la cantidad necesaria
-					</td>
-		            
+					</td>           
 					<td>
 						aca tiramos el resultado de lo requerido menos los items ok
 					</td>
+					<td> 
+						
+						<a class="btn btn-info" href="" title="Asigna el item"><i class="icon-envelope"></i>Asignar</a>
+						<a class="btn btn-info" href="" title="Llevar"><i class="icon-envelope"></i>Yo llevo</a>
+						<a class="btn btn-danger" href="" title="Elimina el item"><i class="icon-envelope"></i>Eliminar</a>
+					</td>
 					
-			</tr>
+				</tr>
+				@endforeach
 			
         </tbody>
     </table>
 	</div>
 	
 	<div class="row"> 
-            <h1 class="subheader">Subir imágenes </h1>
+            <h1 class="subheader">Imagenes</h1>
+			
             <!--si el formulario contiene errores de validación-->
             @if($errors->has())
                 <div class="alert-box alert">           
@@ -299,8 +306,9 @@
             @endif
             <div class="form">
               
-                {{ Form::open(array('url' => 'Evento', 'files' => true)) }}
- 
+                
+				{{Form::open(array('method' => 'POST', 'class'=>'form-horizontal', 'action' =>'FotoController@post_foto' ,'files' => true ,'role' => 'form'))}}
+				<input name="captura" type="hidden" value="{{$objEvento->id}}">	
                 {{ Form::label('photo', 'photo') }}                
                 <!--así se crea un campo file en laravel-->
                 {{ Form::file('photo') }}
