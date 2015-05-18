@@ -3,6 +3,11 @@
 	@include('includes.head')
 </head>
 @section('content')
+	
+	
+	
+	<img src="img/eventuales.png"  width='700' height='400'>
+	
 	<!--le da el cuerpo al body (valga la redundancia)--> <!--modificado en el css box-shadow-->
     <div class="container"> 
     	<div id="SlideDeAsados" class="carousel slide" data-ride="carousel">
