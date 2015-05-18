@@ -5,7 +5,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Meating - Crear Evento </title>
+    <title>EventualEs - Crear Evento </title>
 
 	<!-- CARGAR EL Bootstrap -->
 

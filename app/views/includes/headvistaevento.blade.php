@@ -5,7 +5,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../favicon.ico">
 
-    <title>Meating - Vista del evento</title>
+    <title>EventualEs - Vista del evento</title>
 
 	<!-- CARGAR EL Bootstrap -->
 
@@ -15,12 +15,3 @@
     <!-- Custom styles for this template -->
     <link href="../css/StyleComun.css" rel="stylesheet">
     <link href="../css/StyleIndex.css" rel="stylesheet">
-	<link href="../css/vallenato.css" rel="stylesheet">
-	<!-- JS -->
-			<script src="{{ URL::asset('js/jquery-2.1.1.js') }}"></script>
-			<script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-			<script src="{{ URL::asset('js/vallenato.js') }}"></script>
-		
-
-		

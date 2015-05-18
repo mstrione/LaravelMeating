@@ -5,7 +5,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>¿Que es Meating?</title>
+    <title>¿Que es EventualEs?</title>
 
 	<!-- CARGAR EL Bootstrap -->
 
