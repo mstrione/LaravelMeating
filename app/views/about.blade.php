@@ -5,16 +5,18 @@
 	@include('includes.headqe')
 </head>
 <h1 class="featurette-heading" align="center">¿Que es EventualEs?..</h1>
+
 @section('content')
 	<div class="page-header">
+	
     <div class="jumbotron">
- 
+ <img src="img/eventuales.png"  width='200' height='100'>
         
         <p> EventualEs surge como una rama de un proyecto originalmente llamado Meating, realizado para una materia universitaria.</p>
         <p> Como el fin de esta pagina consiste en organizar eventos, el nombre se origino porque la idea es realizar algun evento...algo Eventual; y como es en español, anexe el Es.</p>
         <div class="row">
             <div class="span6 screenshotHolder">
-                <img src="125x125.jpg" class="img-thumbnail" alt="Thumbnail Image">
+                <img src="img/Crearevento.png"  class="img-thumbnail" alt="Thumbnail Image" width='300' height='200'>
             </div>
             <div class="span4 pull-right description">
                 <h2 class="featurette-heading">Crear eventos</h2>
@@ -25,7 +27,7 @@
         </hr>
         <div class="row">
             <div class="span6 pull-right screenshotHolder">
-                <img src="125x125.jpg" class="img-thumbnail" alt="Thumbnail Image">
+                <img src="img/miseventos.png" class="img-thumbnail" alt="Thumbnail Image" width='300' height='200'>
             </div>
             <div class="span4 description">
                 <h2 class="featurette-heading">Ver eventos</h2>
@@ -37,7 +39,7 @@
     </hr>
         <div class="row">
             <div class="span6 pull-left screenshotHolder">
-                <img src="125x125.jpg" class="img-thumbnail" alt="Thumbnail Image">
+                <img src="img/quienpaga.png" class="img-thumbnail" alt="Thumbnail Image" width='300' height='200'>
             </div>
             <div class="span4 description">
                 <h2 class="featurette-heading">Y quien compra todo???</h2>

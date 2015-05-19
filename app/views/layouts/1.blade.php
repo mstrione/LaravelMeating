@@ -27,6 +27,45 @@
 	<script src="{{ URL::asset('js/jquery-2.1.1.js') }}"></script>
     <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="css/StyleComun.css" rel="stylesheet">
+		<link href="css/StyleIndex.css" rel="stylesheet">
+		
+		<!-- JS -->
+			<script src="{{ URL::asset('js/jquery-2.1.1.js') }}"></script>
+			<script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+			<script src="{{ URL::asset('js/vallenato.js') }}"></script>
+		
+
+		<link href="{{ URL::asset('css/vallenato.css') }}" rel="stylesheet">
+
 	</div>
+	<script> 
+		$( "#costofijo1" ).click(function() {
+		  $( "#costofijo2" ).toggle(  );
+		  alert("1");
+		});
+		$( "#division1" ).click(function() {
+		  $( "#division2" ).toggle(  );
+		  alert("2");
+		});
+		$( "#divisionasistentegastado1" ).click(function() {
+		  $( "#divisionasistentegastado2" ).toggle(  );
+		  alert("3");
+		});
+		$( "#divisiongastado1" ).click(function() {
+		  $( "#divisiongastado2" ).toggle(  );
+		  alert("4");
+		});
+		$( "#divisionasistentefijo1" ).click(function() {
+		  $( "#divisionasistentefijo2" ).toggle(  );
+		  alert("5");
+		});
+	
+	</script>
 </body>
 </html>

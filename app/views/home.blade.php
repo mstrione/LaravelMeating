@@ -57,7 +57,7 @@
       				<div class="caption" align="center">
         				<h3>ORGANIZÁ RAPIDO Y FACIL!</h3>
         				<p>Ahorrá tiempo! Porque con Meating calculamos todo y lo haces en un touch!</p>
-        				<p><a href="Registro.php" class="btn btn-primary" role="button">Registrate Ahora!</a> </p>
+        				<p><a href="/registro" class="btn btn-primary" role="button">Registrate Ahora!</a> </p>
       				</div>
     			</div>
   			</div>
@@ -67,7 +67,7 @@
       				<div class="caption" align="center">
         				<h3>INVITA</h3>
         				<p>Invita a todas las personas que quieras porque tenemos el corazon gigante!!</p>
-        				<p><a href="Registro.php" class="btn btn-primary" role="button">Invita amig@s!</a> </p>
+        				<p><a href="/registro" class="btn btn-primary" role="button">Invita amig@s!</a> </p>
       				</div>
     			</div>
   			</div>
@@ -77,7 +77,7 @@
       				<div class="caption" align="center">
         				<h3>DISFRUTA</h3>
         				<p>El ultimo paso y el mejor! Que estas esperando?? Regístrate y SALUD!</p>
-        				<p><a href="Registro.php" class="btn btn-primary" role="button">Comenzá a disfrutar!</a> </p>
+        				<p><a href="/registro" class="btn btn-primary" role="button">Comenzá a disfrutar!</a> </p>
       				</div>
     			</div>
   			</div>
