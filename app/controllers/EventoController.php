@@ -143,11 +143,39 @@ class EventoController extends \BaseController {
         return Redirect::to('MisEventos');
 	}
 	
-	public function enviarmail($id)
+	/*public function enviarmail($id)
 	{
-        $usuario = Usuario::find($id)
-		$data = aray( $usuario->username)
-		Mail::send(contact,,,)
+		$usuario = Usuario::find($id);
+		$data = aray( $usuario->username, $usuario->email);
+		Mail::send('mails.contact',$data,'',);
+        return Redirect::to('MisEventos');
+		
+		$input = Input::all();
+		
+			$datos = array($usuario->username, $usuario->email, $asunto='', $mensaje='');
+				//'nombre' => Input::get('nombre'),
+				//'email' => Input::get('email'),
+				//'asunto' => Input::get('asunto'),
+				//'mensaje' => Input::get('mensaje')
+				//		);
+				
+			Mail::send('emails.contacto', $datos, function($message) //se envia el mail
+			{
+			    $message->from('eze_torress@hotmail.com', 'Laravel');//eventuales@web.com
+			    $message->to(Input::get('email'))->subject(Input::get('asunto'));
+			});
+			return Redirect::to('/contacto')->with('estado', 'Mensaje enviado correctamente');
+        
+	}*/
+	
+	public function Cuentas()
+	{
+		
+        if ($metodo==0)
+		//obtengo el costo fijo por invitado 
+		//al evento tanto le coloco el valor de metodo cuenta
+		//los costos de los invitados del evento todos con el mismo valor, inserto los costos en los inv.
+
         return Redirect::to('MisEventos');
 	}
 

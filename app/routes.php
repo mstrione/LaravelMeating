@@ -11,9 +11,6 @@
 |
 */
 
-
-
-
 //WebController*******************************************
 Route::get('/', 'HomeController@showPrincipal');
 Route::get('/aboutUs', 'HomeController@showAboutUs');
@@ -82,7 +79,7 @@ Route::get('eliminaritem/{id}', 'ItemController@delete_item');
 Route::get('eliminarinvitado/{id}', 'InvitadoController@delete_invitado');
 Route::get('eliminarevento/{id}', 'EventoController@delete_evento');
 
-Route::get('mail/{id}', 'EventoController@enviarmail');
+/*Route::get('mail/{id}', 'EventoController@enviarmail');*/
 
 
 Route::post('/asistir', 'InvitadoController@asistir');

@@ -69,9 +69,10 @@ class HomeController extends BaseController {
 				'asunto' => Input::get('asunto'),
 				'mensaje' => Input::get('mensaje')
 			);
-			Mail::send('emails.contact', $datos, function($message) //se envia el mail
+				
+			Mail::send('emails.contacto', $datos, function($message) //se envia el mail
 			{
-			    $message->from('meating@web.com', 'Laravel');
+			    $message->from('eze_torress@hotmail.com', 'Laravel');//eventuales@web.com
 			    $message->to(Input::get('email'))->subject(Input::get('asunto'));
 			});
 			return Redirect::to('/contacto')->with('estado', 'Mensaje enviado correctamente');
