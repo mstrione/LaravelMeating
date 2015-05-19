@@ -92,18 +92,18 @@
 <div class="row">
   <div class="col-xs-12 col-md-8">
   
-  			<input id="costofijo1" type="radio" name="" checked="" value="1">Se establece un costo fijo segun asistente
+  			
 
 	<ul >
 		<li >
-			<div input id="sincosto" type="radio" class="accordion-header" name="" checked="" value="0" action="onclick" <!--aca mandaria al javascript con la opcion -->El organizador invita</div>
-			<div class="accordion-content"><p>El evento no tiene costo alguno para los invitados</p></div>
+			<div input id="costofijoinvitado1" type="radio" class="accordion-header" name="" checked="" value="0"> Valor fijo por invitado</div>
+			<div class="accordion-content"><p>Se establece un valor fijo de costo por invitado</p></div>
 		</li>
-		<!--
+		
 		<li class="accordion-container">
 			<div input id="costofijo1" type="radio" class="accordion-header" name="" checked="" value="1">Se establece un costo fijo segun asistente</div>
 			<div class="accordion-content"><p>Se distinguen dos valores fijos de costo para cada uno de los tipos de asistentes respectivamente, adultos y menores, tambien independientemente del costo total del evento.</p></div>
-		</li>-->
+		</li>
 		
 		
 		<li class="accordion-container">
@@ -129,39 +129,68 @@
 	<div class="col-xs-6 col-md-4">
 		<!--dependiendo de la opcion muestro-->
 		<div id="opcion1" style="display:none"></div>
-	
+			
+			<div class="row">
+				<div id="costofijoinvitado2" class="form-group" class="col-lg-4 control-label" >
+						{{Form::label('Costo por invitado','',array('class'=>'col-lg-1 control-label'))}}
+						{{ Form::input('number', 'costo') }}
+						
+				</div>
+			</div> 
 			<div class="row">
 				<div id="costofijo2" class="form-group" class="col-lg-4 control-label" >
-					
+						{{Form::label('Menores','',array('class'=>'col-lg-1 control-label'))}}
+						{{ Form::input('number', 'costo') }}
+						</br>
+						{{Form::label('Adultos','',array('class'=>'col-lg-1 control-label'))}}
+						{{ Form::input('number', 'costo') }}
 				</div>
 			</div>
 			<div class="row">
 				<div id="division2" class="form-group" class="col-lg-4 control-label" >
+				 colocar boton de aceptar este
 					
 				</div>
 			</div>
 			<div class="row">
 				<div id="divisionasistentegastado2" class="form-group" class="col-lg-4 control-label" >
+				
+						<div class="col-lg-6"> <!--aca si los niños son 80%...los adultos son un 20%-->
+						
+						{{Form::label('Menores','',array('class'=>'col-lg-1 control-label'))}}
+						{{ Form::input('number', 'costo') }}
+						{{Form::label('Adultos','',array('class'=>'col-lg-1 control-label'))}}
+						{{ Form::input('number', 'costo') }}
+						</div>
 					
 				</div>
 			</div>
 			<div class="row">
 				<div id="divisiongastado2" class="form-group" class="col-lg-4 control-label" >
-					
+						<div class="col-lg-6">						
+						{{Form::label('Valor fijo','',array('class'=>'col-lg-1 control-label'))}}
+						{{ Form::input('number', 'costo') }}						
+						</div>
 				</div>
 			</div>
 			<div class="row">
 				<div id="divisionasistentefijo2" class="form-group" class="col-lg-4 control-label" >
+						<div class="col-lg-6">
+						{{Form::label('Valor a dividir','',array('class'=>'col-lg-1 control-label'))}}
+						</div>
+						<div>
+						{{ Form::input('number', 'costo') }}
+						{{Form::label('Adultos','',array('class'=>'col-lg-1 control-label'))}}
+						{{ Form::input('number', 'costo') }}
+						{{Form::label('Menores','',array('class'=>'col-lg-1 control-label'))}}
+						{{ Form::input('number', 'costo') }}
+						</div>
 					
 				</div>
 			</div>
 			
 		</div>
-	</br>sasdfasdf
-	</br>sasdfasdf
-	</br>sasdfasdf
 	
-	</br>sasdfasdf
 	</div>
 </div>
 	
