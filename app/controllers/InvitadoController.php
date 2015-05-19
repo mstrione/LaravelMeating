@@ -55,6 +55,23 @@ class InvitadoController extends \BaseController {
 	}
 
 
+	public function asistir()
+	{
+		$ideventocapturado=Input::get('captura');
+		$invitadoid=Input::get('capturainvitado');	
+				$invitado = Invitado::find($invitadoid);						
+				$invitado->menores = Input::get('menores');
+				$invitado->adultos = Input::get('adultos');		
+				$invitado->confirmado =1;			
+				$invitado->gasto=Input::get('gasto');
+				
+				$invitado->save();
+				
+				return Redirect::to("verevento/$ideventocapturado");
+		}
+		
+		
+		
 	
 	 
 	 

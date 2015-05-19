@@ -161,7 +161,7 @@ $(document).ready(function() {
 								<div id="map_canvas" style="width: 700px; height: 300px;"></div>
 								<br/>							
 				</body>
-				<div id='map_canvas' style="width:600px; height:400px;"></div>
+				
 			
 			
 			</br> 
