@@ -82,6 +82,7 @@
 										<td>
 								
 										<a class="btn btn-success" href="/verevento/{{$evento->id}}"  title="Vista del evento"><span class="glyphicon glyphicon-eye-open"></span>
+										
 										<i class="icon-envelope"></i>Ver
 										</a>
 																

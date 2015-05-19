@@ -37,7 +37,7 @@
   <div class="col-xs-12 col-md-8">
 	<ul >
 		<li class="accordion-container">
-			<div input type="radio" class="accordion-header" name="" checked="true" value="0" action="onclick" <!--aca mandaria al javascript con la opcion -->El organizador invita</div>
+			<div input type="radio" class="accordion-header" name="" checked="" value="0" action="onclick" <!--aca mandaria al javascript con la opcion -->El organizador invita</div>
 			<div class="accordion-content"><p>El evento no tiene costo alguno para los invitados</p></div>
 		</li>
 		<li class="accordion-container">

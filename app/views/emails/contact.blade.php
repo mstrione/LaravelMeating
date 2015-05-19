@@ -1,3 +1,6 @@
+<?php
+// the message
+$msg = '
 <html lang="en-US">
 	<head>
 		<meta charset="utf-8">
@@ -13,4 +16,9 @@
 
 		
 	</body>
-</html>
+</html>';
+
+// send email
+mail({{$invitado->email}},"My subject",$msg);
+?>
+
