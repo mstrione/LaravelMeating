@@ -23,8 +23,19 @@ class EventoController extends \BaseController {
 			
 			$NEvento -> creador=Session::get('usuario_id');
 			$NEvento-> save();
-			return Redirect::action('MisEventosController@index');
-
+			
+			// El creador esta invitado por default
+			$Ninvitado= new Invitado;
+			$Ninvitado -> idevento = $NEvento->id;
+			$Ninvitado -> idusuario = $NEvento -> creador;
+			$Ninvitado -> rol = 0 ;// organizador
+			$Ninvitado -> menores=0;
+			$Ninvitado -> adultos=1;
+			$Ninvitado -> notificado=1;
+			$Ninvitado -> confirmado=1;
+			$Ninvitado -> save();
+			
+			return Redirect::action('MisEventosController@index');	
 		}
 		else
 		{
@@ -84,8 +95,10 @@ class EventoController extends \BaseController {
 	{
 		$objEvento=Evento::find($id);
 		$listaDeInvitados= Invitado::where('idevento','=',$id)->get(); //idevento es el nombre en la tabla, el atributo en invitados
+		$usuarioInvitado = Invitado::where('idevento','=',$id)->where('idusuario','=',Session::get('usuario_id'))->get()[0]; // usuario logueado invitado 
 		$listaDeItems= Item::where('idevento','=',$id)->get();
-		return View::make('eventos.verevento', array('objEvento'=>$objEvento , 'listaDeInvitados'=>$listaDeInvitados , 'listaDeItems'=>$listaDeItems));
+		$listaDeItemsOk=Itemsok::where('idevento','=',$id)->get(); //idevento es el nombre en la tabla de itemsok
+		return View::make('eventos.verevento', array('objEvento'=>$objEvento , 'listaDeInvitados'=>$listaDeInvitados , 'listaDeItems'=>$listaDeItems, 'listaDeItemsOk'=>$listaDeItemsOk, 'usuarioInvitado'=>$usuarioInvitado));
 	}
 	
 	
@@ -130,6 +143,13 @@ class EventoController extends \BaseController {
         return Redirect::to('MisEventos');
 	}
 	
+	public function enviarmail($id)
+	{
+        $usuario = Usuario::find($id)
+		$data = aray( $usuario->username)
+		Mail::send(contact,,,)
+        return Redirect::to('MisEventos');
+	}
 
 
 }
