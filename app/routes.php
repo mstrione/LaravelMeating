@@ -55,7 +55,7 @@ Route::post('/upload', 'FotoController@post_foto');
 
 //ItemController
 Route::post('/AgregarElItem', 'ItemController@agregar');
-
+Route::post('/Asignar', 'ItemsokController@asignar');
 
 //INVITADOS
 
@@ -82,4 +82,7 @@ Route::get('eliminaritem/{id}', 'ItemController@delete_item');
 Route::get('eliminarinvitado/{id}', 'InvitadoController@delete_invitado');
 Route::get('eliminarevento/{id}', 'EventoController@delete_evento');
 
+Route::get('mail/{id}', 'EventoController@enviarmail');
 
+
+Route::post('/asistir', 'InvitadoController@asistir');
