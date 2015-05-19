@@ -45,26 +45,31 @@
 
 	</div>
 	<script> 
+		$( "#costofijoinvitado1" ).click(function() {
+		  $( "#costofijoinvitado2" ).toggle(  );
+		  
+		});
 		$( "#costofijo1" ).click(function() {
 		  $( "#costofijo2" ).toggle(  );
-		  alert("1");
+		  
 		});
 		$( "#division1" ).click(function() {
 		  $( "#division2" ).toggle(  );
-		  alert("2");
+		  
 		});
 		$( "#divisionasistentegastado1" ).click(function() {
 		  $( "#divisionasistentegastado2" ).toggle(  );
-		  alert("3");
+		  
 		});
 		$( "#divisiongastado1" ).click(function() {
 		  $( "#divisiongastado2" ).toggle(  );
-		  alert("4");
+		  
 		});
 		$( "#divisionasistentefijo1" ).click(function() {
 		  $( "#divisionasistentefijo2" ).toggle(  );
-		  alert("5");
+		  
 		});
+		
 	
 	</script>
 </body>
